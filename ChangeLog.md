@@ -3888,6 +3888,7 @@ Added a new API 'CheckTrafficManagerNameAvailabilityV2'.
 * Replaced 'IdentifyTopFatFlow' parameter with 'EnableFatFlowLogging' parameter to 'New-AzFirewall'
 * Fixed a bug not able to add MSSQL application rules to an AZURE FIREWALL POLICY
 * Onboard Project AzureML Registries to Private Link Common Cmdlets
+* Added 'EnableDnstapLogging' parameter to 'New-AzFirewall'
 
 #### Az.RecoveryServices
 * [Breaking Change] Added fix for Enable-AzRecoveryServicesBackupProtection cmdlet. Resolved the null reference issue by making policy a mandatory parameter.
