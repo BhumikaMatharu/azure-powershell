@@ -28,7 +28,6 @@
 * Added properties 'ContinuousCapture', 'LocalPath', and 'CaptureSetting' reference in Packet capture V2 command, as well as support for it for the following cmdlets:
     - `New-AzNetworkWatcherPacketCaptureV2`
 * Onboarded Application Gateway WAF Exceptions cmdlet.
-    - `New-AzApplicationGatewayFirewallPolicyException`  
     - `New-AzApplicationGatewayFirewallPolicyException` 
 
 ## Version 7.17.0
