@@ -1,4 +1,4 @@
-### Example 1: Get the project catalog sync error detail
+### Example 1: Get the project catalog sync error dteail
 ```powershell
 Get-AzDevCenterAdminProjectCatalogSyncErrorDetail -ProjectName DevProject -CatalogName CentralCatalog -ResourceGroupName testRg
 ```

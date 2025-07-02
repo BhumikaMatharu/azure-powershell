@@ -18,7 +18,7 @@ using System.Text;
 namespace Microsoft.Azure.Commands.Insights.OutputClasses
 {
     /// <summary>
-    /// Wraps around the ManagementEventRuleCondition class
+    /// Wrapps around the ManagementEventRuleCondition class
     /// </summary>
     public class PSEventRuleCondition : IPSRuleCondition
     {

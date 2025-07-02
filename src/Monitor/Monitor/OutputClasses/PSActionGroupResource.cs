@@ -38,7 +38,7 @@ namespace Microsoft.Azure.Commands.Insights.OutputClasses
 
         /// <summary>
         /// Gets or sets indicates whether this action group is enabled. If an
-        ///             action group is not enabled, then none of its receivers will
+        ///             action group is not enabled, then none of its receviers will
         ///             receive communications.
         /// 
         /// </summary>

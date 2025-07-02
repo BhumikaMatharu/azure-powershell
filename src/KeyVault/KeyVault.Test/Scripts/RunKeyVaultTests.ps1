@@ -244,7 +244,7 @@ function Run-AllDataPlaneTests
 {
     Write-Host "Starting the data plane tests..."
 
-    # All operations that involve soft delete
+    # All operations that invlove soft delete
     if($global:softDeleteEnabled -eq $true)
     {
         # Key soft delete tests

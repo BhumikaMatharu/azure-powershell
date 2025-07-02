@@ -47,47 +47,47 @@ namespace Microsoft.Azure.Commands.Insights.OutputClasses
         public IList<PSSmsReceiver> SmsReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of webhook receivers.
+        /// Gets or sets the list of webhook receviers.
         /// </summary>
         public IList<PSWebhookReceiver> WebhookReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of event hub receivers.
+        /// Gets or sets the list of event hub receviers.
         /// </summary>
         public IList<PSEventHubReceiver> EventHubReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of itsm receivers.
+        /// Gets or sets the list of itsm receviers.
         /// </summary>
         public IList<PSItsmReceiver> ItsmReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of voice receivers.
+        /// Gets or sets the list of voice receviers.
         /// </summary>
         public IList<PSVoiceReceiver> VoiceReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of armrole receivers.
+        /// Gets or sets the list of armrole receviers.
         /// </summary>
         public IList<PSArmRoleReceiver> ArmRoleReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of azure function receivers.
+        /// Gets or sets the list of azure function receviers.
         /// </summary>
         public IList<PSAzureFunctionReceiver> AzureFunctionReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of logic app receivers.
+        /// Gets or sets the list of logic app receviers.
         /// </summary>
         public IList<PSLogicAppReceiver> LogicAppReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of automation runbook  receivers.
+        /// Gets or sets the list of automation runbook  receviers.
         /// </summary>
         public IList<PSAutomationRunbookReceiver> AutomationRunbookReceivers { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of azure app push receivers.
+        /// Gets or sets the list of azure app push receviers.
         /// </summary>
         public IList<PSAzureAppPushReceiver> AzureAppPushReceivers { get; set; }
 

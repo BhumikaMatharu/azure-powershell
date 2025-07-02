@@ -66,7 +66,7 @@ function Validate-SecurityTopologies
 
 <#
 .SYNOPSIS
-Validates a single SecurityTopologies
+Validates a single SecurityTopologie
 #>
 function Validate-SecurityTopologies
 {

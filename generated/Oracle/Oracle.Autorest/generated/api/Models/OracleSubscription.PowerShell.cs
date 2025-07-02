@@ -205,18 +205,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
             {
                 ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).ProductCode = (string) content.GetValueForProperty("ProductCode",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).ProductCode, global::System.Convert.ToString);
             }
-            if (content.Contains("AzureSubscriptionId"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AzureSubscriptionId = (System.Collections.Generic.List<string>) content.GetValueForProperty("AzureSubscriptionId",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AzureSubscriptionId, __y => TypeConverterExtensions.SelectToList<string>(__y, global::System.Convert.ToString));
-            }
-            if (content.Contains("AddSubscriptionOperationState"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AddSubscriptionOperationState = (string) content.GetValueForProperty("AddSubscriptionOperationState",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AddSubscriptionOperationState, global::System.Convert.ToString);
-            }
-            if (content.Contains("LastOperationStatusDetail"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).LastOperationStatusDetail = (string) content.GetValueForProperty("LastOperationStatusDetail",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).LastOperationStatusDetail, global::System.Convert.ToString);
-            }
             AfterDeserializeDictionary(content);
         }
 
@@ -329,18 +317,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
             if (content.Contains("ProductCode"))
             {
                 ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).ProductCode = (string) content.GetValueForProperty("ProductCode",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).ProductCode, global::System.Convert.ToString);
-            }
-            if (content.Contains("AzureSubscriptionId"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AzureSubscriptionId = (System.Collections.Generic.List<string>) content.GetValueForProperty("AzureSubscriptionId",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AzureSubscriptionId, __y => TypeConverterExtensions.SelectToList<string>(__y, global::System.Convert.ToString));
-            }
-            if (content.Contains("AddSubscriptionOperationState"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AddSubscriptionOperationState = (string) content.GetValueForProperty("AddSubscriptionOperationState",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).AddSubscriptionOperationState, global::System.Convert.ToString);
-            }
-            if (content.Contains("LastOperationStatusDetail"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).LastOperationStatusDetail = (string) content.GetValueForProperty("LastOperationStatusDetail",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal)this).LastOperationStatusDetail, global::System.Convert.ToString);
             }
             AfterDeserializePSObject(content);
         }

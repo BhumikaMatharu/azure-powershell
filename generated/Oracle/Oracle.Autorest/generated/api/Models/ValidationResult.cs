@@ -75,7 +75,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         string Message { get; set; }
         /// <summary>validation status</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = true,
         Read = true,
         Create = false,

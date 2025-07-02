@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Management.Monitor.Management.Models
         }
 
         /// <summary>
-        /// Gets or sets the Schedule of the recurrence
+        /// Gtes or sets the Schedule of the recurrence
         /// </summary>
         public new RecurrentSchedule Schedule
         {

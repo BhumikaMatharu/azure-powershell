@@ -81,7 +81,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public string ID { get; }
 
         /// <summary>
-        ///     Gets the Fabric arm resource name.
+        ///     Gets the Fabric arm resoure name.
         /// </summary>
         public string FabricArmResourceName { get; }
 

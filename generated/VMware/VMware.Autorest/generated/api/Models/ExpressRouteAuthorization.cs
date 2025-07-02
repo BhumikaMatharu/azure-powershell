@@ -37,46 +37,28 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.VMware.Models
         public string Key { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationKey; }
 
         /// <summary>Internal Acessors for ExpressRouteAuthorizationId</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationInternal.ExpressRouteAuthorizationId { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationId; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationId = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationInternal.ExpressRouteAuthorizationId { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationId; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationId = value; }
 
         /// <summary>Internal Acessors for Key</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationInternal.Key { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationKey; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationKey = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationInternal.Key { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationKey; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ExpressRouteAuthorizationKey = value; }
 
         /// <summary>Internal Acessors for Property</summary>
         Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationProperties Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationInternal.Property { get => (this._property = this._property ?? new Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.ExpressRouteAuthorizationProperties()); set { {_property = value;} } }
 
         /// <summary>Internal Acessors for ProvisioningState</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ProvisioningState = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IExpressRouteAuthorizationPropertiesInternal)Property).ProvisioningState = value; }
 
         /// <summary>Internal Acessors for Id</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.Id { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Id; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Id = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.Id { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Id; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Id = value; }
 
         /// <summary>Internal Acessors for Name</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.Name { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Name; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Name = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.Name { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Name; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Name = value; }
 
         /// <summary>Internal Acessors for SystemData</summary>
-        Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.ISystemData Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemData = value ?? null /* model class */; }
-
-        /// <summary>Internal Acessors for SystemDataCreatedAt</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt = value ?? default(global::System.DateTime); }
-
-        /// <summary>Internal Acessors for SystemDataCreatedBy</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy = value ?? null; }
-
-        /// <summary>Internal Acessors for SystemDataCreatedByType</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType = value ?? null; }
-
-        /// <summary>Internal Acessors for SystemDataLastModifiedAt</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt = value ?? default(global::System.DateTime); }
-
-        /// <summary>Internal Acessors for SystemDataLastModifiedBy</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy = value ?? null; }
-
-        /// <summary>Internal Acessors for SystemDataLastModifiedByType</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType = value ?? null; }
+        Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.ISystemData Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemData = value; }
 
         /// <summary>Internal Acessors for Type</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.Type { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Type; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Type = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal.Type { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Type; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).Type = value; }
 
         /// <summary>The name of the resource</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
@@ -101,31 +83,31 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.VMware.Models
         /// Azure Resource Manager metadata containing createdBy and modifiedBy information.
         /// </summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
-        internal Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.ISystemData SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemData = value ?? null /* model class */; }
+        internal Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.ISystemData SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemData; }
 
         /// <summary>The timestamp of resource creation (UTC).</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
-        public global::System.DateTime? SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; }
+        public global::System.DateTime? SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt = value ?? default(global::System.DateTime); }
 
         /// <summary>The identity that created the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
-        public string SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; }
+        public string SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy = value ?? null; }
 
         /// <summary>The type of identity that created the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
-        public string SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; }
+        public string SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType = value ?? null; }
 
         /// <summary>The timestamp of resource last modification (UTC)</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
-        public global::System.DateTime? SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; }
+        public global::System.DateTime? SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt = value ?? default(global::System.DateTime); }
 
         /// <summary>The identity that last modified the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
-        public string SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; }
+        public string SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy = value ?? null; }
 
         /// <summary>The type of identity that last modified the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]
-        public string SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; }
+        public string SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType = value ?? null; }
 
         /// <summary>
         /// The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"

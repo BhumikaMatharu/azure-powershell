@@ -19,7 +19,6 @@ Describe 'New-AzNetworkCloudBareMetalMachineKeySet' {
                 tag1 = $bmmksconfig.tags
             }
             $userList = @{
-                userPrincipalName = $bmmksconfig.userPrincipalName
                 description   = $bmmksconfig.userDescription
                 azureUserName = $bmmksconfig.userName
                 sshPublicKey  = @{
@@ -30,7 +29,7 @@ Describe 'New-AzNetworkCloudBareMetalMachineKeySet' {
                 -Name $bmmksconfig.bmmKeySetName -ClusterName $bmmksconfig.clusterName `
                 -AzureGroupId $bmmksconfig.azureGroupId `
                 -Expiration $bmmksconfig.expiration -OSGroupName $bmmksconfig.osGroupName `
-                -ExtendedLocationName $bmmksconfig.extendedLocation `
+                -ExtendedLocationName $common.extendedLocation `
                 -ExtendedLocationType $common.customLocationType -Location $common.location `
                 -PrivilegeLevel $bmmksconfig.privilegeLevel -JumpHostsAllowed $bmmksconfig.jumpHostsAllowed `
                 -UserList $userList -Tag $tagHash `

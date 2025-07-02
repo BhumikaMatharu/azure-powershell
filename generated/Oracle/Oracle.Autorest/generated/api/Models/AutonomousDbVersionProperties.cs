@@ -18,21 +18,21 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
 
         /// <summary>The Autonomous Database workload type</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public string DbWorkload { get => this._dbWorkload; set => this._dbWorkload = value; }
+        public string DbWorkload { get => this._dbWorkload; }
 
         /// <summary>Backing field for <see cref="IsDefaultForFree" /> property.</summary>
         private bool? _isDefaultForFree;
 
         /// <summary>True if this version of the Oracle Database software's default is free.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public bool? IsDefaultForFree { get => this._isDefaultForFree; set => this._isDefaultForFree = value; }
+        public bool? IsDefaultForFree { get => this._isDefaultForFree; }
 
         /// <summary>Backing field for <see cref="IsDefaultForPaid" /> property.</summary>
         private bool? _isDefaultForPaid;
 
         /// <summary>True if this version of the Oracle Database software's default is paid.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public bool? IsDefaultForPaid { get => this._isDefaultForPaid; set => this._isDefaultForPaid = value; }
+        public bool? IsDefaultForPaid { get => this._isDefaultForPaid; }
 
         /// <summary>Backing field for <see cref="IsFreeTierEnabled" /> property.</summary>
         private bool? _isFreeTierEnabled;
@@ -41,21 +41,39 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         /// True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
         /// </summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public bool? IsFreeTierEnabled { get => this._isFreeTierEnabled; set => this._isFreeTierEnabled = value; }
+        public bool? IsFreeTierEnabled { get => this._isFreeTierEnabled; }
 
         /// <summary>Backing field for <see cref="IsPaidEnabled" /> property.</summary>
         private bool? _isPaidEnabled;
 
         /// <summary>True if this version of the Oracle Database software has payments enabled.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public bool? IsPaidEnabled { get => this._isPaidEnabled; set => this._isPaidEnabled = value; }
+        public bool? IsPaidEnabled { get => this._isPaidEnabled; }
+
+        /// <summary>Internal Acessors for DbWorkload</summary>
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDbVersionPropertiesInternal.DbWorkload { get => this._dbWorkload; set { {_dbWorkload = value;} } }
+
+        /// <summary>Internal Acessors for IsDefaultForFree</summary>
+        bool? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDbVersionPropertiesInternal.IsDefaultForFree { get => this._isDefaultForFree; set { {_isDefaultForFree = value;} } }
+
+        /// <summary>Internal Acessors for IsDefaultForPaid</summary>
+        bool? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDbVersionPropertiesInternal.IsDefaultForPaid { get => this._isDefaultForPaid; set { {_isDefaultForPaid = value;} } }
+
+        /// <summary>Internal Acessors for IsFreeTierEnabled</summary>
+        bool? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDbVersionPropertiesInternal.IsFreeTierEnabled { get => this._isFreeTierEnabled; set { {_isFreeTierEnabled = value;} } }
+
+        /// <summary>Internal Acessors for IsPaidEnabled</summary>
+        bool? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDbVersionPropertiesInternal.IsPaidEnabled { get => this._isPaidEnabled; set { {_isPaidEnabled = value;} } }
+
+        /// <summary>Internal Acessors for Version</summary>
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDbVersionPropertiesInternal.Version { get => this._version; set { {_version = value;} } }
 
         /// <summary>Backing field for <see cref="Version" /> property.</summary>
         private string _version;
 
         /// <summary>Supported Autonomous Db versions.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public string Version { get => this._version; set => this._version = value; }
+        public string Version { get => this._version; }
 
         /// <summary>Creates an new <see cref="AutonomousDbVersionProperties" /> instance.</summary>
         public AutonomousDbVersionProperties()
@@ -70,72 +88,72 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         /// <summary>The Autonomous Database workload type</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
-        ReadOnly = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"The Autonomous Database workload type",
         SerializedName = @"dbWorkload",
         PossibleTypes = new [] { typeof(string) })]
         [global::Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("OLTP", "DW", "AJD", "APEX")]
-        string DbWorkload { get; set; }
+        string DbWorkload { get;  }
         /// <summary>True if this version of the Oracle Database software's default is free.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
-        ReadOnly = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"True if this version of the Oracle Database software's default is free.",
         SerializedName = @"isDefaultForFree",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? IsDefaultForFree { get; set; }
+        bool? IsDefaultForFree { get;  }
         /// <summary>True if this version of the Oracle Database software's default is paid.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
-        ReadOnly = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"True if this version of the Oracle Database software's default is paid.",
         SerializedName = @"isDefaultForPaid",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? IsDefaultForPaid { get; set; }
+        bool? IsDefaultForPaid { get;  }
         /// <summary>
         /// True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
         /// </summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
-        ReadOnly = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.",
         SerializedName = @"isFreeTierEnabled",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? IsFreeTierEnabled { get; set; }
+        bool? IsFreeTierEnabled { get;  }
         /// <summary>True if this version of the Oracle Database software has payments enabled.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
-        ReadOnly = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"True if this version of the Oracle Database software has payments enabled.",
         SerializedName = @"isPaidEnabled",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? IsPaidEnabled { get; set; }
+        bool? IsPaidEnabled { get;  }
         /// <summary>Supported Autonomous Db versions.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
+        Required = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"Supported Autonomous Db versions.",
         SerializedName = @"version",
         PossibleTypes = new [] { typeof(string) })]
-        string Version { get; set; }
+        string Version { get;  }
 
     }
     /// AutonomousDbVersion resource model

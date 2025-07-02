@@ -58,7 +58,7 @@ namespace Microsoft.Azure.Commands.KeyVault
         [Alias(Constants.IssuerName)]
         public string Name { get; set; }
 
-        #region Expanded Parameter Set parameters
+        #region Expanded Parameter Set parmeters
         /// <summary>
         /// IssuerProvider
         /// </summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Azure.Commands.KeyVault
 
         #endregion
 
-        #region ByValue Parameter Set parameters
+        #region ByValue Parameter Set parmeters
 
         /// <summary>
         /// OrganizationDetails

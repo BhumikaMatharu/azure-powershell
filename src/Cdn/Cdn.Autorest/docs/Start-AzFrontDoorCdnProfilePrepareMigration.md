@@ -115,7 +115,7 @@ When a classic AFD instance associated with more than one WAF policy and has no 
 Migrate the classic AFD to Azure Front Door(Standard/Premium) profile..
 The change need to be committed after this.
 
-### Example 5: When a classic AFD instance not associated with WAF and has no customer certificate, and the subscription of the classic AFD instance is different from the local subscription.
+### Example 5: When a classic AFD instance not associated with WAF and has no customer certificate, and the subscription of the classic AFD instance is different from the local subscrition.
 ```powershell
 Start-AzFrontDoorCdnProfilePrepareMigration -ResourceGroupName rgName -ClassicResourceReferenceId /subscriptions/testSubId01/resourcegroups/rgName/providers/Microsoft.Network/Frontdoors/name -ProfileName name-migrated -SkuName Standard_AzureFrontDoor -SubscriptionId testSubId01
 ```
@@ -126,7 +126,7 @@ MigratedProfileResourceId
 /subscriptions/testSubId/resourceGroups/rgName/providers/Microsoft.Cdn/profiles/name-migrated
 ```
 
-When a classic AFD instance not associated with WAF and has no customer certificate, and the subscription of the classic AFD instance is different from the local subscription.
+When a classic AFD instance not associated with WAF and has no customer certificate, and the subscription of the classic AFD instance is different from the local subscrition.
 Migrate the classic AFD to Azure Front Door(Standard/Premium) profile..
 The change need to be committed after this.
 

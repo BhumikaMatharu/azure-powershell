@@ -16,7 +16,7 @@ Describe 'Invoke-AzKustoDiagnoseClusterVirtualNetwork' {
         . ($mockingPath | Select-Object -First 1).FullName
     }
     It 'Diagnose' -skip {
-        # Skipping this tests since this Operation is only supported for VNet injected clusters 
+        # Skiping this tests since this Operation is only supported for VNet injected clusters 
         $resourceGroupName = $env.resourceGroupName
         $clusterName = $env.kustoClusterName
 
@@ -24,7 +24,7 @@ Describe 'Invoke-AzKustoDiagnoseClusterVirtualNetwork' {
     }
 
     It 'DiagnoseViaIdentity' -skip {
-        # Skipping this tests since this Operation is only supported for VNet injected clusters 
+        # Skiping this tests since this Operation is only supported for VNet injected clusters 
         $resourceGroupName = $env.resourceGroupName
         $clusterName = $env.kustoClusterName
 

@@ -228,7 +228,7 @@ function Test-CreatePCMap
     $Job = New-AzRecoveryServicesAsrProtectionContainerMapping -Name $ProtectionContainerMappingName -Policy $Policy -PrimaryProtectionContainer $PrimaryProtectionContainer -RecoveryProtectionContainer $RecoveryProtectionContainer
     WaitForJobCompletion -JobId $Job.Name
 
-    # Get protection container mapping
+    # Get protection conatiner mapping
     $ProtectionContainerMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -Name $ProtectionContainerMappingName -ProtectionContainer $PrimaryProtectionContainer
     Assert-NotNull($ProtectionContainerMapping)
 }
@@ -462,10 +462,10 @@ function Test-RemovePCMap
     # Get the primary container
     $PrimaryProtectionContainer = Get-AzRecoveryServicesAsrFabric -FriendlyName $PrimaryFabricName| Get-AzRecoveryServicesAsrProtectionContainer | where { $_.FriendlyName -eq $PrimaryProtectionContainerName }
 
-    # Get protection container mapping
+    # Get protection conatiner mapping
     $ProtectionContainerMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -Name $ProtectionContainerMappingName -ProtectionContainer $PrimaryProtectionContainer
 
-    # Remove protection container mapping
+    # Remove protection conatiner mapping
     $Job = Remove-AzRecoveryServicesAsrProtectionContainerMapping -ProtectionContainerMapping $ProtectionContainerMapping
     #WaitForJobCompletion -JobId $Job.Name
 }
@@ -710,7 +710,7 @@ function Test-SiteRecoveryNewModelE2ETest
     Assert-NotNull($Policy)
     Assert-NotNull($Policy.Name)
 
-    # Get containers
+    # Get conatiners
     $PrimaryProtectionContainer = Get-AzRecoveryServicesAsrFabric | Get-AzRecoveryServicesAsrProtectionContainer | where { $_.FriendlyName -eq $PrimaryProtectionContainerName }
     Assert-NotNull($PrimaryProtectionContainer)
     Assert-NotNull($PrimaryProtectionContainer.Name)
@@ -718,7 +718,7 @@ function Test-SiteRecoveryNewModelE2ETest
     Assert-NotNull($RecoveryProtectionContainer)
     Assert-NotNull($RecoveryProtectionContainer.Name)
 
-    # Create new Container mapping 
+    # Create new Conatiner mapping 
     $Job = New-AzRecoveryServicesAsrProtectionContainerMapping -Name $ProtectionContainerMappingName -Policy $Policy -PrimaryProtectionContainer $PrimaryProtectionContainer -RecoveryProtectionContainer $RecoveryProtectionContainer
     #WaitForJobCompletion -JobId $Job.Name
 
@@ -764,7 +764,7 @@ function Test-SiteRecoveryNewModelE2ETest
     $Job = Remove-AzRecoveryServicesAsrNetworkMapping -NetworkMapping $NetworkMapping
     #WaitForJobCompletion -JobId $Job.Name
 
-    # Remove container mapping
+    # Remove conatiner mapping
     $Job = Remove-AzRecoveryServicesAsrProtectionContainerMapping -ProtectionContainerMapping $ProtectionContainerMapping
     #WaitForJobCompletion -JobId $Job.Name
     $ProtectionContainerMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -ProtectionContainer $PrimaryProtectionContainer | Where-Object {$_.Name -eq $ProtectionContainerMappingName}

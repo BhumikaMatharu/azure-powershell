@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzReservation
 
 ## SYNOPSIS
-Update the applied scopes of the `Reservation`.
+update the applied scopes of the `Reservation`.
 
 ## SYNTAX
 
@@ -56,7 +56,7 @@ Update-AzReservation -Id <String> -OrderId <String> -JsonString <String> [-Defau
 ```
 
 ## DESCRIPTION
-Update the applied scopes of the `Reservation`.
+update the applied scopes of the `Reservation`.
 
 ## EXAMPLES
 

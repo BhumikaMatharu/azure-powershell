@@ -161,7 +161,7 @@ function Update-GeneratedSubModule {
         Copy-Item -Path $moveFrom -Destination $moveTo -Recurse -Force
     }
     # regenerate csproj
-    New-GeneratedFileFromTemplate -TemplateName 'Az.ModuleName.csproj' -GeneratedFileName "Az.$subModuleNameTrimmed.csproj" -GeneratedDirectory $GeneratedDirectory -ModuleRootName $ModuleRootName -SubModuleName $subModuleNameTrimmed -SubModuleNameFull $SubModuleName
+    New-GeneratedFileFromTemplate -TemplateName 'Az.ModuleName.csproj' -GeneratedFileName "Az.$subModuleNameTrimmed.csproj" -GeneratedDirectory $GeneratedDirectory -ModuleRootName $ModuleRootName -SubModuleName $subModuleNameTrimmed
     
     # revert guid in psd1 so that no conflict in updating this file
     if ($guid) {
@@ -189,9 +189,7 @@ function New-GeneratedFileFromTemplate {
         [string]
         $ModuleRootName,
         [string]
-        $SubModuleName,
-        [string]
-        $SubModuleNameFull
+        $SubModuleName
     )
     $TemplatePath = Join-Path $PSScriptRoot "Templates"
     $templateFile = Join-Path $TemplatePath $TemplateName
@@ -203,11 +201,7 @@ function New-GeneratedFileFromTemplate {
     }
     $templateFile = $templateFile -replace '{ModuleNamePlaceHolder}', $SubModuleName
     $templateFile = $templateFile -replace '{LowCaseModuleNamePlaceHolder}', $SubModuleName.ToLower()
-    if ($SubModuleNameFull) {
-        $templateFile = $templateFile -replace '{ModuleFolderPlaceHolder}', $SubModuleNameFull
-    } else {
-        $templateFile = $templateFile -replace '{ModuleFolderPlaceHolder}', "$SubModuleName.Autorest"
-    }
+    $templateFile = $templateFile -replace '{ModuleFolderPlaceHolder}', "$SubModuleName.Autorest"
     $templateFile = $templateFile -replace '{RootModuleNamePlaceHolder}', $ModuleRootName
     Write-Host "Copying template: $TemplateName." -ForegroundColor Yellow
     $templateFile | Set-Content $GeneratedFile -force

@@ -32,9 +32,6 @@ Get a Datastore
 ### [Get-AzVMwareGlobalReachConnection](Get-AzVMwareGlobalReachConnection.md)
 Get a GlobalReachConnection
 
-### [Get-AzVMwareHost](Get-AzVMwareHost.md)
-Get a Host
-
 ### [Get-AzVMwareIscsiPath](Get-AzVMwareIscsiPath.md)
 Get a IscsiPath
 
@@ -46,15 +43,6 @@ Get a PrivateCloud
 
 ### [Get-AzVMwarePrivateCloudAdminCredential](Get-AzVMwarePrivateCloudAdminCredential.md)
 List the admin credentials for the private cloud
-
-### [Get-AzVMwareProvisionedNetwork](Get-AzVMwareProvisionedNetwork.md)
-Get a ProvisionedNetwork
-
-### [Get-AzVMwarePureStoragePolicy](Get-AzVMwarePureStoragePolicy.md)
-Get a PureStoragePolicy
-
-### [Get-AzVMwareSku](Get-AzVMwareSku.md)
-A list of SKUs.
 
 ### [Get-AzVMwareVirtualMachine](Get-AzVMwareVirtualMachine.md)
 Get a VirtualMachine
@@ -101,9 +89,6 @@ Rotate the vCenter password
 ### [New-AzVMwarePSCredentialExecutionParameterObject](New-AzVMwarePSCredentialExecutionParameterObject.md)
 Create an in-memory object for PSCredentialExecutionParameter.
 
-### [New-AzVMwarePureStoragePolicy](New-AzVMwarePureStoragePolicy.md)
-Create a PureStoragePolicy
-
 ### [New-AzVMwareScriptSecureStringExecutionParameterObject](New-AzVMwareScriptSecureStringExecutionParameterObject.md)
 Create an in-memory object for ScriptSecureStringExecutionParameter.
 
@@ -143,9 +128,6 @@ Delete a PlacementPolicy
 ### [Remove-AzVMwarePrivateCloud](Remove-AzVMwarePrivateCloud.md)
 Delete a private cloud
 
-### [Remove-AzVMwarePureStoragePolicy](Remove-AzVMwarePureStoragePolicy.md)
-Delete a PureStoragePolicy
-
 ### [Test-AzVMwareLocationQuotaAvailability](Test-AzVMwareLocationQuotaAvailability.md)
 Return quota for subscription by region
 
@@ -175,7 +157,4 @@ Update a PlacementPolicy
 
 ### [Update-AzVMwarePrivateCloud](Update-AzVMwarePrivateCloud.md)
 Update a PrivateCloud
-
-### [Update-AzVMwarePureStoragePolicy](Update-AzVMwarePureStoragePolicy.md)
-Update a PureStoragePolicy
 

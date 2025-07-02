@@ -161,7 +161,7 @@ namespace Microsoft.Azure.Commands.Network
 
             if (FqdnTag != null)
             {
-                this.Protocol = new string[] {"https"}; // "http" and "mssql" are not allowed for FqdnTags
+                this.Protocol = new string[] { "http", "https", "mssql"};
                 FqdnTag = AzureFirewallFqdnTagHelper.MapUserInputToAllowedFqdnTags(FqdnTag, this.AzureFirewallPolicyFqdnTagClient).ToArray();
             }
 

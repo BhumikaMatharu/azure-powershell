@@ -290,7 +290,10 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Helpers
             var dataProtection = new VolumePropertiesDataProtection();
             if (psDataProtection.Replication != null)
             {
-                var replication = new ReplicationObject();                                
+                var replication = new ReplicationObject();
+
+                // replication.ReplicationId = psDataProtection.Replication.ReplicationId;
+                replication.EndpointType = psDataProtection.Replication.EndpointType;
                 replication.ReplicationSchedule = psDataProtection.Replication.ReplicationSchedule;
                 replication.RemoteVolumeResourceId = psDataProtection.Replication.RemoteVolumeResourceId;
                 replication.RemoteVolumeRegion = psDataProtection.Replication.RemoteVolumeRegion;
@@ -323,7 +326,8 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Helpers
             {
                 var replication = new ReplicationObject();
 
-                // replication.ReplicationId = psDataProtection.Replication.ReplicationId;                
+                // replication.ReplicationId = psDataProtection.Replication.ReplicationId;
+                replication.EndpointType = psDataProtection.Replication.EndpointType;
                 replication.ReplicationSchedule = psDataProtection.Replication.ReplicationSchedule;
                 replication.RemoteVolumeResourceId = psDataProtection.Replication.RemoteVolumeResourceId;
                 // replication.RemoteVolumeRegion = psDataProtection.Replication.RemoteVolumeRegion;

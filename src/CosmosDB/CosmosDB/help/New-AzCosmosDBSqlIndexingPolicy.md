@@ -14,9 +14,8 @@ Creates a new CosmosDB Sql IndexingPolicy object.
 
 ```
 New-AzCosmosDBSqlIndexingPolicy [-IncludedPath <PSIncludedPath[]>] [-SpatialSpec <PSSpatialSpec[]>]
- [-CompositePath <PSCompositePath[][]>] [-ExcludedPath <String[]>] [-Automatic <Boolean>]
- [-IndexingMode <String>] [-VectorIndex <PSVectorIndex[]>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ [-CompositePath <PSCompositePath[][]>] [-ExcludedPath <String[]>] [-Automatic <Boolean>] [-VectorIndex <PSVectorIndex[]>]
+ [-IndexingMode <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,12 +154,11 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
 ### -VectorIndex
 Array of objects of type Microsoft.Azure.Commands.CosmosDB.Models.PSSqlVectorIndex.
 
 ```yaml
-Type: Microsoft.Azure.Commands.CosmosDB.Models.PSVectorIndex[]
+Type: Microsoft.Azure.Commands.CosmosDB.Models.PSSqlVectorIndex[]
 Parameter Sets: (All)
 Aliases:
 

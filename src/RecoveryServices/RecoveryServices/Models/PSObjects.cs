@@ -213,7 +213,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices
         public string Location { get; set; }
 
         /// <summary>
-        /// Gets or sets Resource group name.
+        /// Gets or sets Resouce group name.
         /// </summary>
         public string ResourceGroupName { get; set; }
 

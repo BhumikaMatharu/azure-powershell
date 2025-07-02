@@ -102,7 +102,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices
         }
 
         /// <summary>
-        /// Get vaults under a resource group.
+        /// Get vaults under a resouce group.
         /// </summary>
         private void GetVaultsUnderResourceGroup(string resourceGroupName)
         {
@@ -113,7 +113,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices
         }
 
         /// <summary>
-        /// Get vaults under all resource groups.
+        /// Get vaults under all resouce group.
         /// </summary>
         private void GetVaultsUnderAllResourceGroups()
         {

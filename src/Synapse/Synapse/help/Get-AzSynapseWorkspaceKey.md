@@ -1,6 +1,6 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll-Help.xml
-Module Name: Az.Synapse
+module name: Az.Synapse
 online version: https://learn.microsoft.com/powershell/module/az.synapse/get-azsynapseworkspacekey
 schema: 2.0.0
 ---

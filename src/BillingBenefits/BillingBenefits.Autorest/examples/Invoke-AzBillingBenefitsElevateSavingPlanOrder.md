@@ -11,7 +11,7 @@ Name                                 PrincipalId                          RoleDe
 
 Elevate savings plan order
 
-### Example 2: Elevate savings plan order via identity	
+### Example 2: Elevate savings plan order via identiy	
 ```powershell	
 $identity = @{	
             SavingsPlanOrderId = "e45905d2-9207-4f24-8549-f615c203b49b"	

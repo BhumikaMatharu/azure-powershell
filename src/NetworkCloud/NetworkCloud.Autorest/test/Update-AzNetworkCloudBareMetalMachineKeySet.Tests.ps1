@@ -23,7 +23,6 @@ Describe 'Update-AzNetworkCloudBareMetalMachineKeySet' {
             $userList = @{
                 description   = $bmmksconfig.userDescriptionUpdate
                 azureUserName = $bmmksconfig.userNameUpdate
-                userPrincipalName = $bmmksconfig.userPrincipalNameUpdate
                 sshPublicKey  = @{
                     keyData = $bmmksconfig.sshKeyUpdate
                 }

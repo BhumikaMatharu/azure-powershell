@@ -1016,14 +1016,6 @@
       "Update-AzChaosExperiment": {},
       "Update-AzChaosTarget": {}
     },
-    "Az.CloudHsm": {
-      "Backup-AzCloudHsm": {},
-      "Get-AzCloudHsm": {},
-      "New-AzCloudHsm": {},
-      "Remove-AzCloudHsm": {},
-      "Restore-AzCloudHsm": {},
-      "Update-AzCloudHsm": {}
-    },
     "Az.CloudService": {
       "Get-AzCloudService": {},
       "Get-AzCloudServiceInstanceView": {},
@@ -2367,42 +2359,12 @@
       "Start-AzDataShareSubscriptionSynchronization": {},
       "Stop-AzDataShareSubscriptionSynchronization": {}
     },
-    "Az.DataTransfer": {
-      "Approve-AzDataTransferConnection": {},
-      "Deny-AzDataTransferConnection": {},
-      "Disable-AzDataTransferFlow": {},
-      "Enable-AzDataTransferFlow": {},
-      "Get-AzDataTransferConnection": {},
-      "Get-AzDataTransferFlow": {},
-      "Get-AzDataTransferPendingConnection": {},
-      "Get-AzDataTransferPendingFlow": {},
-      "Get-AzDataTransferPipeline": {},
-      "Invoke-AzDataTransferLinkPendingConnection": {},
-      "Invoke-AzDataTransferLinkPendingFlow": {},
-      "New-AzDataTransferConnection": {},
-      "New-AzDataTransferFlow": {},
-      "Remove-AzDataTransferConnection": {},
-      "Remove-AzDataTransferFlow": {},
-      "Update-AzDataTransferConnection": {},
-      "Update-AzDataTransferFlow": {}
-    },
     "Az.DedicatedHsm": {
       "Get-AzDedicatedHsm": {},
       "Get-AzDedicatedHsmOutboundNetworkDependencyEndpoint": {},
       "New-AzDedicatedHsm": {},
       "Remove-AzDedicatedHsm": {},
       "Update-AzDedicatedHsm": {}
-    },
-    "Az.DependencyMap": {
-      "Get-AzDependencyMap": {},
-      "Get-AzDependencyMapDiscoverySource": {},
-      "New-AzDependencyMap": {},
-      "New-AzDependencyMapDiscoverySource": {},
-      "New-AzDependencyMapOffAzureDiscoverySourceResourcePropertiesObject": {},
-      "Remove-AzDependencyMap": {},
-      "Remove-AzDependencyMapDiscoverySource": {},
-      "Update-AzDependencyMap": {},
-      "Update-AzDependencyMapDiscoverySource": {}
     },
     "Az.DesktopVirtualization": {
       "Disconnect-AzWvdUserSession": {},
@@ -2672,17 +2634,19 @@
     "Az.DigitalTwins": {
       "Get-AzDigitalTwinsEndpoint": {},
       "Get-AzDigitalTwinsInstance": {},
+      "Get-AzDigitalTwinsPrivateEndpointConnection": {},
+      "Get-AzDigitalTwinsPrivateLinkResource": {},
       "Get-AzDigitalTwinsTimeSeriesDatabaseConnection": {},
       "New-AzDigitalTwinsEndpoint": {},
       "New-AzDigitalTwinsInstance": {},
+      "New-AzDigitalTwinsPrivateEndpointConnection": {},
       "New-AzDigitalTwinsTimeSeriesDatabaseConnection": {},
       "Remove-AzDigitalTwinsEndpoint": {},
       "Remove-AzDigitalTwinsInstance": {},
+      "Remove-AzDigitalTwinsPrivateEndpointConnection": {},
       "Remove-AzDigitalTwinsTimeSeriesDatabaseConnection": {},
       "Test-AzDigitalTwinsInstanceNameAvailability": {},
-      "Update-AzDigitalTwinsEndpoint": {},
-      "Update-AzDigitalTwinsInstance": {},
-      "Update-AzDigitalTwinsTimeSeriesDatabaseConnection": {}
+      "Update-AzDigitalTwinsInstance": {}
     },
     "Az.DiskPool": {
       "Get-AzDiskPool": {},
@@ -4554,23 +4518,10 @@
       "Update-AzMySqlVirtualNetworkRule": {}
     },
     "Az.NeonPostgres": {
-      "Get-AzNeonPostgresBranch": {},
-      "Get-AzNeonPostgresCompute": {},
-      "Get-AzNeonPostgresEndpoint": {},
-      "Get-AzNeonPostgresNeonDatabase": {},
-      "Get-AzNeonPostgresNeonRole": {},
       "Get-AzNeonPostgresOrganization": {},
-      "Get-AzNeonPostgresProject": {},
-      "Get-AzNeonPostgresProjectConnectionUri": {},
-      "New-AzNeonPostgresBranch": {},
       "New-AzNeonPostgresOrganization": {},
-      "New-AzNeonPostgresProject": {},
-      "Remove-AzNeonPostgresBranch": {},
       "Remove-AzNeonPostgresOrganization": {},
-      "Remove-AzNeonPostgresProject": {},
-      "Update-AzNeonPostgresBranch": {},
-      "Update-AzNeonPostgresOrganization": {},
-      "Update-AzNeonPostgresProject": {}
+      "Update-AzNeonPostgresOrganization": {}
     },
     "Az.NetAppFiles": {
       "Approve-AzNetAppFilesReplication": {},
@@ -5044,7 +4995,6 @@
       "New-AzApplicationGatewayFirewallDisabledRuleGroupConfig": {},
       "New-AzApplicationGatewayFirewallExclusionConfig": {},
       "New-AzApplicationGatewayFirewallMatchVariable": {},
-      "New-AzApplicationGatewayFirewallPolicyException": {},
       "New-AzApplicationGatewayFirewallPolicy": {},
       "New-AzApplicationGatewayFirewallPolicyExclusion": {},
       "New-AzApplicationGatewayFirewallPolicyExclusionManagedRule": {},
@@ -5207,7 +5157,6 @@
       "New-AzOffice365PolicyProperty": {},
       "New-AzP2sVpnGateway": {},
       "New-AzPacketCaptureFilterConfig": {},
-      "New-AzPacketCaptureSettingsConfig": {},
       "New-AzPacketCaptureScopeConfig": {},
       "New-AzPrivateDnsZoneConfig": {},
       "New-AzPrivateDnsZoneGroup": {},
@@ -6149,12 +6098,7 @@
       "Remove-AzProviderHubProviderRegistration": {},
       "Remove-AzProviderHubResourceTypeRegistration": {},
       "Remove-AzProviderHubSku": {},
-      "Stop-AzProviderHubDefaultRollout": {},
-      "Update-AzProviderHubCustomRollout": {},
-      "Update-AzProviderHubDefaultRollout": {},
-      "Update-AzProviderHubNotificationRegistration": {},
-      "Update-AzProviderHubProviderRegistration": {},
-      "Update-AzProviderHubResourceTypeRegistration": {}
+      "Stop-AzProviderHubDefaultRollout": {}
     },
     "Az.Purview": {
       "Add-AzPurviewAccountRootCollectionAdmin": {},
@@ -6271,14 +6215,7 @@
       "Start-AzPurviewScanResultScan": {},
       "Stop-AzPurviewScanResultScan": {},
       "Test-AzPurviewAccountNameAvailability": {},
-      "Update-AzPurviewAccount": {},
-      "Update-AzPurviewClassificationRule": {},
-      "Update-AzPurviewDataSource": {},
-      "Update-AzPurviewFilter": {},
-      "Update-AzPurviewKeyVaultConnection": {},
-      "Update-AzPurviewScan": {},
-      "Update-AzPurviewScanRuleset": {},
-      "Update-AzPurviewTrigger": {}
+      "Update-AzPurviewAccount": {}
     },
     "Az.Quantum": {
       "Get-AzQuantumOffering": {},
@@ -8090,12 +8027,7 @@
       "Update-AzStorageServiceProperty": {},
       "Get-AzStorageAccountMigration": {},
       "Get-AzStorageFileServiceUsage": {},
-      "Get-AzStorageTaskAssignment": {},
-      "Get-AzStorageTaskAssignmentInstancesReport": {},
-      "New-AzStorageTaskAssignment": {},
-      "Remove-AzStorageTaskAssignment": {},
       "Start-AzStorageAccountMigration": {},
-      "Update-AzStorageTaskAssignment": {},
       "Disable-AzStorageSoftDelete": {},
       "Enable-AzStorageSoftDelete": {},
       "Get-AzDatalakeGen2FileSystem": {},
@@ -8574,14 +8506,10 @@
       "Get-AzVMwareClusterZone": {},
       "Get-AzVMwareDatastore": {},
       "Get-AzVMwareGlobalReachConnection": {},
-      "Get-AzVMwareHost": {},
       "Get-AzVMwareIscsiPath": {},
       "Get-AzVMwarePlacementPolicy": {},
       "Get-AzVMwarePrivateCloud": {},
       "Get-AzVMwarePrivateCloudAdminCredential": {},
-      "Get-AzVMwareProvisionedNetwork": {},
-      "Get-AzVMwarePureStoragePolicy": {},
-      "Get-AzVMwareSku": {},
       "Get-AzVMwareVirtualMachine": {},
       "New-AzVMwareAddon": {},
       "New-AzVMwareAddonSrmPropertyObject": {},
@@ -8597,7 +8525,6 @@
       "New-AzVMwarePrivateCloudNsxtPassword": {},
       "New-AzVMwarePrivateCloudVcenterPassword": {},
       "New-AzVMwarePSCredentialExecutionParameterObject": {},
-      "New-AzVMwarePureStoragePolicy": {},
       "New-AzVMwareScriptSecureStringExecutionParameterObject": {},
       "New-AzVMwareScriptStringExecutionParameterObject": {},
       "New-AzVMwareVmHostPlacementPolicyPropertyObject": {},
@@ -8611,7 +8538,6 @@
       "Remove-AzVMwareIscsiPath": {},
       "Remove-AzVMwarePlacementPolicy": {},
       "Remove-AzVMwarePrivateCloud": {},
-      "Remove-AzVMwarePureStoragePolicy": {},
       "Test-AzVMwareLocationQuotaAvailability": {},
       "Test-AzVMwareLocationTrialAvailability": {},
       "Update-AzVMwareAuthorization": {},
@@ -8621,8 +8547,7 @@
       "Update-AzVMwareGlobalReachConnection": {},
       "Update-AzVMwareIscsiPath": {},
       "Update-AzVMwarePlacementPolicy": {},
-      "Update-AzVMwarePrivateCloud": {},
-      "Update-AzVMwarePureStoragePolicy": {}
+      "Update-AzVMwarePrivateCloud": {}
     },
     "Az.VoiceServices": {
       "Get-AzVoiceServicesCommunicationsGateway": {},

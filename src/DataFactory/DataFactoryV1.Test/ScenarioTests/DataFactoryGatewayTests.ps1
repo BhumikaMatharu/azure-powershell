@@ -14,7 +14,7 @@
 
 <#
 .SYNOPSIS
-Negative test. Get gateway from an non-existing empty group.
+Nagative test. Get gateway from an non-existing empty group.
 #>
 function Test-GetNonExistingDataFactoryGateway
 {	

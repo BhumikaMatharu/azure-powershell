@@ -212,7 +212,7 @@ function Test-UpdateDataFactory
 
 <#
 .SYNOOSIS
-Verifies factory properties
+Verifies factory proepties
 #>
 function ValidateFactoryProperties ($expected, $actual)
 {

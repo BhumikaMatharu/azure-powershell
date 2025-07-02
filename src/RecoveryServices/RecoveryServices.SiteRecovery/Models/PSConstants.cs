@@ -469,7 +469,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public const string Required = "Required";
 
         /// <summary>
-        ///     Failover deployment model: ResourceManager
+        ///     Failover deployment model: ResourceMananger
         /// </summary>
         public const string ResourceManager = "ResourceManager";
 
@@ -1166,7 +1166,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
     }
 
     /// <summary>
-    ///     ASR Health Event Severity mapped with Monitoring Event in SRS.
+    ///     ASR Heatlth Event Severity mapped with Monitoring Event in SRS.
     /// </summary>
     public static class ASRHealthEventServerity
     {

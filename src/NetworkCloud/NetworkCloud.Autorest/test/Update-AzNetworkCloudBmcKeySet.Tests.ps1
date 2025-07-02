@@ -21,12 +21,13 @@ Describe 'Update-AzNetworkCloudBmcKeySet' {
                 tag1 = $bmcksconfig.tags
                 tag2 = $bmcksconfig.tagsUpdate
             }
-            $userList = New-AzNetworkCloudKeySetUserObject `
-                -userPrincipalName $bmcksconfig.userPrincipalName `
-                -description $bmcksconfig.userDescription `
-                -azureUserName $bmcksconfig.userName `
-                -sshPublicKeyData $bmcksconfig.sshKeyUpdate
-
+            $userList = @{
+                description   = $bmcksconfig.userDescriptionUpdate
+                azureUserName = $bmcksconfig.userNameUpdate
+                sshPublicKey  = @{
+                    keyData = $bmcksconfig.sshKeyUpdate
+                }
+            }
             Update-AzNetworkCloudBmcKeySet -ResourceGroupName $bmcksconfig.bmcksrg `
                 -Name $bmcksconfig.bmcKeySetName -Tag $tagUpdatedHash -ClusterName $bmcksconfig.clusterName -UserList $userList `
                 -Subscription $bmcksconfig.subscriptionId

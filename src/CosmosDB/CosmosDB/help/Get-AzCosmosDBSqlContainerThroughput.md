@@ -15,8 +15,7 @@ Gets the throughput settings corresponding to a CosmosDB Sql Container.
 ### ByNameParameterSet (Default)
 ```
 Get-AzCosmosDBSqlContainerThroughput -ResourceGroupName <String> -AccountName <String> -DatabaseName <String>
- [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ [-Name <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ByObjectParameterSet

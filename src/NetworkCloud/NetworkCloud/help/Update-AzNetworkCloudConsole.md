@@ -16,17 +16,16 @@ Properties and tag updates can be done independently.
 ### UpdateExpanded (Default)
 ```
 Update-AzNetworkCloudConsole -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- -VirtualMachineName <String> [-IfMatch <String>] [-IfNoneMatch <String>] [-Enabled <ConsoleEnabled>]
- [-Expiration <DateTime>] [-SshPublicKeyData <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+ -VirtualMachineName <String> [-Enabled <ConsoleEnabled>] [-Expiration <DateTime>] [-SshPublicKeyData <String>]
+ [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzNetworkCloudConsole -InputObject <INetworkCloudIdentity> [-IfMatch <String>] [-IfNoneMatch <String>]
- [-Enabled <ConsoleEnabled>] [-Expiration <DateTime>] [-SshPublicKeyData <String>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-AzNetworkCloudConsole -InputObject <INetworkCloudIdentity> [-Enabled <ConsoleEnabled>]
+ [-Expiration <DateTime>] [-SshPublicKeyData <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,39 +107,6 @@ The date and time after which the key will be disallowed access.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IfMatch
-The ETag of the transformation.
-Omit this value to always overwrite the current resource.
-Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IfNoneMatch
-Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-Other values will result in error from server as they are not supported.
-
-```yaml
-Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +280,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsole
+### Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsole
 
 ## NOTES
 

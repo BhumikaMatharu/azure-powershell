@@ -13,12 +13,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IGiVersionPropertiesInternal
     {
 
+        /// <summary>Internal Acessors for Version</summary>
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IGiVersionPropertiesInternal.Version { get => this._version; set { {_version = value;} } }
+
         /// <summary>Backing field for <see cref="Version" /> property.</summary>
         private string _version;
 
         /// <summary>A valid Oracle Grid Infrastructure (GI) software version.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public string Version { get => this._version; set => this._version = value; }
+        public string Version { get => this._version; }
 
         /// <summary>Creates an new <see cref="GiVersionProperties" /> instance.</summary>
         public GiVersionProperties()
@@ -32,15 +35,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
     {
         /// <summary>A valid Oracle Grid Infrastructure (GI) software version.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
+        Required = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"A valid Oracle Grid Infrastructure (GI) software version.",
         SerializedName = @"version",
         PossibleTypes = new [] { typeof(string) })]
-        string Version { get; set; }
+        string Version { get;  }
 
     }
     /// GiVersion resource model

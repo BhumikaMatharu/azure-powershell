@@ -17,8 +17,7 @@ Creates a new CosmosDB MongoDB User Definition.
 New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String> [-Mechanisms <String>]
  -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
- [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByNameParameterSet
@@ -26,8 +25,7 @@ New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <S
 New-AzCosmosDBMongoDBUserDefinition -ResourceGroupName <String> -AccountName <String> -Id <String>
  -UserName <String> -Password <String> [-Mechanisms <String>] -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
- [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByParentObjectDataActionsParameterSet
@@ -36,8 +34,7 @@ New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <S
  -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
  [-CustomData <String>] -DatabaseAccountObject <PSDatabaseAccountGetResults>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByParentObjectPermissionsParameterSet
@@ -46,8 +43,7 @@ New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <S
  -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
  [-CustomData <String>] -DatabaseAccountObject <PSDatabaseAccountGetResults>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByResourceIdParameterSet
@@ -55,8 +51,8 @@ New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <S
 New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String> [-Mechanisms <String>]
  -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
- [-CustomData <String>] [-ResourceId <String>] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-CustomData <String>] [-ResourceId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

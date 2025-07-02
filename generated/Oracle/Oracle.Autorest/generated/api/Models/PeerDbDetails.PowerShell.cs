@@ -113,14 +113,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
             {
                 ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbId = (string) content.GetValueForProperty("PeerDbId",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbId, global::System.Convert.ToString);
             }
-            if (content.Contains("PeerDbOcid"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbOcid = (string) content.GetValueForProperty("PeerDbOcid",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbOcid, global::System.Convert.ToString);
-            }
-            if (content.Contains("PeerDbLocation"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbLocation = (string) content.GetValueForProperty("PeerDbLocation",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbLocation, global::System.Convert.ToString);
-            }
             AfterDeserializeDictionary(content);
         }
 
@@ -141,14 +133,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
             if (content.Contains("PeerDbId"))
             {
                 ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbId = (string) content.GetValueForProperty("PeerDbId",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbId, global::System.Convert.ToString);
-            }
-            if (content.Contains("PeerDbOcid"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbOcid = (string) content.GetValueForProperty("PeerDbOcid",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbOcid, global::System.Convert.ToString);
-            }
-            if (content.Contains("PeerDbLocation"))
-            {
-                ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbLocation = (string) content.GetValueForProperty("PeerDbLocation",((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPeerDbDetailsInternal)this).PeerDbLocation, global::System.Convert.ToString);
             }
             AfterDeserializePSObject(content);
         }

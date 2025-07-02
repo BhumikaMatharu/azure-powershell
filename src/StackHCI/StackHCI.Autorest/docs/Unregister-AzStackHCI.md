@@ -74,7 +74,7 @@ Invoking with all the parameters
 ## PARAMETERS
 
 ### -AccountId
-Specifies the AccountId.
+Specifies the AccoundId.
 Specifying this along with ArmAccessToken will avoid Azure interactive logon.
 
 ```yaml

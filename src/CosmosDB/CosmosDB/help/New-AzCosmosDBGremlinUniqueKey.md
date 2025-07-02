@@ -13,8 +13,7 @@ Creates a new CosmosDB UniqueKeyPolicy object.
 ## SYNTAX
 
 ```
-New-AzCosmosDBGremlinUniqueKey -Path <String[]> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+New-AzCosmosDBGremlinUniqueKey -Path <String[]> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

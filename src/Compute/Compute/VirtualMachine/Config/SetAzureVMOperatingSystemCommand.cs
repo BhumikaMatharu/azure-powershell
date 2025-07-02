@@ -338,7 +338,7 @@ namespace Microsoft.Azure.Commands.Compute
                     this.VM.OSProfile.LinuxConfiguration = new LinuxConfiguration();
                 }
 
-                //setting patchmode
+                //seting patchmode
                 if (this.IsParameterBound(c => c.PatchMode))
                 {
                     if (this.VM.OSProfile.LinuxConfiguration.PatchSettings == null)
@@ -440,7 +440,7 @@ namespace Microsoft.Azure.Commands.Compute
                         Listeners = listenerList,
                     };
 
-                //setting patchmode
+                //seting patchmode
                 if (this.IsParameterBound(c => c.PatchMode))
                 {
                     if (this.VM.OSProfile.WindowsConfiguration.PatchSettings == null)

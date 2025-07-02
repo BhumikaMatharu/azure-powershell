@@ -55,11 +55,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -206,15 +201,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -242,6 +228,8 @@ begin {
             RemoveViaJsonString = 'Az.Oracle.private\Remove-AzOracleCloudVMClusterVM_RemoveViaJsonString';
         }
         if (('Remove', 'RemoveExpanded', 'RemoveViaJsonFilePath', 'RemoveViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -255,9 +243,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)

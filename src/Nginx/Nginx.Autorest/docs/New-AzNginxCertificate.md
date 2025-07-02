@@ -35,7 +35,7 @@ Location Name
          cert-test
 ```
 
-This command creates a certificate for a NGINX deployment.
+This commond creates a certificate for a NGINX deployment.
 
 ## PARAMETERS
 

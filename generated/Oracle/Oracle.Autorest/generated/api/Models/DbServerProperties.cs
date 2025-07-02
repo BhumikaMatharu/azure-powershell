@@ -36,13 +36,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
         public string CompartmentId { get => this._compartmentId; }
 
-        /// <summary>Backing field for <see cref="ComputeModel" /> property.</summary>
-        private string _computeModel;
-
-        /// <summary>The compute model of the Exadata Infrastructure</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public string ComputeModel { get => this._computeModel; }
-
         /// <summary>Backing field for <see cref="CpuCoreCount" /> property.</summary>
         private int? _cpuCoreCount;
 
@@ -152,9 +145,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         /// <summary>Internal Acessors for CompartmentId</summary>
         string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.CompartmentId { get => this._compartmentId; set { {_compartmentId = value;} } }
 
-        /// <summary>Internal Acessors for ComputeModel</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.ComputeModel { get => this._computeModel; set { {_computeModel = value;} } }
-
         /// <summary>Internal Acessors for CpuCoreCount</summary>
         int? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.CpuCoreCount { get => this._cpuCoreCount; set { {_cpuCoreCount = value;} } }
 
@@ -168,16 +158,16 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetails Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetail { get => (this._dbServerPatchingDetail = this._dbServerPatchingDetail ?? new Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.DbServerPatchingDetails()); set { {_dbServerPatchingDetail = value;} } }
 
         /// <summary>Internal Acessors for DbServerPatchingDetailEstimatedPatchDuration</summary>
-        int? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailEstimatedPatchDuration { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).EstimatedPatchDuration; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).EstimatedPatchDuration = value ?? default(int); }
+        int? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailEstimatedPatchDuration { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).EstimatedPatchDuration; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).EstimatedPatchDuration = value; }
 
         /// <summary>Internal Acessors for DbServerPatchingDetailPatchingStatus</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailPatchingStatus { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).PatchingStatus; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).PatchingStatus = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailPatchingStatus { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).PatchingStatus; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).PatchingStatus = value; }
 
         /// <summary>Internal Acessors for DbServerPatchingDetailTimePatchingEnded</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailTimePatchingEnded { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingEnded; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingEnded = value ?? default(global::System.DateTime); }
+        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailTimePatchingEnded { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingEnded; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingEnded = value; }
 
         /// <summary>Internal Acessors for DbServerPatchingDetailTimePatchingStarted</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailTimePatchingStarted { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingStarted; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingStarted = value ?? default(global::System.DateTime); }
+        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DbServerPatchingDetailTimePatchingStarted { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingStarted; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPatchingDetailsInternal)DbServerPatchingDetail).TimePatchingStarted = value; }
 
         /// <summary>Internal Acessors for DisplayName</summary>
         string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbServerPropertiesInternal.DisplayName { get => this._displayName; set { {_displayName = value;} } }
@@ -300,18 +290,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         SerializedName = @"compartmentId",
         PossibleTypes = new [] { typeof(string) })]
         string CompartmentId { get;  }
-        /// <summary>The compute model of the Exadata Infrastructure</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = false,
-        ReadOnly = true,
-        Read = true,
-        Create = false,
-        Update = false,
-        Description = @"The compute model of the Exadata Infrastructure",
-        SerializedName = @"computeModel",
-        PossibleTypes = new [] { typeof(string) })]
-        [global::Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("ECPU", "OCPU")]
-        string ComputeModel { get;  }
         /// <summary>The number of CPU cores enabled on the Db server.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
@@ -551,9 +529,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         System.Collections.Generic.List<string> AutonomousVirtualMachineId { get; set; }
         /// <summary>The OCID of the compartment.</summary>
         string CompartmentId { get; set; }
-        /// <summary>The compute model of the Exadata Infrastructure</summary>
-        [global::Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("ECPU", "OCPU")]
-        string ComputeModel { get; set; }
         /// <summary>The number of CPU cores enabled on the Db server.</summary>
         int? CpuCoreCount { get; set; }
         /// <summary>The OCID of the Db nodes associated with the Db server.</summary>

@@ -10,7 +10,7 @@ input-file:
 subject-prefix: ''
 
 directive:
-  # Remove unneeded cmdlets
+  # Remove unnedded cmdlets
   - where:
       subject: ^Operation$
     remove: true

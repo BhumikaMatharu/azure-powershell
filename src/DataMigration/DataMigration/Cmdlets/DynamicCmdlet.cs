@@ -58,7 +58,7 @@ namespace Microsoft.Azure.Commands.DataMigration.Cmdlets
         }
 
         /// <summary>
-        /// An initialization method that performs custom operations like creating dynamic prams
+        /// An initialization method that performs custom operations like creating dyanmic prams
         /// </summary>
         public abstract void CustomInit();
 

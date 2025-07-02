@@ -299,7 +299,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         ///     Converts Query object to query string to pass on.
         /// </summary>
         /// <param name="queryObject">Query object</param>
-        /// <returns>Query string</returns>
+        /// <returns>Qeury string</returns>
         public static string ToQueryString(
             this object queryObject)
         {

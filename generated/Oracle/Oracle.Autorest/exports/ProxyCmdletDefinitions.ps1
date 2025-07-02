@@ -50,11 +50,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -190,15 +185,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -224,6 +210,8 @@ begin {
             AddViaJsonString = 'Az.Oracle.private\Add-AzOracleCloudVMClusterVM_AddViaJsonString';
         }
         if (('AddExpanded', 'AddViaJsonFilePath', 'AddViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -237,9 +225,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -313,11 +298,6 @@ AUTONOMOUSDATABASEINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -339,11 +319,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -457,15 +432,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -491,6 +457,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleAutonomousDatabaseBackup_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -504,9 +472,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -580,11 +545,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -606,11 +566,6 @@ LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -716,15 +671,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -750,6 +696,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleAutonomousDatabaseCharacterSet_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -763,9 +711,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -839,11 +784,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -865,11 +805,6 @@ LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -975,15 +910,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -1009,6 +935,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleAutonomousDatabaseNationalCharacterSet_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -1022,9 +950,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -1098,11 +1023,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -1124,11 +1044,6 @@ LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -1234,15 +1149,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -1268,6 +1174,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleAutonomousDatabaseVersion_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -1281,9 +1189,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -1357,11 +1262,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -1463,15 +1363,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -1497,6 +1388,8 @@ begin {
             List1 = 'Az.Oracle.private\Get-AzOracleAutonomousDatabase_List1';
         }
         if (('Get', 'List', 'List1') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -1510,9 +1403,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -1588,11 +1478,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -1694,15 +1579,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -1728,6 +1604,8 @@ begin {
             List1 = 'Az.Oracle.private\Get-AzOracleCloudExadataInfrastructure_List1';
         }
         if (('Get', 'List', 'List1') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -1741,9 +1619,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -1817,11 +1692,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -1923,15 +1793,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -1957,6 +1818,8 @@ begin {
             List1 = 'Az.Oracle.private\Get-AzOracleCloudVMCluster_List1';
         }
         if (('Get', 'List', 'List1') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -1970,9 +1833,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -2046,11 +1906,6 @@ CLOUDVMCLUSTERINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2072,11 +1927,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2191,15 +2041,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -2225,6 +2066,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleDbNode_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -2238,9 +2081,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -2314,11 +2154,6 @@ CLOUDEXADATAINFRASTRUCTUREINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2340,11 +2175,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2459,15 +2289,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -2493,6 +2314,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleDbServer_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -2506,9 +2329,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -2582,11 +2402,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2608,11 +2423,6 @@ LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2662,12 +2472,6 @@ param(
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
     # Identity Parameter
     ${LocationInputObject},
-
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Query')]
-    [System.String]
-    # Filters the result for the given Azure Availability Zone
-    ${Zone},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -2725,15 +2529,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -2759,6 +2554,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleDbSystemShape_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -2772,9 +2569,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -2848,11 +2642,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2874,11 +2663,6 @@ LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -2985,15 +2769,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -3019,6 +2794,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleDnsPrivateView_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -3032,9 +2809,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -3108,11 +2882,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -3134,11 +2903,6 @@ LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -3245,15 +3009,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -3279,6 +3034,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleDnsPrivateZone_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -3292,1317 +3049,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Get a ExadbVmCluster
-.Description
-Get a ExadbVmCluster
-.Example
-Get-AzOracleExadbVMCluster
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/get-azoracleexadbvmcluster
-#>
-function Get-AzOracleExadbVMCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster])]
-[CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
-param(
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Alias('ExadbVMClusterName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExadbVmCluster
-    ${Name},
-
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='List1', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='Get')]
-    [Parameter(ParameterSetName='List')]
-    [Parameter(ParameterSetName='List1')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String[]]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Get = 'Az.Oracle.private\Get-AzOracleExadbVMCluster_Get';
-            GetViaIdentity = 'Az.Oracle.private\Get-AzOracleExadbVMCluster_GetViaIdentity';
-            List = 'Az.Oracle.private\Get-AzOracleExadbVMCluster_List';
-            List1 = 'Az.Oracle.private\Get-AzOracleExadbVMCluster_List1';
-        }
-        if (('Get', 'List', 'List1') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Get a ExascaleDbNode
-.Description
-Get a ExascaleDbNode
-.Example
-Get-AzOracleExascaleDbNode -Exadbvmclustername "OFake_PowerShellTestVmCluster" -ResourceGroupName "PowerShellTestRg"
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbNode
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-EXADBVMCLUSTERINPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/get-azoracleexascaledbnode
-#>
-function Get-AzOracleExascaleDbNode {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbNode])]
-[CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
-param(
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='List', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExadbVmCluster
-    ${ExadbVMClusterName},
-
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='GetViaIdentityExadbVMCluster', Mandatory)]
-    [Alias('ExascaleDbNodeName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExascaleDbNode
-    ${Name},
-
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='List', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='Get')]
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String[]]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='GetViaIdentityExadbVMCluster', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${ExadbVMClusterInputObject},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Get = 'Az.Oracle.private\Get-AzOracleExascaleDbNode_Get';
-            GetViaIdentity = 'Az.Oracle.private\Get-AzOracleExascaleDbNode_GetViaIdentity';
-            GetViaIdentityExadbVMCluster = 'Az.Oracle.private\Get-AzOracleExascaleDbNode_GetViaIdentityExadbVMCluster';
-            List = 'Az.Oracle.private\Get-AzOracleExascaleDbNode_List';
-        }
-        if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Get a ExascaleDbStorageVault
-.Description
-Get a ExascaleDbStorageVault
-.Example
-Get-AzOracleCloudVMCluster
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbStorageVault
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/get-azoracleexascaledbstoragevault
-#>
-function Get-AzOracleExascaleDbStorageVault {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbStorageVault])]
-[CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
-param(
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Alias('ExascaleDbStorageVaultName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExascaleDbStorageVault
-    ${Name},
-
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='List1', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='Get')]
-    [Parameter(ParameterSetName='List')]
-    [Parameter(ParameterSetName='List1')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String[]]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Get = 'Az.Oracle.private\Get-AzOracleExascaleDbStorageVault_Get';
-            GetViaIdentity = 'Az.Oracle.private\Get-AzOracleExascaleDbStorageVault_GetViaIdentity';
-            List = 'Az.Oracle.private\Get-AzOracleExascaleDbStorageVault_List';
-            List1 = 'Az.Oracle.private\Get-AzOracleExascaleDbStorageVault_List1';
-        }
-        if (('Get', 'List', 'List1') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Get a FlexComponent
-.Description
-Get a FlexComponent
-.Example
-Get-AzOracleFlexComponent -Location "eastus"
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IFlexComponent
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-
-LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/get-azoracleflexcomponent
-#>
-function Get-AzOracleFlexComponent {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IFlexComponent])]
-[CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
-param(
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='List', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the Azure region.
-    ${Location},
-
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='GetViaIdentityLocation', Mandatory)]
-    [Alias('FlexComponentName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the FlexComponent
-    ${Name},
-
-    [Parameter(ParameterSetName='Get')]
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String[]]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='GetViaIdentityLocation', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${LocationInputObject},
-
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Exadata.X9M", "Exadata.X11M", "ExaDbXS")]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Query')]
-    [System.String]
-    # If provided, filters the results for the given shape
-    ${Shape},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Get = 'Az.Oracle.private\Get-AzOracleFlexComponent_Get';
-            GetViaIdentity = 'Az.Oracle.private\Get-AzOracleFlexComponent_GetViaIdentity';
-            GetViaIdentityLocation = 'Az.Oracle.private\Get-AzOracleFlexComponent_GetViaIdentityLocation';
-            List = 'Az.Oracle.private\Get-AzOracleFlexComponent_List';
-        }
-        if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Get a GiMinorVersion
-.Description
-Get a GiMinorVersion
-.Example
-Get-AzOracleGiVersion -Location "eastus"  -Shape "EXADATA"
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IGiMinorVersion
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-GIVERSIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-
-LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/get-azoraclegiminorversion
-#>
-function Get-AzOracleGiMinorVersion {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IGiMinorVersion])]
-[CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
-param(
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='GetViaIdentityLocation', Mandatory)]
-    [Parameter(ParameterSetName='List', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # GiVersion name
-    ${Giversionname},
-
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='List', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the Azure region.
-    ${Location},
-
-    [Parameter(ParameterSetName='Get', Mandatory)]
-    [Parameter(ParameterSetName='GetViaIdentityGiVersion', Mandatory)]
-    [Parameter(ParameterSetName='GetViaIdentityLocation', Mandatory)]
-    [Alias('GiMinorVersionName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the GiMinorVersion
-    ${Name},
-
-    [Parameter(ParameterSetName='Get')]
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String[]]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='GetViaIdentityGiVersion', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${GiVersionInputObject},
-
-    [Parameter(ParameterSetName='GetViaIdentityLocation', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${LocationInputObject},
-
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("EXADATA", "EXADB_XS")]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Query')]
-    [System.String]
-    # If provided, filters the results to the set of database versions which are supported for the given shape family.
-    ${ShapeFamily},
-
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Query')]
-    [System.String]
-    # Filters the result for the given Azure Availability Zone
-    ${Zone},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Get = 'Az.Oracle.private\Get-AzOracleGiMinorVersion_Get';
-            GetViaIdentity = 'Az.Oracle.private\Get-AzOracleGiMinorVersion_GetViaIdentity';
-            GetViaIdentityGiVersion = 'Az.Oracle.private\Get-AzOracleGiMinorVersion_GetViaIdentityGiVersion';
-            GetViaIdentityLocation = 'Az.Oracle.private\Get-AzOracleGiMinorVersion_GetViaIdentityLocation';
-            List = 'Az.Oracle.private\Get-AzOracleGiMinorVersion_List';
-        }
-        if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -4676,11 +3122,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -4702,11 +3143,6 @@ LOCATIONINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -4756,19 +3192,6 @@ param(
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
     # Identity Parameter
     ${LocationInputObject},
-
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Exadata.X9M", "Exadata.X11M", "ExaDbXS")]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Query')]
-    [System.String]
-    # If provided, filters the results for the given shape
-    ${Shape},
-
-    [Parameter(ParameterSetName='List')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Query')]
-    [System.String]
-    # Filters the result for the given Azure Availability Zone
-    ${Zone},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -4826,15 +3249,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -4860,6 +3274,8 @@ begin {
             List = 'Az.Oracle.private\Get-AzOracleGiVersion_List';
         }
         if (('Get', 'List') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -4873,9 +3289,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -4932,7 +3345,7 @@ $stopActionName = "Stop"
 $dbNodeList = Get-AzOracleDbNode -Cloudvmclustername $vmClusterName -ResourceGroupName $resourceGroup
 $dbNodeOcid1 = $dbNodeList[0].Name
             
-Invoke-AzOracleActionDbNode -ResourceGroupName $resourceGroup -Cloudvmclustername $vmClusterName -Dbnodeocid $dbNodeOcid1  -Action $stopActionName
+Invoke-AzOracleActionDbNode -Cloudvmclustername $vmClusterName -Dbnodeocid $dbNodeOcid1 -ResourceGroupName $resourceGroup -Action $stopActionName
 .Example
 $vmClusterName = "OFake_PowerShellTestVmCluster"
 $resourceGroup = "PowerShellTestRg"
@@ -4965,11 +3378,6 @@ CLOUDVMCLUSTERINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -4991,11 +3399,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -5147,15 +3550,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -5182,6 +3576,8 @@ begin {
             ActionViaJsonString = 'Az.Oracle.private\Invoke-AzOracleActionDbNode_ActionViaJsonString';
         }
         if (('ActionExpanded', 'ActionViaJsonFilePath', 'ActionViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -5195,336 +3591,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-VM actions on DbNode of ExadbVmCluster by the provided filter
-.Description
-VM actions on DbNode of ExadbVmCluster by the provided filter
-.Example
-$vmClusterName = "OFake_PowerShellTestVmCluster"
-$resourceGroup = "PowerShellTestRg"
-$stopActionName = "Stop"
-            
-$dbNodeList = Get-AzOracleExascaleDbNode -Exadbvmclustername $vmClusterName -ResourceGroupName $resourceGroup
-$dbNodeOcid1 = $dbNodeList[0].Name
-            
-Invoke-AzOracleActionExascaleDbNode -ExadbVMClusterName $vmClusterName -ExascaleDbNodeName $dbNodeOcid1 -ResourceGroupName $resourceGroup -Action $stopActionName
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbNodeAction
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbActionResponse
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IDbNodeAction>: DbNode action object
-  Action <String>: Db action
-
-EXADBVMCLUSTERINPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/invoke-azoracleactionexascaledbnode
-#>
-function Invoke-AzOracleActionExascaleDbNode {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbActionResponse])]
-[CmdletBinding(DefaultParameterSetName='ActionExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='ActionExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExadbVmCluster
-    ${ExadbVMClusterName},
-
-    [Parameter(ParameterSetName='ActionExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaIdentityExadbVMCluster', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaIdentityExadbVMClusterExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExascaleDbNode
-    ${ExascaleDbNodeName},
-
-    [Parameter(ParameterSetName='ActionExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='ActionExpanded')]
-    [Parameter(ParameterSetName='ActionViaJsonFilePath')]
-    [Parameter(ParameterSetName='ActionViaJsonString')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='ActionViaIdentityExadbVMCluster', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='ActionViaIdentityExadbVMClusterExpanded', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${ExadbVMClusterInputObject},
-
-    [Parameter(ParameterSetName='ActionViaIdentityExpanded', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='ActionExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaIdentityExadbVMClusterExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ActionViaIdentityExpanded', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Start", "Stop", "SoftReset", "Reset")]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Db action
-    ${Action},
-
-    [Parameter(ParameterSetName='ActionViaIdentityExadbVMCluster', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbNodeAction]
-    # DbNode action object
-    ${Body},
-
-    [Parameter(ParameterSetName='ActionViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Action operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='ActionViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Json string supplied to the Action operation
-    ${JsonString},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            ActionExpanded = 'Az.Oracle.private\Invoke-AzOracleActionExascaleDbNode_ActionExpanded';
-            ActionViaIdentityExadbVMCluster = 'Az.Oracle.private\Invoke-AzOracleActionExascaleDbNode_ActionViaIdentityExadbVMCluster';
-            ActionViaIdentityExadbVMClusterExpanded = 'Az.Oracle.private\Invoke-AzOracleActionExascaleDbNode_ActionViaIdentityExadbVMClusterExpanded';
-            ActionViaIdentityExpanded = 'Az.Oracle.private\Invoke-AzOracleActionExascaleDbNode_ActionViaIdentityExpanded';
-            ActionViaJsonFilePath = 'Az.Oracle.private\Invoke-AzOracleActionExascaleDbNode_ActionViaJsonFilePath';
-            ActionViaJsonString = 'Az.Oracle.private\Invoke-AzOracleActionExascaleDbNode_ActionViaJsonString';
-        }
-        if (('ActionExpanded', 'ActionViaJsonFilePath', 'ActionViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -5598,11 +3664,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -5654,22 +3715,8 @@ param(
     [Parameter(ParameterSetName='SwitchoverViaIdentityExpanded')]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
     [System.String]
-    # The Azure resource ID of the Disaster Recovery peer database, which is located in a different region from the current peer database.
+    # The database OCID of the Disaster Recovery peer database, which is located in a different region from the current peer database.
     ${PeerDbId},
-
-    [Parameter(ParameterSetName='SwitchoverExpanded')]
-    [Parameter(ParameterSetName='SwitchoverViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The location of the Disaster Recovery peer database.
-    ${PeerDbLocation},
-
-    [Parameter(ParameterSetName='SwitchoverExpanded')]
-    [Parameter(ParameterSetName='SwitchoverViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Ocid of the Disaster Recovery peer database, which is located in a different region from the current peer database.
-    ${PeerDbOcid},
 
     [Parameter(ParameterSetName='SwitchoverViaJsonFilePath', Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
@@ -5751,15 +3798,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -5785,6 +3823,8 @@ begin {
             SwitchoverViaJsonString = 'Az.Oracle.private\Invoke-AzOracleSwitchoverAutonomousDatabase_SwitchoverViaJsonString';
         }
         if (('SwitchoverExpanded', 'SwitchoverViaJsonFilePath', 'SwitchoverViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -5798,9 +3838,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -5898,7 +3935,7 @@ param(
     [Parameter(ParameterSetName='CreateExpanded')]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
     [System.Int32]
-    # Retention period, in days
+    # Retention period, in days, for long-term backups.
     ${RetentionPeriodInDay},
 
     [Parameter(ParameterSetName='CreateViaJsonFilePath', Mandatory)]
@@ -5981,15 +4018,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -6014,6 +4042,8 @@ begin {
             CreateViaJsonString = 'Az.Oracle.private\New-AzOracleAutonomousDatabaseBackup_CreateViaJsonString';
         }
         if (('CreateExpanded', 'CreateViaJsonFilePath', 'CreateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -6027,9 +4057,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -6195,7 +4222,7 @@ param(
     ${CustomerContact},
 
     [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Regular", "Clone", "CloneFromBackupTimestamp", "CrossRegionDisasterRecovery")]
+    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Regular", "Clone")]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
     [System.String]
     # Database type to be created.
@@ -6425,15 +4452,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -6458,6 +4476,8 @@ begin {
             CreateViaJsonString = 'Az.Oracle.private\New-AzOracleAutonomousDatabase_CreateViaJsonString';
         }
         if (('CreateExpanded', 'CreateViaJsonFilePath', 'CreateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -6471,9 +4491,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -6600,12 +4617,6 @@ param(
     [Parameter(ParameterSetName='CreateExpanded')]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
     [System.String]
-    # The database server model type of the cloud Exadata infrastructure resource.
-    ${DatabaseServerType},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
     # The name for the Exadata infrastructure.
     ${DisplayName},
 
@@ -6698,12 +4709,6 @@ param(
 
     [Parameter(ParameterSetName='CreateExpanded')]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The storage server model type of the cloud Exadata infrastructure resource.
-    ${StorageServerType},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ITrackedResourceTags]))]
     [System.Collections.Hashtable]
     # Resource tags.
@@ -6789,15 +4794,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -6822,6 +4818,8 @@ begin {
             CreateViaJsonString = 'Az.Oracle.private\New-AzOracleCloudExadataInfrastructure_CreateViaJsonString';
         }
         if (('CreateExpanded', 'CreateViaJsonFilePath', 'CreateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -6835,9 +4833,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -7236,15 +5231,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -7269,6 +5255,8 @@ begin {
             CreateViaJsonString = 'Az.Oracle.private\New-AzOracleCloudVMCluster_CreateViaJsonString';
         }
         if (('CreateExpanded', 'CreateViaJsonFilePath', 'CreateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -7282,694 +5270,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Create a ExadbVmCluster
-.Description
-Create a ExadbVmCluster
-.Example
-$subscriptionId = "00000000-0000-0000-0000-000000000000"
-$resourceGroup = "PowerShellTestRg"
-
-$vnetName = "PSTestVnet"
-$vnetId = "/subscriptions/$($subscriptionId)/resourceGroups/$($resourceGroup)/providers/Microsoft.Network/virtualNetworks/$($vnetName)"
-
-$subnetName = "delegated"
-$subnetId = "/subscriptions/$($subscriptionId)/resourceGroups/$($resourceGroup)/providers/Microsoft.Network/virtualNetworks/$($vnetName)/subnets/$($subnetName)"
-    
-$sshPublicKey = "ssh-rsa xxx"
-
-$resourceGroup = "PowerShellTestRg"
-$exascaleStorageVaultName = "OFake_PowerShellTestExaScaleStorage"
-$exascaleDbStorageVault = Get-AzOracleExascaleDbStorageVault -Name $exascaleStorageVaultName -ResourceGroupName $resourceGroup
-$exascaleDbStorageVaultId = $exascaleDbStorageVault.Id
-
-$exadbVmClusterName = "OFake_PowerShellTestExadbVmCluster"
-New-AzOracleExadbVMCluster -Name $exadbVmClusterName -ResourceGroupName $resourceGroup -Location "eastus" -DisplayName $exadbVmClusterName -HostName "host" -totalEcpuCount 8 -exascaleDbStorageVaultId $exascaleDbStorageVaultId -SshPublicKey $sshPublicKey -VnetId $vnetId -SubnetId $subnetId -LicenseModel "LicenseIncluded" -shape "ExaDbXS" -enabledEcpuCount 8 -TimeZone "UTC" -nodeCount 1 
-
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-NSGCIDR <INsgCidr[]>: CIDR blocks for additional NSG ingress rules. The VNET CIDRs used to provision the VM Cluster will be added by default.
-  Source <String>: Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
-  [DestinationPortRangeMax <Int32?>]: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-  [DestinationPortRangeMin <Int32?>]: The minimum port number, which must not be greater than the maximum port number.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/new-azoracleexadbvmcluster
-#>
-function New-AzOracleExadbVMCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster])]
-[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(Mandatory)]
-    [Alias('ExadbVMClusterName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExadbVmCluster
-    ${Name},
-
-    [Parameter(Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The geo-location where the resource lives
-    ${Location},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Client OCI backup subnet CIDR, default is 192.168.252.0/22
-    ${BackupSubnetCidr},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The cluster name for Exadata VM cluster on Exascale Infrastructure.
-    # The cluster name must begin with an alphabetic character, and may contain hyphens (-).
-    # Underscores (_) are not permitted.
-    # The cluster name can be no longer than 11 characters and is not case sensitive.
-    ${ClusterName},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Management.Automation.SwitchParameter]
-    # Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS.
-    ${DataCollectionOptionIsDiagnosticsEventsEnabled},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Management.Automation.SwitchParameter]
-    # Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS.
-    ${DataCollectionOptionIsHealthMonitoringEnabled},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Management.Automation.SwitchParameter]
-    # Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS.
-    ${DataCollectionOptionIsIncidentLogsEnabled},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Display Name
-    ${DisplayName},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # A domain name used for the Exadata VM cluster on Exascale Infrastructure
-    ${Domain},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-    ${EnabledEcpuCount},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The Azure Resource ID of the Exadata Database Storage Vault.
-    ${ExascaleDbStorageVaultId},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Grid Setup will be done using this Grid Image OCID.
-    # Can be obtained using giMinorVersions API
-    ${GridImageOcid},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The hostname for the Exadata VM cluster on Exascale Infrastructure.
-    ${Hostname},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("LicenseIncluded", "BringYourOwnLicense")]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure.
-    # The default is LICENSE_INCLUDED.
-    ${LicenseModel},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # The number of nodes in the Exadata VM cluster on Exascale Infrastructure.
-    ${NodeCount},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [AllowEmptyCollection()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.INsgCidr[]]
-    # CIDR blocks for additional NSG ingress rules.
-    # The VNET CIDRs used to provision the VM Cluster will be added by default.
-    ${NsgCidr},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The OCID of the zone the Exadata VM cluster on Exascale Infrastructure is associated with.
-    ${PrivateZoneOcid},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # The TCP Single Client Access Name (SCAN) port.
-    # The default port is 1521.
-    ${ScanListenerPortTcp},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # The TCPS Single Client Access Name (SCAN) port.
-    # The default port is 2484.
-    ${ScanListenerPortTcpSsl},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The shape of the Exadata VM cluster on Exascale Infrastructure resource
-    ${Shape},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [AllowEmptyCollection()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String[]]
-    # The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-    ${SshPublicKey},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Client subnet
-    ${SubnetId},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Operating system version of the image.
-    ${SystemVersion},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ITrackedResourceTags]))]
-    [System.Collections.Hashtable]
-    # Resource tags.
-    ${Tag},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The time zone of the Exadata VM cluster on Exascale Infrastructure.
-    # For details, see [Exadata Infrastructure Time Zones](/Content/Database/References/timezones.htm).
-    ${TimeZone},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-    ${TotalEcpuCount},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # Total Capacity
-    ${VMFileSystemStorageTotalSizeInGb},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # VNET for network connectivity
-    ${VnetId},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [AllowEmptyCollection()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String[]]
-    # The availability zones.
-    ${Zone},
-
-    [Parameter(ParameterSetName='CreateViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Create operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='CreateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Json string supplied to the Create operation
-    ${JsonString},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            CreateExpanded = 'Az.Oracle.private\New-AzOracleExadbVMCluster_CreateExpanded';
-            CreateViaJsonFilePath = 'Az.Oracle.private\New-AzOracleExadbVMCluster_CreateViaJsonFilePath';
-            CreateViaJsonString = 'Az.Oracle.private\New-AzOracleExadbVMCluster_CreateViaJsonString';
-        }
-        if (('CreateExpanded', 'CreateViaJsonFilePath', 'CreateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Create a ExascaleDbStorageVault
-.Description
-Create a ExascaleDbStorageVault
-.Example
-$subscriptionId = "00000000-0000-0000-0000-000000000000"
-$resourceGroup = "PowerShellTestRg"
-
-$exaScaleDbStorageVaultName = "OFake_PowerShellTestExaScaleDbStorage"
-New-AzOracleExascaleDbStorageVault -Name $exaScaleDbStorageVaultName -ResourceGroupName $resourceGroup -Location "eastus" -DisplayName $exaScaleDbStorageVaultName -description "description" -additionalFlashCacheInPercent 100 -TimeZone "UTC"  
-
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbStorageVault
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/new-azoracleexascaledbstoragevault
-#>
-function New-AzOracleExascaleDbStorageVault {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbStorageVault])]
-[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(Mandatory)]
-    [Alias('ExascaleDbStorageVaultName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExascaleDbStorageVault
-    ${Name},
-
-    [Parameter(Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The geo-location where the resource lives
-    ${Location},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # The size of additional Flash Cache in percentage of High Capacity database storage.
-    ${AdditionalFlashCacheInPercent},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Exadata Database Storage Vault description.
-    ${Description},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The user-friendly name for the Exadata Database Storage Vault.
-    # The name does not need to be unique.
-    ${DisplayName},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # Total Capacity
-    ${HighCapacityDatabaseStorageInputTotalSizeInGb},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ITrackedResourceTags]))]
-    [System.Collections.Hashtable]
-    # Resource tags.
-    ${Tag},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The time zone that you want to use for the Exadata Database Storage Vault
-    ${TimeZone},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [AllowEmptyCollection()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String[]]
-    # The availability zones.
-    ${Zone},
-
-    [Parameter(ParameterSetName='CreateViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Create operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='CreateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Json string supplied to the Create operation
-    ${JsonString},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            CreateExpanded = 'Az.Oracle.private\New-AzOracleExascaleDbStorageVault_CreateExpanded';
-            CreateViaJsonFilePath = 'Az.Oracle.private\New-AzOracleExascaleDbStorageVault_CreateViaJsonFilePath';
-            CreateViaJsonString = 'Az.Oracle.private\New-AzOracleExascaleDbStorageVault_CreateViaJsonString';
-        }
-        if (('CreateExpanded', 'CreateViaJsonFilePath', 'CreateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -8043,11 +5343,6 @@ AUTONOMOUSDATABASEINPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -8069,11 +5364,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -8202,15 +5492,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -8235,6 +5516,8 @@ begin {
             DeleteViaIdentityAutonomousDatabase = 'Az.Oracle.private\Remove-AzOracleAutonomousDatabaseBackup_DeleteViaIdentityAutonomousDatabase';
         }
         if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -8248,9 +5531,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -8324,11 +5604,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -8445,15 +5720,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -8477,6 +5743,8 @@ begin {
             DeleteViaIdentity = 'Az.Oracle.private\Remove-AzOracleAutonomousDatabase_DeleteViaIdentity';
         }
         if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -8490,9 +5758,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -8566,11 +5831,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -8687,15 +5947,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -8719,6 +5970,8 @@ begin {
             DeleteViaIdentity = 'Az.Oracle.private\Remove-AzOracleCloudExadataInfrastructure_DeleteViaIdentity';
         }
         if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -8732,9 +5985,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -8819,11 +6069,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -8970,15 +6215,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -9006,6 +6242,8 @@ begin {
             RemoveViaJsonString = 'Az.Oracle.private\Remove-AzOracleCloudVMClusterVM_RemoveViaJsonString';
         }
         if (('Remove', 'RemoveExpanded', 'RemoveViaJsonFilePath', 'RemoveViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -9019,9 +6257,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -9095,11 +6330,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -9216,15 +6446,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -9248,6 +6469,8 @@ begin {
             DeleteViaIdentity = 'Az.Oracle.private\Remove-AzOracleCloudVMCluster_DeleteViaIdentity';
         }
         if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -9261,1100 +6484,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Remove VMs from the VM Cluster
-.Description
-Remove VMs from the VM Cluster
-.Example
-$resourceGroup = "PowerShellTestRg"
-
-$dbNodeList = Get-AzOracleExascaleDbNode -Exadbvmclustername "OFake_PowerShellTestVmCluster" -ResourceGroupName $resourceGroup
-$dbNodeOcid1 = $dbNodeList[0].Ocid
-$dbNodeToRemove = @($dbNodeOcid1)
-
-Remove-AzOracleExadbVMClusterVM -Exadbvmclustername "OFake_PowerShellTestVmCluster" -ResourceGroupName $resourceGroup -DbNode $dbNodeToRemove
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IRemoveVirtualMachineFromExadbVMClusterDetails
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IRemoveVirtualMachineFromExadbVMClusterDetails>: Details of removing Virtual Machines from the Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
-  DbNode <List<IDbNodeDetails>>: The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be removed.
-    DbNodeId <String>: Exascale DbNode Azure Resource ID
-
-DBNODE <IDbNodeDetails[]>: The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be removed.
-  DbNodeId <String>: Exascale DbNode Azure Resource ID
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/remove-azoracleexadbvmclustervm
-#>
-function Remove-AzOracleExadbVMClusterVM {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster])]
-[CmdletBinding(DefaultParameterSetName='RemoveViaIdentity', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='Remove', Mandatory)]
-    [Parameter(ParameterSetName='RemoveExpanded', Mandatory)]
-    [Parameter(ParameterSetName='RemoveViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='RemoveViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExadbVmCluster
-    ${ExadbVMClusterName},
-
-    [Parameter(ParameterSetName='Remove', Mandatory)]
-    [Parameter(ParameterSetName='RemoveExpanded', Mandatory)]
-    [Parameter(ParameterSetName='RemoveViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='RemoveViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='Remove')]
-    [Parameter(ParameterSetName='RemoveExpanded')]
-    [Parameter(ParameterSetName='RemoveViaJsonFilePath')]
-    [Parameter(ParameterSetName='RemoveViaJsonString')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='RemoveViaIdentity', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='RemoveViaIdentityExpanded', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='Remove', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='RemoveViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IRemoveVirtualMachineFromExadbVMClusterDetails]
-    # Details of removing Virtual Machines from the Exadata VM cluster on Exascale Infrastructure.
-    # Applies to Exadata Database Service on Exascale Infrastructure only.
-    ${Body},
-
-    [Parameter(ParameterSetName='RemoveExpanded', Mandatory)]
-    [Parameter(ParameterSetName='RemoveViaIdentityExpanded', Mandatory)]
-    [AllowEmptyCollection()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDbNodeDetails[]]
-    # The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be removed.
-    ${DbNode},
-
-    [Parameter(ParameterSetName='RemoveViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Remove operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='RemoveViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Json string supplied to the Remove operation
-    ${JsonString},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Remove = 'Az.Oracle.private\Remove-AzOracleExadbVMClusterVM_Remove';
-            RemoveExpanded = 'Az.Oracle.private\Remove-AzOracleExadbVMClusterVM_RemoveExpanded';
-            RemoveViaIdentity = 'Az.Oracle.private\Remove-AzOracleExadbVMClusterVM_RemoveViaIdentity';
-            RemoveViaIdentityExpanded = 'Az.Oracle.private\Remove-AzOracleExadbVMClusterVM_RemoveViaIdentityExpanded';
-            RemoveViaJsonFilePath = 'Az.Oracle.private\Remove-AzOracleExadbVMClusterVM_RemoveViaJsonFilePath';
-            RemoveViaJsonString = 'Az.Oracle.private\Remove-AzOracleExadbVMClusterVM_RemoveViaJsonString';
-        }
-        if (('Remove', 'RemoveExpanded', 'RemoveViaJsonFilePath', 'RemoveViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Delete a ExadbVmCluster
-.Description
-Delete a ExadbVmCluster
-.Example
-Remove-AzOracleExadbVMCluster -NoWait -Name "OFake_PowerShellTestVmCluster" -ResourceGroupName "PowerShellTestRg"
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-System.Boolean
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/remove-azoracleexadbvmcluster
-#>
-function Remove-AzOracleExadbVMCluster {
-[OutputType([System.Boolean])]
-[CmdletBinding(DefaultParameterSetName='Delete', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='Delete', Mandatory)]
-    [Alias('ExadbVMClusterName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExadbVmCluster
-    ${Name},
-
-    [Parameter(ParameterSetName='Delete', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='Delete')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='DeleteViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Returns true when the command succeeds
-    ${PassThru},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Delete = 'Az.Oracle.private\Remove-AzOracleExadbVMCluster_Delete';
-            DeleteViaIdentity = 'Az.Oracle.private\Remove-AzOracleExadbVMCluster_DeleteViaIdentity';
-        }
-        if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Delete a ExascaleDbStorageVault
-.Description
-Delete a ExascaleDbStorageVault
-.Example
-Remove-AzOracleExascaleDbStorageVault -NoWait -Name "OFake_PowerShellTestExascaleDbStorageVault" -ResourceGroupName "PowerShellTestRg"
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-System.Boolean
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/remove-azoracleexascaledbstoragevault
-#>
-function Remove-AzOracleExascaleDbStorageVault {
-[OutputType([System.Boolean])]
-[CmdletBinding(DefaultParameterSetName='Delete', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='Delete', Mandatory)]
-    [Alias('ExascaleDbStorageVaultName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExascaleDbStorageVault
-    ${Name},
-
-    [Parameter(ParameterSetName='Delete', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='Delete')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='DeleteViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Returns true when the command succeeds
-    ${PassThru},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Delete = 'Az.Oracle.private\Remove-AzOracleExascaleDbStorageVault_Delete';
-            DeleteViaIdentity = 'Az.Oracle.private\Remove-AzOracleExascaleDbStorageVault_DeleteViaIdentity';
-        }
-        if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Perform ChangeDisasterRecoveryConfiguration action on Autonomous Database
-.Description
-Perform ChangeDisasterRecoveryConfiguration action on Autonomous Database
-.Example
-$subscriptionId = "00000000-0000-0000-0000-000000000000"
-$resourceGroup = "PowerShellTestRg"
-$autonomousdatabasename = "databasedb1"
-
-Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration -autonomousdatabasename $autonomousdatabasename -ResourceGroupName $resourceGroup -DisasterRecoveryType "Adg"
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDisasterRecoveryConfigurationDetails
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDatabase
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IDisasterRecoveryConfigurationDetails>: Configurations of a Disaster Recovery Details
-  [DisasterRecoveryType <String>]: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-  [IsReplicateAutomaticBackup <Boolean?>]: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
-  [IsSnapshotStandby <Boolean?>]: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
-  [TimeSnapshotStandbyEnabledTill <DateTime?>]: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/rename-azoracleautonomousdatabasedisasterrecoveryconfiguration
-#>
-function Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IAutonomousDatabase])]
-[CmdletBinding(DefaultParameterSetName='ChangeExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='Change', Mandatory)]
-    [Parameter(ParameterSetName='ChangeExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ChangeViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='ChangeViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The database name.
-    ${Autonomousdatabasename},
-
-    [Parameter(ParameterSetName='Change', Mandatory)]
-    [Parameter(ParameterSetName='ChangeExpanded', Mandatory)]
-    [Parameter(ParameterSetName='ChangeViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='ChangeViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='Change')]
-    [Parameter(ParameterSetName='ChangeExpanded')]
-    [Parameter(ParameterSetName='ChangeViaJsonFilePath')]
-    [Parameter(ParameterSetName='ChangeViaJsonString')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='ChangeViaIdentity', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='ChangeViaIdentityExpanded', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='Change', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='ChangeViaIdentity', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IDisasterRecoveryConfigurationDetails]
-    # Configurations of a Disaster Recovery Details
-    ${Body},
-
-    [Parameter(ParameterSetName='ChangeExpanded')]
-    [Parameter(ParameterSetName='ChangeViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Adg", "BackupBased")]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-    # Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
-    # Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-    ${DisasterRecoveryType},
-
-    [Parameter(ParameterSetName='ChangeExpanded')]
-    [Parameter(ParameterSetName='ChangeViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Management.Automation.SwitchParameter]
-    # If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby.
-    # If false, the backups taken on the Primary are not replicated to the Standby database.
-    ${IsReplicateAutomaticBackup},
-
-    [Parameter(ParameterSetName='ChangeExpanded')]
-    [Parameter(ParameterSetName='ChangeViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Management.Automation.SwitchParameter]
-    # Indicates if user wants to convert to a snapshot standby.
-    # For example, true would set a standby database to snapshot standby database.
-    # False would set a snapshot standby database back to regular standby database.
-    ${IsSnapshotStandby},
-
-    [Parameter(ParameterSetName='ChangeExpanded')]
-    [Parameter(ParameterSetName='ChangeViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.DateTime]
-    # Time and date stored as an RFC 3339 formatted timestamp string.
-    # For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
-    ${TimeSnapshotStandbyEnabledTill},
-
-    [Parameter(ParameterSetName='ChangeViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Change operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='ChangeViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Json string supplied to the Change operation
-    ${JsonString},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            Change = 'Az.Oracle.private\Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration_Change';
-            ChangeExpanded = 'Az.Oracle.private\Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration_ChangeExpanded';
-            ChangeViaIdentity = 'Az.Oracle.private\Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration_ChangeViaIdentity';
-            ChangeViaIdentityExpanded = 'Az.Oracle.private\Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration_ChangeViaIdentityExpanded';
-            ChangeViaJsonFilePath = 'Az.Oracle.private\Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration_ChangeViaJsonFilePath';
-            ChangeViaJsonString = 'Az.Oracle.private\Rename-AzOracleAutonomousDatabaseDisasterRecoveryConfiguration_ChangeViaJsonString';
-        }
-        if (('Change', 'ChangeExpanded', 'ChangeViaJsonFilePath', 'ChangeViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -10434,11 +6563,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -10585,15 +6709,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -10621,6 +6736,8 @@ begin {
             RestoreViaJsonString = 'Az.Oracle.private\Restore-AzOracleAutonomousDatabase_RestoreViaJsonString';
         }
         if (('Restore', 'RestoreExpanded', 'RestoreViaJsonFilePath', 'RestoreViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -10634,9 +6751,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -10714,11 +6828,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -10935,7 +7044,7 @@ param(
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
     [System.String]
-    # The Azure resource ID of the Disaster Recovery peer database, which is located in a different region from the current peer database.
+    # The database OCID of the Disaster Recovery peer database, which is located in a different region from the current peer database.
     ${PeerDbId},
 
     [Parameter(ParameterSetName='UpdateExpanded')]
@@ -11069,15 +7178,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -11103,6 +7203,8 @@ begin {
             UpdateViaJsonString = 'Az.Oracle.private\Update-AzOracleAutonomousDatabase_UpdateViaJsonString';
         }
         if (('UpdateExpanded', 'UpdateViaJsonFilePath', 'UpdateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -11116,9 +7218,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -11196,11 +7295,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -11467,15 +7561,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -11501,6 +7586,8 @@ begin {
             UpdateViaJsonString = 'Az.Oracle.private\Update-AzOracleCloudExadataInfrastructure_UpdateViaJsonString';
         }
         if (('UpdateExpanded', 'UpdateViaJsonFilePath', 'UpdateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -11514,9 +7601,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -11578,10 +7662,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-FILESYSTEMCONFIGURATIONDETAIL <IFileSystemConfigurationDetails[]>: Array of mount path and size.
-  [FileSystemSizeGb <Int32?>]: Size of the VM
-  [MountPoint <String>]: Mount path
-
 INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Adbbackupid <String>]: AutonomousDatabaseBackup id
   [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
@@ -11595,11 +7675,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -11704,14 +7779,6 @@ param(
     [System.String]
     # Display Name
     ${DisplayName},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
-    [AllowEmptyCollection()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IFileSystemConfigurationDetails[]]
-    # Array of mount path and size.
-    ${FileSystemConfigurationDetail},
 
     [Parameter(ParameterSetName='UpdateExpanded')]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
@@ -11840,15 +7907,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -11874,6 +7932,8 @@ begin {
             UpdateViaJsonString = 'Az.Oracle.private\Update-AzOracleCloudVMCluster_UpdateViaJsonString';
         }
         if (('UpdateExpanded', 'UpdateViaJsonFilePath', 'UpdateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -11887,554 +7947,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Update a ExadbVmCluster
-.Description
-Update a ExadbVmCluster
-.Example
-$tagHashTable = @{'tagName'="tagValue"}
-Update-AzOracleExadbVMCluster -Name "OFake_PowerShellTestVmCluster" -ResourceGroupName "PowerShellTestRg" -Tag $tagHashTable
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/update-azoracleexadbvmcluster
-#>
-function Update-AzOracleExadbVMCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMCluster])]
-[CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
-    [Alias('ExadbVMClusterName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExadbVmCluster
-    ${Name},
-
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath')]
-    [Parameter(ParameterSetName='UpdateViaJsonString')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.Int32]
-    # The number of nodes in the Exadata VM cluster on Exascale Infrastructure.
-    ${NodeCount},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExadbVMClusterUpdateTags]))]
-    [System.Collections.Hashtable]
-    # Resource tags.
-    ${Tag},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
-    [AllowEmptyCollection()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String[]]
-    # The availability zones.
-    ${Zone},
-
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Update operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Json string supplied to the Update operation
-    ${JsonString},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            UpdateExpanded = 'Az.Oracle.private\Update-AzOracleExadbVMCluster_UpdateExpanded';
-            UpdateViaIdentityExpanded = 'Az.Oracle.private\Update-AzOracleExadbVMCluster_UpdateViaIdentityExpanded';
-            UpdateViaJsonFilePath = 'Az.Oracle.private\Update-AzOracleExadbVMCluster_UpdateViaJsonFilePath';
-            UpdateViaJsonString = 'Az.Oracle.private\Update-AzOracleExadbVMCluster_UpdateViaJsonString';
-        }
-        if (('UpdateExpanded', 'UpdateViaJsonFilePath', 'UpdateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-
-    finally {
-        $backupTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        $backupInternalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-    }
-
-}
-end {
-    try {
-        $steppablePipeline.End()
-
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $backupTelemetryId
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $backupInternalCalledCmdlets
-        if ($preTelemetryId -eq '') {
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Send', $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        }
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = $preTelemetryId
-
-    } catch {
-        [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::ClearTelemetryContext()
-        throw
-    }
-} 
-}
-
-<#
-.Synopsis
-Update a ExascaleDbStorageVault
-.Description
-Update a ExascaleDbStorageVault
-.Example
-$tagHashTable = @{'tagName'="tagValue"}
-Update-AzOracleExadbVMCluster -Name "OFake_PowerShellTestVmCluster" -ResourceGroupName "PowerShellTestRg" -Tag $tagHashTable
-
-.Inputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity
-.Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbStorageVault
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <IOracleIdentity>: Identity Parameter
-  [Adbbackupid <String>]: AutonomousDatabaseBackup id
-  [Adbscharsetname <String>]: AutonomousDatabaseCharacterSet name
-  [Adbsncharsetname <String>]: AutonomousDatabaseNationalCharacterSets name
-  [Autonomousdatabasename <String>]: The database name.
-  [Autonomousdbversionsname <String>]: AutonomousDbVersion name
-  [Cloudexadatainfrastructurename <String>]: CloudExadataInfrastructure name
-  [Cloudvmclustername <String>]: CloudVmCluster name
-  [Dbnodeocid <String>]: DbNode OCID.
-  [Dbserverocid <String>]: DbServer OCID.
-  [Dbsystemshapename <String>]: DbSystemShape name
-  [Dnsprivateviewocid <String>]: DnsPrivateView OCID
-  [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
-  [Giversionname <String>]: GiVersion name
-  [Id <String>]: Resource identity path
-  [Location <String>]: The name of the Azure region.
-  [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
-  [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
-  [Systemversionname <String>]: SystemVersion name
-  [Virtualnetworkaddressname <String>]: Virtual IP address hostname.
-.Link
-https://learn.microsoft.com/powershell/module/az.oracle/update-azoracleexascaledbstoragevault
-#>
-function Update-AzOracleExascaleDbStorageVault {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbStorageVault])]
-[CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
-    [Alias('ExascaleDbStorageVaultName')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the ExascaleDbStorageVault
-    ${Name},
-
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [System.String]
-    # The name of the resource group.
-    # The name is case insensitive.
-    ${ResourceGroupName},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath')]
-    [Parameter(ParameterSetName='UpdateViaJsonString')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
-    [System.String]
-    # The ID of the target subscription.
-    # The value must be an UUID.
-    ${SubscriptionId},
-
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Path')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleIdentity]
-    # Identity Parameter
-    ${InputObject},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IExascaleDbStorageVaultTagsUpdateTags]))]
-    [System.Collections.Hashtable]
-    # Resource tags.
-    ${Tag},
-
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Update operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Json string supplied to the Update operation
-    ${JsonString},
-
-    [Parameter()]
-    [Alias('AzureRMContext', 'AzureCredential')]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Azure')]
-    [System.Management.Automation.PSObject]
-    # The DefaultProfile parameter is not functional.
-    # Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
-    ${DefaultProfile},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command as a job
-    ${AsJob},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Run the command asynchronously
-    ${NoWait},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
-
-        if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
-        }         
-        $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
-        if ($preTelemetryId -eq '') {
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId =(New-Guid).ToString()
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.module]::Instance.Telemetry.Invoke('Create', $MyInvocation, $parameterSet, $PSCmdlet)
-        } else {
-            $internalCalledCmdlets = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets
-            if ($internalCalledCmdlets -eq '') {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets = $MyInvocation.MyCommand.Name
-            } else {
-                [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::InternalCalledCmdlets += ',' + $MyInvocation.MyCommand.Name
-            }
-            [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId = 'internal'
-        }
-
-        $mapping = @{
-            UpdateExpanded = 'Az.Oracle.private\Update-AzOracleExascaleDbStorageVault_UpdateExpanded';
-            UpdateViaIdentityExpanded = 'Az.Oracle.private\Update-AzOracleExascaleDbStorageVault_UpdateViaIdentityExpanded';
-            UpdateViaJsonFilePath = 'Az.Oracle.private\Update-AzOracleExascaleDbStorageVault_UpdateViaJsonFilePath';
-            UpdateViaJsonString = 'Az.Oracle.private\Update-AzOracleExascaleDbStorageVault_UpdateViaJsonString';
-        }
-        if (('UpdateExpanded', 'UpdateViaJsonFilePath', 'UpdateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
-            if ($testPlayback) {
-                $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
-            } else {
-                $PSBoundParameters['SubscriptionId'] = (Get-AzContext).Subscription.Id
-            }
-        }
-        $cmdInfo = Get-Command -Name $mapping[$parameterSet]
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessCustomAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-        if ($null -ne $MyInvocation.MyCommand -and [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets -notcontains $MyInvocation.MyCommand.Name -and [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ContainsPreviewAttribute($cmdInfo, $MyInvocation)){
-            [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.MessageAttributeHelper]::ProcessPreviewMessageAttributesAtRuntime($cmdInfo, $MyInvocation, $parameterSet, $PSCmdlet)
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -12509,9 +8021,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -12540,9 +8049,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -12630,9 +8136,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -12661,9 +8164,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)

@@ -14,8 +14,7 @@ Gets the restorable database account object
 
 ```
 Get-AzCosmosDBRestorableDatabaseAccount [-Location <String>] [-DatabaseAccountInstanceId <String>]
- [-DatabaseAccountName <String>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ [-DatabaseAccountName <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

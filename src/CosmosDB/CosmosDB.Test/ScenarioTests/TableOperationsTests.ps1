@@ -61,7 +61,7 @@ function Test-TableOperationsCmdlets
       $Throughput = Get-AzCosmosDBTableThroughput -AccountName $AccountName -ResourceGroupName $rgName -Name $TableName
       Assert-AreEqual $Throughput.Throughput $UpdatedThroughputValue
 
-      # try updating non existing table
+      # try updating non existant table
       Try {
           $UpdatedTable = Update-AzCosmosDBTable -AccountName $AccountName -ResourceGroupName $rgName -Name $TableName2 
       }
@@ -594,14 +594,14 @@ function Test-TableRoleCmdlets
       Assert-AreEqual $UpdatedRoleAssignment.PrincipalId $PrincipalId
       Assert-AreEqual $UpdatedRoleAssignment.Id $FullyQualifiedRoleAssignmentId
 
-      # update role assignment by role definition id
+      # update role assignmnent by role definition id
       $UpdatedRoleAssignment = Update-AzCosmosDBTableRoleAssignment -RoleDefinitionId $RoleDefinitionId -Id $RoleAssignmentId -AccountName $AccountName -ResourceGroupName $rgName
       Assert-AreEqual $UpdatedRoleAssignment.RoleDefinitionId $FullyQualifiedRoleDefinitionId
       Assert-AreEqual $UpdatedRoleAssignment.Scope $FullyQualifiedScope
       Assert-AreEqual $UpdatedRoleAssignment.PrincipalId $PrincipalId
       Assert-AreEqual $UpdatedRoleAssignment.Id $FullyQualifiedRoleAssignmentId
 
-      # update role assignment by input object
+      # update role assignmnent by input object
       $UpdatedRoleAssignment.RoleDefinitionId = $FullyQualifiedRoleDefinitionId3
       $UpdatedRoleAssignment = Update-AzCosmosDBTableRoleAssignment -InputObject $UpdatedRoleAssignment
       Assert-AreEqual $UpdatedRoleAssignment.RoleDefinitionId $FullyQualifiedRoleDefinitionId3
@@ -609,7 +609,7 @@ function Test-TableRoleCmdlets
       Assert-AreEqual $UpdatedRoleAssignment.PrincipalId $PrincipalId
       Assert-AreEqual $UpdatedRoleAssignment.Id $FullyQualifiedRoleAssignmentId
             
-      # update role assignment by parent object
+      # update role assignmnent by parent object
       $UpdatedRoleAssignment = Update-AzCosmosDBTableRoleAssignment -Id $RoleAssignmentId -ParentObject $UpdatedRoleDefinition
       Assert-AreEqual $UpdatedRoleAssignment.RoleDefinitionId $FullyQualifiedRoleDefinitionId
       Assert-AreEqual $UpdatedRoleAssignment.Scope $FullyQualifiedScope

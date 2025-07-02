@@ -44,11 +44,6 @@ INPUTOBJECT <IOracleIdentity>: Identity Parameter
   [Dbsystemshapename <String>]: DbSystemShape name
   [Dnsprivateviewocid <String>]: DnsPrivateView OCID
   [Dnsprivatezonename <String>]: DnsPrivateZone name
-  [ExadbVMClusterName <String>]: The name of the ExadbVmCluster
-  [ExascaleDbNodeName <String>]: The name of the ExascaleDbNode
-  [ExascaleDbStorageVaultName <String>]: The name of the ExascaleDbStorageVault
-  [FlexComponentName <String>]: The name of the FlexComponent
-  [GiMinorVersionName <String>]: The name of the GiMinorVersion
   [Giversionname <String>]: GiVersion name
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
@@ -100,22 +95,8 @@ param(
     [Parameter(ParameterSetName='SwitchoverViaIdentityExpanded')]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
     [System.String]
-    # The Azure resource ID of the Disaster Recovery peer database, which is located in a different region from the current peer database.
+    # The database OCID of the Disaster Recovery peer database, which is located in a different region from the current peer database.
     ${PeerDbId},
-
-    [Parameter(ParameterSetName='SwitchoverExpanded')]
-    [Parameter(ParameterSetName='SwitchoverViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # The location of the Disaster Recovery peer database.
-    ${PeerDbLocation},
-
-    [Parameter(ParameterSetName='SwitchoverExpanded')]
-    [Parameter(ParameterSetName='SwitchoverViaIdentityExpanded')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
-    [System.String]
-    # Ocid of the Disaster Recovery peer database, which is located in a different region from the current peer database.
-    ${PeerDbOcid},
 
     [Parameter(ParameterSetName='SwitchoverViaJsonFilePath', Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Category('Body')]
@@ -197,15 +178,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -231,6 +203,8 @@ begin {
             SwitchoverViaJsonString = 'Az.Oracle.private\Invoke-AzOracleSwitchoverAutonomousDatabase_SwitchoverViaJsonString';
         }
         if (('SwitchoverExpanded', 'SwitchoverViaJsonFilePath', 'SwitchoverViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -244,9 +218,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)

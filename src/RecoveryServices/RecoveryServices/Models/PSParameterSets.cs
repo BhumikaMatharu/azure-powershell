@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices
         internal const string ByDefault = "ByDefault";
 
         /// <summary>
-        /// When execution has to be done for site
+        /// When excution has to be done for site
         /// </summary>
         internal const string ForSite = "ForSite";
 

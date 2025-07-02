@@ -15,7 +15,7 @@
 # To get upcoming breaking change info, you need to build az first
 # ```powershell
 # dotnet msbuild build.proj /t:build /p:configuration=Debug
-# Import-Module ./tools/BreakingChanges/GetUpcomingBreakingChange.psm1
+# Import-Module ./tools/BreakingChanges/GetUpcomingBreakingChange.ps1
 # Export-AllBreakingChangeMessageUnderArtifacts -ArtifactsPath ./artifacts/Debug/ -MarkdownPath ./documentation/breaking-changes/upcoming-breaking-changes.md
 # ```
 
@@ -57,39 +57,18 @@ Function Export-AllBreakingChangeMessageUnderArtifacts
         $ArtifactsPath,
         [Parameter()]
         [String]
-        $MarkdownPath,
-        [Parameter(Mandatory = $false)]
-        [String[]]
-        $Module
+        $MarkdownPath
     )
-    Write-Host "Gathering breaking change info from $ArtifactsPath"
-    @"
-# Upcoming breaking changes in Azure PowerShell
-
-The breaking changes listed in this article are planned for the next major release of the Az
-PowerShell module unless otherwise noted. Per our
-[Support lifecycle](azureps-support-lifecycle.md), breaking changes in Azure PowerShell occur twice
-a year with major versions of the Az PowerShell module.
-
-Preview modules are not included in this list. Read more about [module version types](azureps-support-lifecycle.md#module-version-types).
-"@ | Out-File -FilePath $MarkdownPath -Force
-
-    if (-not $Module)
+    $Result = "# Upcoming breaking changes in Azure PowerShell`n"
+    $AllModuleList = Get-ChildItem -Path $ArtifactsPath -Filter Az.* | ForEach-Object { $_.Name }
+    ForEach ($ModuleName In $AllModuleList)
     {
-        # If no specific modules are provided, gather all Az.* modules
-        $Module = Get-ChildItem -Path $ArtifactsPath -Filter Az.* | ForEach-Object { $_.Name }
-        Write-Host "GA modules only: false. All $($Module.Count) modules will be processed."
-    }
-    else
-    {
-        Write-Host "$($Module.Count) GA modules will be processed."
-    }
+        Write-Host "Generating breaking change message for $ModuleName"
+        if ($ModuleName -ne "Az.Monitor")
+        {
+            $Result += Export-BreakingChangeMessageOfModule -ArtifactsPath $ArtifactsPath -ModuleName $ModuleName
+        }
 
-    $i = 0
-    $total = $Module.Count
-    $Module | ForEach-Object {
-        $i = $i + 1
-        Write-Progress -Activity "Gathering breaking change info" -Status "Processing $_" -PercentComplete (100 * $i / $total)
-        Export-BreakingChangeMessageOfModule -ArtifactsPath $ArtifactsPath -ModuleName $_ | Out-File -FilePath $MarkdownPath -Append -NoNewline
     }
+    $Result | Out-File -FilePath $MarkdownPath -Force
 }

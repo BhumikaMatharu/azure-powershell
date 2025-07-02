@@ -14,8 +14,7 @@ Retrieves the latest restorable timestamp for a table.
 
 ```
 Get-AzCosmosDBTableBackupInformation -ResourceGroupName <String> -AccountName <String> -Name <String>
- -Location <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ -Location <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

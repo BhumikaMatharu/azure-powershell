@@ -231,7 +231,7 @@ function Test-SetAzureRmCognitiveServicesAccount
         Assert-AreEqual $originalAccount.Endpoint $changedAccount.Endpoint;
         Assert-AreEqual $originalAccount.Kind $changedAccount.Kind;
         
-        # get the account against
+        # get the account agains
         $gottenAccount = Get-AzCognitiveServicesAccount -ResourceGroupName $rgname -Name $accountname;
 
         Assert-AreEqual $originalAccount.Location $gottenAccount.Location;

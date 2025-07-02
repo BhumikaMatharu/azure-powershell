@@ -19,7 +19,7 @@ using System.Text;
 namespace Microsoft.Azure.Commands.Insights.OutputClasses
 {
     /// <summary>
-    /// Wraps around the ThresholdRuleCondition class
+    /// Wrapps around the ThresholdRuleCondition class
     /// </summary>
     public class PSThresholdRuleCondition : IPSRuleCondition
     {

@@ -18,7 +18,7 @@ using Microsoft.Azure.Management.Monitor.Models;
 namespace Microsoft.Azure.Commands.Insights.OutputClasses
 {
     /// <summary>
-    /// Wraps around a list of AutoscaleProfile
+    /// Wrapps around a list of AutoscaleProfile
     /// </summary>
     public class PSAutoscaleProfilesList : List<AutoscaleProfile>
     {

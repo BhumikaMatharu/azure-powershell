@@ -19,7 +19,7 @@ using System.Text;
 namespace Microsoft.Azure.Commands.Insights.OutputClasses
 {
     /// <summary>
-    /// Wraps around the IDictionary to provide a better output format for the PS command lets.
+    /// Wrapps around the IDictionary to provide a better output format for the PS command lets.
     /// </summary>
     public class PSDictionaryElement
     {

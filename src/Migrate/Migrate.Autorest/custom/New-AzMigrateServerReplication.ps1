@@ -197,7 +197,7 @@ function New-AzMigrateServerReplication {
         [Parameter(ParameterSetName = 'ByInputObjectDefaultUser')]
         [Microsoft.Azure.PowerShell.Cmdlets.Migrate.Category('Path')]
         [System.String]
-        # Specifies the disk encryption set to be used.
+        # Specifies the disk encyption set to be used.
         ${DiskEncryptionSetID},
     
         [Parameter()]
@@ -471,8 +471,7 @@ function New-AzMigrateServerReplication {
             $null = $PSBoundParameters.Remove('ResourceName')
             $null = $PSBoundParameters.Remove('SubscriptionId')
             $null = $PSBoundParameters.Add('Location', $TargetRegion)
-            #Get-AzVMSku -Location is deprecated, replicate using Get-AzComputeResourceSKU and a where clause
-            $allAvailableSkus = Get-AzComputeResourceSKU @PSBoundParameters| Where-Object { $_.ResourceType.Contains("virtualMachines") }
+            $allAvailableSkus = Get-AzVMSize @PSBoundParameters -ErrorVariable notPresent -ErrorAction SilentlyContinue
             if ($null -ne $allAvailableSkus) {
                 $matchingComputeSku = $allAvailableSkus | Where-Object { $_.Name -eq $TargetVMSize }
                 if ($null -ne $matchingComputeSku) {

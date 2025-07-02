@@ -216,7 +216,7 @@ namespace Microsoft.Azure.Commands.Management.CognitiveServices.Models
     public enum PSNetWorkRuleDefaultActionEnum
     {
         /// <summary>
-        /// Selected networks.
+        /// Seleted networks.
         /// </summary>
         Deny,
         /// <summary>

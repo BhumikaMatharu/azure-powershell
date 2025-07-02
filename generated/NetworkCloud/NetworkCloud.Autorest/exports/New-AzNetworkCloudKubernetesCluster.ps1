@@ -46,7 +46,7 @@ New-AzNetworkCloudKubernetesCluster -ResourceGroupName resourceGroupName `
                 -Tag $tagHash
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -133,7 +133,7 @@ SSHPUBLICKEY <ISshPublicKey[]>: The SSH configuration for the operating systems 
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudkubernetescluster
 #>
 function New-AzNetworkCloudKubernetesCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -156,21 +156,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -199,7 +184,7 @@ param(
     [Parameter(Mandatory)]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IInitialAgentPoolConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IInitialAgentPoolConfiguration[]]
     # The agent pools that are created with this Kubernetes cluster for running critical system services and workloads.
     # This data in this field is only used during creation, and the field will be empty following the creation of the Kubernetes Cluster.
     # After creation, the management of agent pools is done using the agentPools sub-resource.
@@ -247,7 +232,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2NetworkAttachmentConfiguration[]]
     # The list of Layer 2 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL2NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL2Network},
@@ -255,7 +240,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3NetworkAttachmentConfiguration[]]
     # The list of Layer 3 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL3NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL3Network},
@@ -263,7 +248,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetworkAttachmentConfiguration[]]
     # The list of Trunked Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONTRUNKEDNETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationTrunkedNetwork},
@@ -271,7 +256,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBgpAdvertisement[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBgpAdvertisement[]]
     # The association of IP address pools to the communities and peers, allowing for announcement of IPs.
     # To construct, see NOTES section for BGPADVERTISEMENT properties and create a hash table.
     ${BgpAdvertisement},
@@ -279,7 +264,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IIPAddressPool[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IIPAddressPool[]]
     # The list of pools of IP addresses that can be allocated to load balancer services.
     # To construct, see NOTES section for BGPIPADDRESSPOOL properties and create a hash table.
     ${BgpIPAddressPool},
@@ -287,7 +272,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IServiceLoadBalancerBgpPeer[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IServiceLoadBalancerBgpPeer[]]
     # The list of additional BgpPeer entities that the Kubernetes cluster will peer with.
     # All peering must be explicitly defined.
     # To construct, see NOTES section for BGPPEER properties and create a hash table.
@@ -303,7 +288,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The SSH configuration for the operating systems that run the nodes in the Kubernetes cluster.
     # In some cases, specification of public keys may be required to produce a working environment.
     # To construct, see NOTES section for CONTROLPLANENODECONFIGURATIONADMINPUBLICKEY properties and create a hash table.
@@ -327,7 +312,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IIPAddressPool[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IIPAddressPool[]]
     # The list of pools of IP addresses that can be allocated to load balancer services.
     # To construct, see NOTES section for L2SERVICELOADBALANCERCONFIGURATIONIPADDRESSPOOL properties and create a hash table.
     ${L2ServiceLoadBalancerConfigurationIPAddressPool},
@@ -374,7 +359,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The SSH configuration for the operating systems that run the nodes in the Kubernetes cluster.
     # In some cases, specification of public keys may be required to produce a working environment.
     # To construct, see NOTES section for SSHPUBLICKEY properties and create a hash table.

@@ -20,8 +20,7 @@ Get-AzCosmosDBAccount -ResourceGroupName <String> [-Name <String>] [-DefaultProf
 
 ### ByResourceIdParameterSet
 ```
-Get-AzCosmosDBAccount -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzCosmosDBAccount -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

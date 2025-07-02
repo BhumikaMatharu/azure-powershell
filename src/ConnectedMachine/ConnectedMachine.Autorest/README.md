@@ -48,7 +48,7 @@ input-file:
 module-version: 0.1.0
 title: ConnectedMachine
 subject-prefix: 'Connected'
-# because autorest.powershell is unable to transform IdentityType as the best practice design if it uses managed identity
+# becasue autorest.powershell is unable to transform IdentityType as the best practice design if it uses managed identity
 # we hide the original cmdlet and custom it under /custom folder
 disable-transform-identity-type-for-operation:
   - Machines_Update
@@ -305,7 +305,7 @@ directive:
           - PublicNetworkAccess
           - ProvisioningState
  
-  # Removing cmdlets
+  # Removing cmlets
   - where:
       subject: PrivateEndpointConnection
     remove: true
@@ -334,7 +334,7 @@ directive:
       variant: Upgrade
     remove: true
 
-  # we will release gateway and setting commands in a separate module
+  # we will release gateway and setting commands in a seperate module
   - where:
       subject: Gateway
     remove: true
@@ -367,7 +367,7 @@ directive:
       subject: NetworkConfiguration
     remove: true
 
-  # because autorest.powershell is unable to transform IdentityType as the best practice design if it uses managed identity
+  # becasue autorest.powershell is unable to transform IdentityType as the best practice design if it uses managed identity
   # we hide the original cmdlet and custom it under /custom folder
   - where:
       subject: Machine

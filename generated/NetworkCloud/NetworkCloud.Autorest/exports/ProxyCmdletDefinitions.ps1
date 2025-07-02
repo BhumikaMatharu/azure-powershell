@@ -734,7 +734,7 @@ Get-AzNetworkCloudAgentPool -Name agentPoolName -KubernetesClusterName clusterNa
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IAgentPool
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IAgentPool
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -767,7 +767,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudagentpool
 #>
 function Get-AzNetworkCloudAgentPool {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IAgentPool])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IAgentPool])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -959,7 +959,7 @@ Get-AzNetworkCloudBareMetalMachineKeySet -ClusterName clusterName -ResourceGroup
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineKeySet
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineKeySet
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -992,7 +992,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudbaremetalmachinekeyset
 #>
 function Get-AzNetworkCloudBareMetalMachineKeySet {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineKeySet])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineKeySet])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -1186,7 +1186,7 @@ Get-AzNetworkCloudBareMetalMachine -ResourceGroupName resourceGroupName -Subscri
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachine
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachine
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -1219,7 +1219,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudbaremetalmachine
 #>
 function Get-AzNetworkCloudBareMetalMachine {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachine])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachine])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -1406,7 +1406,7 @@ Get-AzNetworkCloudBmcKeySet -ClusterName clusterName -ResourceGroupName resource
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBmcKeySet
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBmcKeySet
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -1439,7 +1439,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudbmckeyset
 #>
 function Get-AzNetworkCloudBmcKeySet {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBmcKeySet])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBmcKeySet])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -1633,7 +1633,7 @@ Get-AzNetworkCloudClusterManager -ResourceGroupName resourceGroup -SubscriptionI
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterManager
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterManager
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -1666,7 +1666,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudclustermanager
 #>
 function Get-AzNetworkCloudClusterManager {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterManager])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterManager])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -1855,7 +1855,7 @@ Get-AzNetworkCloudCluster -ResourceGroupName resourceGroup -SubscriptionId subsc
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICluster
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICluster
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -1888,7 +1888,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudcluster
 #>
 function Get-AzNetworkCloudCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICluster])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICluster])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -2075,7 +2075,7 @@ Get-AzNetworkCloudConsole -Name consoleName -SubscriptionId subscriptionId -Reso
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsole
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsole
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -2108,7 +2108,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudconsole
 #>
 function Get-AzNetworkCloudConsole {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsole])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsole])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -2300,7 +2300,7 @@ Get-AzNetworkCloudKubernetesClusterFeature -KubernetesClusterName kubernetesClus
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterFeature
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterFeature
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -2333,7 +2333,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudkubernetesclusterfeature
 #>
 function Get-AzNetworkCloudKubernetesClusterFeature {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterFeature])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterFeature])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -2526,7 +2526,7 @@ Get-AzNetworkCloudKubernetesCluster -ResourceGroupName resourceGroupName -Subscr
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -2559,7 +2559,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudkubernetescluster
 #>
 function Get-AzNetworkCloudKubernetesCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -2748,7 +2748,7 @@ Get-AzNetworkCloudL2Network -SubscriptionId subscriptionId
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2Network
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2Network
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -2781,7 +2781,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudl2network
 #>
 function Get-AzNetworkCloudL2Network {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2Network])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2Network])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -2970,7 +2970,7 @@ Get-AzNetworkCloudL3Network -SubscriptionId subscriptionId
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3Network
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3Network
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -3003,7 +3003,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudl3network
 #>
 function Get-AzNetworkCloudL3Network {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3Network])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3Network])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -3190,7 +3190,7 @@ Get-AzNetworkCloudMetricsConfiguration -ClusterName clusterName -ResourceGroupNa
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterMetricsConfiguration
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterMetricsConfiguration
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -3223,7 +3223,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudmetricsconfiguration
 #>
 function Get-AzNetworkCloudMetricsConfiguration {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterMetricsConfiguration])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterMetricsConfiguration])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -3415,7 +3415,7 @@ Get-AzNetworkCloudRackSku -Name rackSkuName -SubscriptionId subscriptionId
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRackSku
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRackSku
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -3448,7 +3448,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudracksku
 #>
 function Get-AzNetworkCloudRackSku {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRackSku])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRackSku])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -3627,7 +3627,7 @@ Get-AzNetworkCloudRack -SubscriptionId subscriptionId
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRack
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRack
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -3660,7 +3660,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudrack
 #>
 function Get-AzNetworkCloudRack {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRack])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRack])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -3849,7 +3849,7 @@ Get-AzNetworkCloudServicesNetwork -SubscriptionId subscriptionId
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICloudServicesNetwork
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICloudServicesNetwork
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -3882,7 +3882,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudservicesnetwork
 #>
 function Get-AzNetworkCloudServicesNetwork {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICloudServicesNetwork])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICloudServicesNetwork])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -4071,7 +4071,7 @@ Get-AzNetworkCloudStorageAppliance -Name storageApplianceName -SubscriptionId su
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageAppliance
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageAppliance
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -4104,7 +4104,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudstorageappliance
 #>
 function Get-AzNetworkCloudStorageAppliance {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageAppliance])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageAppliance])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -4293,7 +4293,7 @@ Get-AzNetworkCloudTrunkedNetwork -ResourceGroupName resourceGroupName -Subscript
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetwork
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetwork
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -4326,7 +4326,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudtrunkednetwork
 #>
 function Get-AzNetworkCloudTrunkedNetwork {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetwork])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetwork])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -4515,7 +4515,7 @@ Get-AzNetworkCloudVirtualMachine -ResourceGroupName resourceGroup -SubscriptionI
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachine
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachine
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -4548,7 +4548,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudvirtualmachine
 #>
 function Get-AzNetworkCloudVirtualMachine {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachine])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachine])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -4737,7 +4737,7 @@ Get-AzNetworkCloudVolume -ResourceGroupName resourceGroupName -SubscriptionId su
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVolume
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVolume
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -4770,7 +4770,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/get-aznetworkcloudvolume
 #>
 function Get-AzNetworkCloudVolume {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVolume])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVolume])]
 [CmdletBinding(DefaultParameterSetName='List', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -5270,7 +5270,7 @@ param(
     [Parameter(Mandatory)]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineCommandSpecification[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineCommandSpecification[]]
     # The list of curated data extraction commands to be executed directly against the target machine.
     # To construct, see NOTES section for COMMAND properties and create a hash table.
     ${Command},
@@ -6276,7 +6276,7 @@ param(
     [Parameter(Mandatory)]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineCommandSpecification[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineCommandSpecification[]]
     # The list of read-only commands to be executed directly against the target machine.
     # To construct, see NOTES section for COMMAND properties and create a hash table.
     ${Command},
@@ -6681,7 +6681,7 @@ Trigger the continuation of an update for a cluster with a matching update strat
 Invoke-AzNetworkCloudClusterContinueVersionUpdate -ResourceGroupName resourceGroupName -ClusterName clusterName -SubscriptionId subscriptionId -MachineGroupTargetingMode "AlphaByRack"  
 
 .Inputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterContinueUpdateVersionParameters
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterContinueUpdateVersionParameters
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
@@ -6759,7 +6759,7 @@ param(
     [Parameter(ParameterSetName='Continue', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='ContinueViaIdentity', Mandatory, ValueFromPipeline)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterContinueUpdateVersionParameters]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterContinueUpdateVersionParameters]
     # ClusterContinueUpdateVersionParameters represents the body of the request to continue the update of a cluster version.
     # To construct, see NOTES section for CLUSTERCONTINUEUPDATEVERSIONPARAMETER properties and create a hash table.
     ${ClusterContinueUpdateVersionParameter},
@@ -7174,7 +7174,7 @@ Triggers the execution of a runtime protection scan to detect and remediate dete
 Invoke-AzNetworkCloudScanClusterRuntime -ResourceGroupName resourceGroupName -ClusterName clusterName -SubscriptionId subscriptionId -ScanActivity "Scan"
 
 .Inputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterScanRuntimeParameters
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterScanRuntimeParameters
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
@@ -7252,7 +7252,7 @@ param(
     [Parameter(ParameterSetName='Scan', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='ScanViaIdentity', Mandatory, ValueFromPipeline)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterScanRuntimeParameters]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterScanRuntimeParameters]
     # ClusterScanRuntimeParameters defines the parameters for the cluster scan runtime operation.
     # To construct, see NOTES section for CLUSTERSCANRUNTIMEPARAMETER properties and create a hash table.
     ${ClusterScanRuntimeParameter},
@@ -7677,7 +7677,7 @@ Create a new Kubernetes cluster agent pool or update the properties of the exist
     New-AzNetworkCloudAgentPool -KubernetesClusterName clusterName -Name agentPoolName -ResourceGroupName resourceGroup -Count count -Location location -Mode agentPoolMode -VMSkuName vmSkuName -SubscriptionId subscriptionId -AdministratorConfigurationAdminUsername adminUsername -AdministratorConfigurationSshPublicKey $sshPublicKey -AgentOptionHugepagesCount hugepagesCount -AgentOptionHugepagesSize hugepagesSize -AttachedNetworkConfigurationL3Network $networkAttachment -AvailabilityZone availabilityZones -ExtendedLocationName clusterExtendedLocation -ExtendedLocationType "CustomLocation " -Tag @{tags = "tag"} -Label $labels -Taint $taints -UpgradeSettingMaxSurge maxSurge
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IAgentPool
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IAgentPool
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -7710,7 +7710,7 @@ TAINT <IKubernetesLabel[]>: The taints applied to the nodes in this agent pool.
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudagentpool
 #>
 function New-AzNetworkCloudAgentPool {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IAgentPool])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IAgentPool])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -7740,21 +7740,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -7793,7 +7778,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The SSH configuration for the operating systems that run the nodes in the Kubernetes cluster.
     # In some cases, specification of public keys may be required to produce a working environment.
     # To construct, see NOTES section for ADMINISTRATORCONFIGURATIONSSHPUBLICKEY properties and create a hash table.
@@ -7815,7 +7800,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2NetworkAttachmentConfiguration[]]
     # The list of Layer 2 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL2NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL2Network},
@@ -7823,7 +7808,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3NetworkAttachmentConfiguration[]]
     # The list of Layer 3 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL3NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL3Network},
@@ -7831,7 +7816,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetworkAttachmentConfiguration[]]
     # The list of Trunked Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONTRUNKEDNETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationTrunkedNetwork},
@@ -7859,7 +7844,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesLabel[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesLabel[]]
     # The labels applied to the nodes in this agent pool.
     # To construct, see NOTES section for LABEL properties and create a hash table.
     ${Label},
@@ -7874,7 +7859,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesLabel[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesLabel[]]
     # The taints applied to the nodes in this agent pool.
     # To construct, see NOTES section for TAINT properties and create a hash table.
     ${Taint},
@@ -8080,7 +8065,7 @@ $userList = @{
 New-AzNetworkCloudBareMetalMachineKeySet -ResourceGroupName resourceGroupName -Name baremetalmachinekeysetname -ClusterName clusterName -AzureGroupId azuregroupid -Expiration "2023-12-31T23:59:59.008Z" -OSGroupName osgroupName -ExtendedLocationName /subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/customLocationName -PrivilegeLevel Superuser -JumpHostsAllowed "192.0.0.1" -ExtendedLocationType CustomLocation -Location EastUs -Tag $tagHash  -UserList $userList -SubscriptionId subscriptionId
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineKeySet
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineKeySet
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -8095,7 +8080,7 @@ USERLIST <IKeySetUser[]>: The unique list of permitted users.
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudbaremetalmachinekeyset
 #>
 function New-AzNetworkCloudBareMetalMachineKeySet {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineKeySet])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineKeySet])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -8125,21 +8110,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -8189,7 +8159,7 @@ param(
     [Parameter(Mandatory)]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKeySetUser[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKeySetUser[]]
     # The unique list of permitted users.
     # To construct, see NOTES section for USERLIST properties and create a hash table.
     ${UserList},
@@ -8365,16 +8335,17 @@ $tagHash = @{
     tag = "tag"
 }
 $userList = @{
-    userPrincipalName = "userPrincipalName"
     description   = "userDescription"
     azureUserName = "userName"
-    sshPublicKey  = "ssh-rsa aaaKyfsdx= fakekey@vm"
+    sshPublicKey  = @{
+        keyData = "ssh-rsa aaaKyfsdx= fakekey@vm"
+    }
 }
 
 New-AzNetworkCloudBmcKeySet -ResourceGroupName resourceGroupName -Name baseboardmgtcontrollerkeysetname -ClusterName clusterName -AzureGroupId azuregroupid -Expiration "2023-12-31T23:59:59.008Z" -ExtendedLocationName /subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/customLocationName -PrivilegeLevel ReadOnly -ExtendedLocationType CustomLocation -Location EastUs -Tag $tagHash -UserList $userList
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBmcKeySet
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBmcKeySet
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -8389,7 +8360,7 @@ USERLIST <IKeySetUser[]>: The unique list of permitted users.
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudbmckeyset
 #>
 function New-AzNetworkCloudBmcKeySet {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBmcKeySet])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBmcKeySet])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -8419,21 +8390,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -8476,7 +8432,7 @@ param(
     [Parameter(Mandatory)]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKeySetUser[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKeySetUser[]]
     # The unique list of permitted users.
     # To construct, see NOTES section for USERLIST properties and create a hash table.
     ${UserList},
@@ -8650,12 +8606,12 @@ $tagHash = @{
 New-AzNetworkCloudClusterManager -Name cnName -Location location -ResourceGroupName resourceGroupName -SubscriptionId subscriptionId -AnalyticsWorkspaceId "" -ManagedResourceGroupConfigurationName mrgName -FabricControllerId fabricControllerID -Tag $tagHash
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterManager
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterManager
 .Link
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudclustermanager
 #>
 function New-AzNetworkCloudClusterManager {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterManager])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterManager])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -8679,21 +8635,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -8927,24 +8868,10 @@ $tagHash = @{
 }
 $securePassword = ConvertTo-SecureString "password" -asplaintext -force
 
-New-AzNetworkCloudCluster -ResourceGroupName resourceGroup -Name clusterName -AggregatorOrSingleRackDefinitionNetworkRackId rackId -AggregatorOrSingleRackDefinitionRackSerialNumber sr1234 -AggregatorOrSingleRackDefinitionRackSkuId rackSku -ClusterType clustertype -ClusterVersion clusterversion -ExtendedLocationName CmExtendedLocation -ExtendedLocationType CustomLocation -Location location -NetworkFabricId networkFabricId -SubscriptionId subscriptionId -AggregatorOrSingleRackDefinitionAvailabilityZone availabilityzone -AggregatorOrSingleRackDefinitionBareMetalMachineConfiguration $baremetalmachineconfigurationdata -AggregatorOrSingleRackDefinitionRackLocation rackLocation -AggregatorOrSingleRackDefinitionStorageApplianceConfiguration $storageapplianceconfigurationdata -AnalyticsWorkspaceId analyticsWorkSpaceId -ClusterServicePrincipalApplicationId clusterServicePrincipalAppId -ClusterServicePrincipalId ClusterServicePrincipalId -ClusterServicePrincipalPassword $securePassword -ClusterServicePrincipalTenantId tenantId -ComputeRackDefinition $computerackdefinition -Tag $tagHash
-.Example
-$storageapplianceconfigurationdata = @()
-$baremetalmachineconfigurationdata = @()
-$computerackdefinition = @(@{IRackDefinition = "The list of rack definitions for the compute racks in a multi-rackcluster, or an empty list in a single-rack cluster."})
-$tagHash = @{
-    tag = "tag"
-}
-$securePassword = ConvertTo-SecureString "password" -asplaintext -force
-$identityUserAssignedIdentity = @{}
-$userAssignedIdentityResourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myManagedIdentity"
-$identityUserAssignedIdentity.Add($userAssignedIdentityResourceId, @{})
-
-
-New-AzNetworkCloudCluster -ResourceGroupName resourceGroup -Name clusterName -AggregatorOrSingleRackDefinitionNetworkRackId rackId -AggregatorOrSingleRackDefinitionRackSerialNumber sr1234 -AggregatorOrSingleRackDefinitionRackSkuId rackSku -ClusterType clustertype -IdentityType identityType -IdentityUserAssignedIdentity $identityUserAssignedIdentity -ClusterVersion clusterversion -ExtendedLocationName CmExtendedLocation -ExtendedLocationType CustomLocation -Location location -NetworkFabricId networkFabricId -SubscriptionId subscriptionId -AggregatorOrSingleRackDefinitionAvailabilityZone availabilityZone -AggregatorOrSingleRackDefinitionBareMetalMachineConfiguration $baremetalmachineconfigurationdata -AggregatorOrSingleRackDefinitionRackLocation rackLocation -AggregatorOrSingleRackDefinitionStorageApplianceConfiguration $storageapplianceconfigurationdata -AnalyticOutputSettingAnalyticsWorkspaceId analyticsWorkspaceId -AnalyticsOutputSettingsAssociatedIdentityType identityType -AnalyticsOutputSettingsAssociatedIdentityUserAssignedIdentityResourceId userAssignedIdentityResourceId -AnalyticsWorkspaceId analyticsWorkspaceId -CommandOutputSettingContainerUrl containerUrl -AssociatedIdentityType commandOutputSettingsIdentityType -AssociatedIdentityUserAssignedIdentityResourceId commandOutputSettingsUserAssignedIdentityResourceId -ClusterServicePrincipalApplicationId clusterServicePrincipalAppId -ClusterServicePrincipalId ClusterServicePrincipalId -ClusterServicePrincipalPassword $securePassword -ClusterServicePrincipalTenantId tenantId -ComputeRackDefinition $computerackdefinition -SecretArchiveKeyVaultId keyVaultId -SecretArchiveSettingVaultUri keyVaultUri -SecretArchiveSettingsAssociatedIdentityType identityType -SecretArchiveSettingsAssociatedIdentityUserAssignedIdentityResourceId userAssignedIdentityResourceId -SecretArchiveUseKeyVault useKeyVault -UpdateStrategyThresholdType updateStrategyThresholdType -UpdateStrategyThresholdValue updateStrategyThresholdValue -UpdateStrategyType updateStrategyType -UpdateStrategyWaitTimeMinute updateStrategyWaitTimeMinutes -VulnerabilityScanningSettingContainerScan vulnerabilityScanningSettingContainerScan -ComputeDeploymentThresholdGrouping computeDeploymentThresholdGrouping -ComputeDeploymentThresholdType computeDeploymentThresholdType -ComputeDeploymentThresholdValue computeDeploymentThresholdValue -Tag $tagHash
+New-AzNetworkCloudCluster -ResourceGroupName resourceGroup -Name clusterName -AggregatorOrSingleRackDefinitionNetworkRackId rackId -AggregatorOrSingleRackDefinitionRackSerialNumber sr1234 -AggregatorOrSingleRackDefinitionRackSkuId rackSku -ClusterType clustertype -ClusterVersion clusterversion -ExtendedLocationName CmExtendedLocation -ExtendedLocationType CustomLocation -Location location -NetworkFabricId networkFabricId -SubscriptionId subscriptionId -AggregatorOrSingleRackDefinitionAvailabilityZone avilabilityzone -AggregatorOrSingleRackDefinitionBareMetalMachineConfiguration $baremetalmachineconfigurationdata -AggregatorOrSingleRackDefinitionRackLocation rackLocation -AggregatorOrSingleRackDefinitionStorageApplianceConfiguration $storageapplianceconfigurationdata -AnalyticsWorkspaceId anlyticsWorkSpaceId -ClusterServicePrincipalApplicationId clusterServicePrincipalAppId -ClusterServicePrincipalId ClusterServicePrincipalId -ClusterServicePrincipalPassword $securePassword -ClusterServicePrincipalTenantId tenantId -ComputeRackDefinition $computerackdefinition -Tag $tagHash
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICluster
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICluster
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -8992,7 +8919,7 @@ COMPUTERACKDEFINITION <IRackDefinition[]>: The list of rack definitions for the 
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudcluster
 #>
 function New-AzNetworkCloudCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICluster])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICluster])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -9016,21 +8943,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -9098,7 +9010,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineConfigurationData[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineConfigurationData[]]
     # The unordered list of bare metal machine configuration.
     # To construct, see NOTES section for AGGREGATORORSINGLERACKDEFINITIONBAREMETALMACHINECONFIGURATION properties and create a hash table.
     ${AggregatorOrSingleRackDefinitionBareMetalMachineConfiguration},
@@ -9112,7 +9024,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageApplianceConfigurationData[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageApplianceConfigurationData[]]
     # The list of storage appliance configuration data for this rack.
     # To construct, see NOTES section for AGGREGATORORSINGLERACKDEFINITIONSTORAGEAPPLIANCECONFIGURATION properties and create a hash table.
     ${AggregatorOrSingleRackDefinitionStorageApplianceConfiguration},
@@ -9120,27 +9032,6 @@ param(
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
-    # The resource ID of the analytics workspace that is to be used by the specified identity.
-    ${AnalyticOutputSettingAnalyticsWorkspaceId},
-
-    [Parameter()]
-    [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType])]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType]
-    # The type of managed identity that is being selected.
-    ${AnalyticsOutputSettingsAssociatedIdentityType},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The user assigned managed identity resource ID to use.
-    # Mutually exclusive with a system assigned identity type.
-    ${AnalyticsOutputSettingsAssociatedIdentityUserAssignedIdentityResourceId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # Field Deprecated.
     # The resource ID of the Log Analytics Workspace that will be used for storing relevant logs.
     ${AnalyticsWorkspaceId},
 
@@ -9148,13 +9039,14 @@ param(
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType])]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType]
-    # The type of associated identity for CommandOutputSettings.
+    # The type of managed identity that is being selected.
     ${AssociatedIdentityType},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
-    # The resource ID of the user assigned identity for CommandOutputSettings.
+    # The user assigned managed identity resource ID to use.
+    # Mutually exclusive with a system assigned identity type.
     ${AssociatedIdentityUserAssignedIdentityResourceId},
 
     [Parameter()]
@@ -9216,7 +9108,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRackDefinition[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRackDefinition[]]
     # The list of rack definitions for the compute racks in a multi-rackcluster, or an empty list in a single-rack cluster.
     # To construct, see NOTES section for COMPUTERACKDEFINITION properties and create a hash table.
     ${ComputeRackDefinition},
@@ -9265,26 +9157,6 @@ param(
     ${SecretArchiveKeyVaultId},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The URI for the key vault used as the secret archive.
-    ${SecretArchiveSettingVaultUri},
-
-    [Parameter()]
-    [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType])]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType]
-    # The type of managed identity that is being selected.
-    ${SecretArchiveSettingsAssociatedIdentityType},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The user assigned managed identity resource ID to use.
-    # Mutually exclusive with a system assigned identity type.
-    ${SecretArchiveSettingsAssociatedIdentityUserAssignedIdentityResourceId},
-
-    [Parameter()]
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ClusterSecretArchiveEnabled])]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ClusterSecretArchiveEnabled]
@@ -9330,13 +9202,6 @@ param(
     [System.Int64]
     # The time to wait between the increments of update defined by the strategy.
     ${UpdateStrategyWaitTimeMinute},
-
-    [Parameter()]
-    [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.VulnerabilityScanningSettingsContainerScan])]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.VulnerabilityScanningSettingsContainerScan]
-    # The mode selection for container vulnerability scanning.
-    ${VulnerabilityScanningSettingContainerScan},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -9492,15 +9357,15 @@ Create a new virtual machine console or update the properties of the existing vi
 .Description
 Create a new virtual machine console or update the properties of the existing virtual machine console.
 .Example
-New-AzNetworkCloudConsole -ResourceGroupName resourceGroupName -Location location -ExtendedLocationName "/subscriptions/subscriptionId/resourcegroups/clusterManagerHostedResourceGroup/providers/microsoft.extendedlocation/customlocations/clusterManagerExtendedLocation" -ExtendedLocationType "CustomLocation" -SubscriptionId subscriptionId -Tag @{tags="tag1"} -Enabled ConsoleEnabled.True -VirtualMachineName virtualMachineName -SshPublicKeyData "ssh-rsa StNw+/C+g0tOZLT9OKK6YTovOn= fakekey@vm" -Expiration "2025-02-01T01:27:03.008Z"
+New-AzNetworkCloudConsole -ResourceGroupName resourceGroupName -Location location -ExtendedLocationName "/subscriptions/subscriptionId/resourcegroups/clusterManagerHostedResourceGroup/providers/microsoft.extendedlocation/customlocations/clusterManagerExtendedLocation" -ExtendedLocationType "CustomLocation" -SubscriptionId subscriptionId -Tag @{tags="tag1"} -Enabled ConsoleEnabled.True -VirtualMachineName virtualMachineName -SshPublicKeyData "ssh-rsa StNw+/C+g0tOZLT9OKK6YTovOn= fakekey@vm" -Expiration "2024-07-01T01:27:03.008Z"
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsole
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsole
 .Link
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudconsole
 #>
 function New-AzNetworkCloudConsole {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsole])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsole])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -9530,21 +9395,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ConsoleEnabled])]
@@ -9747,7 +9597,7 @@ Create a new Kubernetes cluster feature or update properties of the Kubernetes c
 New-AzNetworkCloudKubernetesClusterFeature -FeatureName featureName -KubernetesClusterName kubernetesClusterName -ResourceGroupName resourceGroup -SubscriptionId subscriptionId -Location location -Tag @{"key"="value"}
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterFeature
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterFeature
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -9760,7 +9610,7 @@ OPTION <IStringKeyValuePair[]>: The configured options for the feature.
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudkubernetesclusterfeature
 #>
 function New-AzNetworkCloudKubernetesClusterFeature {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterFeature])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterFeature])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -9790,21 +9640,6 @@ param(
     # The value must be an UUID.
     ${SubscriptionId},
 
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
@@ -9814,7 +9649,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStringKeyValuePair[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStringKeyValuePair[]]
     # The configured options for the feature.
     # To construct, see NOTES section for OPTION properties and create a hash table.
     ${Option},
@@ -10006,7 +9841,7 @@ New-AzNetworkCloudKubernetesCluster -ResourceGroupName resourceGroupName `
                 -Tag $tagHash
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -10093,7 +9928,7 @@ SSHPUBLICKEY <ISshPublicKey[]>: The SSH configuration for the operating systems 
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudkubernetescluster
 #>
 function New-AzNetworkCloudKubernetesCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -10116,21 +9951,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -10159,7 +9979,7 @@ param(
     [Parameter(Mandatory)]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IInitialAgentPoolConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IInitialAgentPoolConfiguration[]]
     # The agent pools that are created with this Kubernetes cluster for running critical system services and workloads.
     # This data in this field is only used during creation, and the field will be empty following the creation of the Kubernetes Cluster.
     # After creation, the management of agent pools is done using the agentPools sub-resource.
@@ -10207,7 +10027,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2NetworkAttachmentConfiguration[]]
     # The list of Layer 2 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL2NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL2Network},
@@ -10215,7 +10035,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3NetworkAttachmentConfiguration[]]
     # The list of Layer 3 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL3NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL3Network},
@@ -10223,7 +10043,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetworkAttachmentConfiguration[]]
     # The list of Trunked Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONTRUNKEDNETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationTrunkedNetwork},
@@ -10231,7 +10051,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBgpAdvertisement[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBgpAdvertisement[]]
     # The association of IP address pools to the communities and peers, allowing for announcement of IPs.
     # To construct, see NOTES section for BGPADVERTISEMENT properties and create a hash table.
     ${BgpAdvertisement},
@@ -10239,7 +10059,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IIPAddressPool[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IIPAddressPool[]]
     # The list of pools of IP addresses that can be allocated to load balancer services.
     # To construct, see NOTES section for BGPIPADDRESSPOOL properties and create a hash table.
     ${BgpIPAddressPool},
@@ -10247,7 +10067,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IServiceLoadBalancerBgpPeer[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IServiceLoadBalancerBgpPeer[]]
     # The list of additional BgpPeer entities that the Kubernetes cluster will peer with.
     # All peering must be explicitly defined.
     # To construct, see NOTES section for BGPPEER properties and create a hash table.
@@ -10263,7 +10083,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The SSH configuration for the operating systems that run the nodes in the Kubernetes cluster.
     # In some cases, specification of public keys may be required to produce a working environment.
     # To construct, see NOTES section for CONTROLPLANENODECONFIGURATIONADMINPUBLICKEY properties and create a hash table.
@@ -10287,7 +10107,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IIPAddressPool[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IIPAddressPool[]]
     # The list of pools of IP addresses that can be allocated to load balancer services.
     # To construct, see NOTES section for L2SERVICELOADBALANCERCONFIGURATIONIPADDRESSPOOL properties and create a hash table.
     ${L2ServiceLoadBalancerConfigurationIPAddressPool},
@@ -10334,7 +10154,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The SSH configuration for the operating systems that run the nodes in the Kubernetes cluster.
     # In some cases, specification of public keys may be required to produce a working environment.
     # To construct, see NOTES section for SSHPUBLICKEY properties and create a hash table.
@@ -10504,12 +10324,12 @@ Create a new layer 2 (L2) network or update the properties of the existing netwo
 New-AzNetworkCloudL2Network -Name l2Network -ResourceGroupName resourceGroupName -ExtendedLocationName "/subscriptions/subscriptionId/resourcegroups/resourceGroupName/providers/microsoft.extendedlocation/customlocations/customLocationsName" -ExtendedLocationType "CustomLocation" -L2IsolationDomainId  "/subscriptions/fabricsubs/resourceGroups/resourceGroupName/providers/Microsoft.NetworkFabric/L2IsolationDomains/L2IsolationDomainsName" -Location  eastus -HybridAksPluginType  "DPDK" -InterfaceName "eth0" -Tag @{tags = "tag1" } -SubscriptionId subscriptionId
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2Network
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2Network
 .Link
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudl2network
 #>
 function New-AzNetworkCloudL2Network {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2Network])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2Network])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -10533,21 +10353,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -10753,12 +10558,12 @@ Create a new layer 3 (L3) network or update the properties of the existing netwo
 New-AzNetworkCloudL3Network -ResourceGroupName resourceGroupName -Name l3NetworkName -Location eastus -ExtendedLocationName  "subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterExtendedLocationName" -ExtendedLocationType "CustomLocation" -Vlan 1001 -L3IsolationDomainId "/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ManagedNetworkFabric/l3IsolationDomains/l3IsolationDomainName" -Ipv4ConnectedPrefix  "10.1.100.0/24" -Ipv6ConnectedPrefix  "fd01:1::0/64" -SubscriptionId subscriptionId
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3Network
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3Network
 .Link
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudl3network
 #>
 function New-AzNetworkCloudL3Network {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3Network])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3Network])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -10782,21 +10587,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -11038,12 +10828,12 @@ Create new or update the existing metrics configuration of the provided cluster.
 New-AzNetworkCloudMetricsConfiguration -ClusterName clusterName -MetricsConfigurationName default -ResourceGroupName resourceGroupName -CollectionInterval 15 -ExtendedLocationName extendedLocationId -ExtendedLocationType CustomLocation -Location eastus -SubscriptionId subscriptionId
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterMetricsConfiguration
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterMetricsConfiguration
 .Link
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudmetricsconfiguration
 #>
 function New-AzNetworkCloudMetricsConfiguration {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterMetricsConfiguration])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterMetricsConfiguration])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -11072,21 +10862,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -11288,7 +11063,7 @@ $endpointEgressList = @{}
 New-AzNetworkCloudServicesNetwork -CloudServicesNetworkName cloudNetworkServicesName -ResourceGroupName resourceGroupName -ExtendedLocationName "/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/customLocationName" -ExtendedLocationType "CustomLocation" -Location eastus -AdditionalEgressEndpoint $endpointEgressList -EnableDefaultEgressEndpoint false -Tag $tags -SubscriptionId subscriptionId
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICloudServicesNetwork
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICloudServicesNetwork
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -11303,7 +11078,7 @@ ADDITIONALEGRESSENDPOINT <IEgressEndpoint[]>: The list of egress endpoints. This
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudservicesnetwork
 #>
 function New-AzNetworkCloudServicesNetwork {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICloudServicesNetwork])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICloudServicesNetwork])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -11327,21 +11102,6 @@ param(
     # The value must be an UUID.
     ${SubscriptionId},
 
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
@@ -11363,7 +11123,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IEgressEndpoint[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IEgressEndpoint[]]
     # The list of egress endpoints.
     # This allows for connection from a Hybrid AKS cluster to the specified endpoint.
     # To construct, see NOTES section for ADDITIONALEGRESSENDPOINT properties and create a hash table.
@@ -11540,12 +11300,12 @@ Create a new trunked network or update the properties of the existing trunked ne
 New-AzNetworkCloudTrunkedNetwork -Name trunkedNetworkName -ResourceGroupName trunkedNetworkRg -SubscriptionId subscriptionId -ExtendedLocationName extendedLocationName -ExtendedLocationType "CustomLocation" -Location location -Vlan vlans -IsolationDomainId isolationDomainId -InterfaceName interfaceName -Tag @{ tag = "tag" }
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetwork
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetwork
 .Link
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudtrunkednetwork
 #>
 function New-AzNetworkCloudTrunkedNetwork {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetwork])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetwork])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -11569,21 +11329,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -11814,7 +11559,7 @@ $securePassword = ConvertTo-SecureString "password" -asplaintext -force
 New-AzNetworkCloudVirtualMachine -Name vmName  -ResourceGroupName resourceGroup -AdminUsername adminUsername -CloudServiceNetworkAttachmentAttachedNetworkId csnAttachedNetworkId -CloudServiceNetworkAttachmentIPAllocationMethod ipAllocationMethod -CpuCore cpuCore -ExtendedLocationName extendedLocationName -ExtendedLocationType "Custom" -Location location -SubscriptionId subscriptionId -MemorySizeGb memorySizeGb -OSDiskSizeGb osDiskSizeGb -VMImage vmImage -BootMethod bootMethod -CloudServiceNetworkAttachmentDefaultGateway defaultGateway -CloudServiceNetworkAttachmentName csnAttachmentName -IsolateEmulatorThread isolateEmulatorThread -NetworkAttachment $networkAttachment -NetworkData networkData -OSDiskCreateOption osDiskCreationOption -OSDiskDeleteOption osDiskDeleteOption -PlacementHint $hint -SshPublicKey $sshPublicKey -Tag @{tags = "tags"} -UserData userData -VirtioInterface virtioInterface -VMDeviceModel vmDeviceModel -VMImageRepositoryCredentialsUsername registryUsername -VMImageRepositoryCredentialsPassword $securePassword -VMImageRepositoryCredentialsRegistryUrl registryUrl
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachine
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachine
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -11840,7 +11585,7 @@ SSHPUBLICKEY <ISshPublicKey[]>: The list of ssh public keys. Each key will be ad
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudvirtualmachine
 #>
 function New-AzNetworkCloudVirtualMachine {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachine])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachine])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -11864,21 +11609,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -11977,18 +11707,6 @@ param(
     ${CloudServiceNetworkAttachmentName},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The resource ID of the extended location on which the resource will be created.
-    ${ConsoleExtendedLocationName},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The extended location type, for example, CustomLocation.
-    ${ConsoleExtendedLocationType},
-
-    [Parameter()]
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.VirtualMachineIsolateEmulatorThread])]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.VirtualMachineIsolateEmulatorThread]
@@ -11999,7 +11717,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.INetworkAttachment[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.INetworkAttachment[]]
     # The list of network attachments to the virtual machine.
     # To construct, see NOTES section for NETWORKATTACHMENT properties and create a hash table.
     ${NetworkAttachment},
@@ -12027,7 +11745,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachinePlacementHint[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachinePlacementHint[]]
     # The scheduling hints for the virtual machine.
     # To construct, see NOTES section for PLACEMENTHINT properties and create a hash table.
     ${PlacementHint},
@@ -12035,7 +11753,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The list of ssh public keys.
     # Each key will be added to the virtual machine using the cloud-init ssh_authorized_keys mechanism for the adminUsername.
     # To construct, see NOTES section for SSHPUBLICKEY properties and create a hash table.
@@ -12251,12 +11969,12 @@ Create a new volume or update the properties of the existing one.
 New-AzNetworkCloudVolume -Name volumeName -ResourceGroupName resourceGroupName -ExtendedLocationName extendedLocation -ExtendedLocationType "CustomLocation " -Location location -SizeMiB size -Tag @{ tag = "newTag" }
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVolume
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVolume
 .Link
 https://learn.microsoft.com/powershell/module/az.networkcloud/new-aznetworkcloudvolume
 #>
 function New-AzNetworkCloudVolume {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVolume])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVolume])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(Mandatory)]
@@ -12280,21 +11998,6 @@ param(
     # The ID of the target subscription.
     # The value must be an UUID.
     ${SubscriptionId},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
@@ -12558,21 +12261,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -12808,21 +12496,6 @@ param(
     # Identity Parameter
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -13062,21 +12735,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -13308,21 +12966,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -13552,21 +13195,6 @@ param(
     # Identity Parameter
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -13806,21 +13434,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -14057,21 +13670,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -14301,21 +13899,6 @@ param(
     # Identity Parameter
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -14549,21 +14132,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -14793,21 +14361,6 @@ param(
     # Identity Parameter
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -15047,21 +14600,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -15291,21 +14829,6 @@ param(
     # Identity Parameter
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -15539,21 +15062,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -15785,21 +15293,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
     [ValidateNotNull()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Azure')]
@@ -16029,21 +15522,6 @@ param(
     # Identity Parameter
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -17849,7 +17327,7 @@ Update-AzNetworkCloudAgentPool -Name agentPoolName -KubernetesClusterName cluste
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IAgentPool
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IAgentPool
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -17885,7 +17363,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudagentpool
 #>
 function Update-AzNetworkCloudAgentPool {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IAgentPool])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IAgentPool])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -17924,24 +17402,9 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # SshPublicKey represents the public key used to authenticate with a resource through SSH.
     # To construct, see NOTES section for ADMINISTRATORCONFIGURATIONSSHPUBLICKEY properties and create a hash table.
     ${AdministratorConfigurationSshPublicKey},
@@ -17954,7 +17417,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IAgentPoolPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IAgentPoolPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -18169,7 +17632,7 @@ Update-AzNetworkCloudBareMetalMachineKeySet -ResourceGroupName resourceGroupName
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineKeySet
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineKeySet
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -18208,7 +17671,7 @@ USERLIST <IKeySetUser[]>: The unique list of permitted users.
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudbaremetalmachinekeyset
 #>
 function Update-AzNetworkCloudBareMetalMachineKeySet {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineKeySet])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineKeySet])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -18247,21 +17710,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.DateTime]
     # The date and time after which the users in this key set will be removed from the bare metal machines.
@@ -18276,7 +17724,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineKeySetPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineKeySetPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -18284,7 +17732,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKeySetUser[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKeySetUser[]]
     # The unique list of permitted users.
     # To construct, see NOTES section for USERLIST properties and create a hash table.
     ${UserList},
@@ -18451,7 +17899,7 @@ Update-AzNetworkCloudBareMetalMachine -Name bmmName -ResourceGroupName resourceG
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachine
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachine
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -18484,7 +17932,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudbaremetalmachine
 #>
 function Update-AzNetworkCloudBareMetalMachine {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachine])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachine])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -18517,21 +17965,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
     # The details provided by the customer during the creation of rack manifeststhat allows for custom data to be associated with this machine.
@@ -18539,7 +17972,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachinePatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachinePatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -18705,10 +18138,11 @@ $tagHash = @{
     tag = "tagUpdate"
 }
 $userList = @{
-    userPrincipalName = "userPrincipalName"
     description   = "userDescription"
     azureUserName = "userName"
-    sshPublicKey  = "ssh-rsa aaaKyfsdx= fakekey@vm"
+    sshPublicKey  = @{
+        keyData =  "ssh-rsa aaaKyfsdx= fakekey@vm"
+    }
 }
 
 $tagUpdatedHash = @{
@@ -18721,7 +18155,7 @@ Update-AzNetworkCloudBmcKeySet -ResourceGroupName resourceGroupName -Name basebo
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBmcKeySet
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBmcKeySet
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -18760,7 +18194,7 @@ USERLIST <IKeySetUser[]>: The unique list of permitted users.
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudbmckeyset
 #>
 function Update-AzNetworkCloudBmcKeySet {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBmcKeySet])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBmcKeySet])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -18799,21 +18233,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.DateTime]
     # The date and time after which the users in this key set will be removed from the baseboard management controllers.
@@ -18821,7 +18240,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBmcKeySetPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBmcKeySetPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -18829,7 +18248,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKeySetUser[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKeySetUser[]]
     # The unique list of permitted users.
     # To construct, see NOTES section for USERLIST properties and create a hash table.
     ${UserList},
@@ -19001,7 +18420,7 @@ Update-AzNetworkCloudClusterManager -ResourceGroupName resourceGroupName -Subscr
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterManager
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterManager
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -19034,7 +18453,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudclustermanager
 #>
 function Update-AzNetworkCloudClusterManager {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterManager])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterManager])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -19067,21 +18486,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentityType])]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentityType]
@@ -19099,7 +18503,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterManagerPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterManagerPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -19259,26 +18663,11 @@ $tagHash = @{
 $securePassword = ConvertTo-SecureString "password" -asplaintext -force
 
 Update-AzNetworkCloudCluster -ResourceGroupName resourceGroup -Name clusterName -SubscriptionId subscriptionId -AggregatorOrSingleRackDefinitionNetworkRackId rackId -AggregatorOrSingleRackDefinitionRackSerialNumber sr1234 -AggregatorOrSingleRackDefinitionRackSkuId rackSku -AggregatorOrSingleRackDefinitionAvailabilityZone availabilityzone -AggregatorOrSingleRackDefinitionBareMetalMachineConfiguration $baremetalmachineconfigurationdata -AggregatorOrSingleRackDefinitionRackLocation rackLocation -AggregatorOrSingleRackDefinitionStorageApplianceConfiguration $storageapplianceconfigurationdata -ClusterServicePrincipalApplicationId clusterServicePrincipalAppId -ClusterServicePrincipalId ClusterServicePrincipalId -ClusterServicePrincipalPassword $securePassword -ClusterServicePrincipalTenantId tenantId -ComputeRackDefinition $computerackdefinition -Tag $tagHash
-.Example
-$storageapplianceconfigurationdata = @()
-$baremetalmachineconfigurationdata = @()
-$computerackdefinition = @(@{IRackDefinition = "The list of rack definitions for the compute racks in a multi-rack cluster, or an empty list in a single-rack cluster."})
-$tagHash = @{
-    tag = "tag"
-    tagUpdate = "tagUpdate"
-}
-$securePassword = ConvertTo-SecureString "password" -asplaintext -force
-$identityUserAssignedIdentity = @{}
-$userAssignedIdentityResourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myManagedIdentity"
-$identityUserAssignedIdentity.Add($userAssignedIdentityResourceId, @{})
-
-
-Update-AzNetworkCloudCluster -ResourceGroupName resourceGroup -Name clusterName -AggregatorOrSingleRackDefinitionNetworkRackId rackId -AggregatorOrSingleRackDefinitionRackSerialNumber sr1234 -AggregatorOrSingleRackDefinitionRackSkuId rackSku -IdentityType identityType -IdentityUserAssignedIdentity $identityUserAssignedIdentity -SubscriptionId subscriptionId -AggregatorOrSingleRackDefinitionAvailabilityZone availabilityZone -AggregatorOrSingleRackDefinitionBareMetalMachineConfiguration $baremetalmachineconfigurationdata -AggregatorOrSingleRackDefinitionRackLocation rackLocation -AggregatorOrSingleRackDefinitionStorageApplianceConfiguration $storageapplianceconfigurationdata -AnalyticsOutputSettingsAssociatedIdentityType identityType -AnalyticsOutputSettingsAssociatedIdentityUserAssignedIdentityResourceId userAssignedIdentityResourceId -AnalyticOutputSettingAnalyticsWorkspaceId analyticsWorkspaceId -CommandOutputSettingContainerUrl containerUrl -AssociatedIdentityType commandOutputSettingsIdentityType -AssociatedIdentityUserAssignedIdentityResourceId commandOutputSettingsUserAssignedIdentityResourceId -ClusterServicePrincipalApplicationId clusterServicePrincipalAppId -ClusterServicePrincipalId ClusterServicePrincipalId -ClusterServicePrincipalPassword $securePassword -ClusterServicePrincipalTenantId tenantId -ComputeRackDefinition $computerackdefinition -SecretArchiveKeyVaultId keyVaultId -SecretArchiveSettingVaultUri keyVaultUri -SecretArchiveSettingsAssociatedIdentityType identityType -SecretArchiveSettingsAssociatedIdentityUserAssignedIdentityResourceId userAssignedIdentityResourceId -SecretArchiveUseKeyVault useKeyVault -UpdateStrategyThresholdType updateStrategyThresholdType -UpdateStrategyThresholdValue updateStrategyThresholdValue -UpdateStrategyType updateStrategyType -UpdateStrategyWaitTimeMinute updateStrategyWaitTimeMinutes -VulnerabilityScanningSettingContainerScan vulnerabilityScanningSettingContainerScan -ComputeDeploymentThresholdGrouping computeDeploymentThresholdGrouping -ComputeDeploymentThresholdType computeDeploymentThresholdType -ComputeDeploymentThresholdValue computeDeploymentThresholdValue -Tag $tagHash
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICluster
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICluster
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -19350,7 +18739,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudcluster
 #>
 function Update-AzNetworkCloudCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICluster])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICluster])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -19383,21 +18772,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
     # The zone name used for this rack when created.
@@ -19407,7 +18781,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineConfigurationData[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineConfigurationData[]]
     # The unordered list of bare metal machine configuration.
     # To construct, see NOTES section for AGGREGATORORSINGLERACKDEFINITIONBAREMETALMACHINECONFIGURATION properties and create a hash table.
     ${AggregatorOrSingleRackDefinitionBareMetalMachineConfiguration},
@@ -19440,42 +18814,23 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageApplianceConfigurationData[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageApplianceConfigurationData[]]
     # The list of storage appliance configuration data for this rack.
     # To construct, see NOTES section for AGGREGATORORSINGLERACKDEFINITIONSTORAGEAPPLIANCECONFIGURATION properties and create a hash table.
     ${AggregatorOrSingleRackDefinitionStorageApplianceConfiguration},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The resource ID of the analytics workspace that is to be used by the specified identity.
-    ${AnalyticOutputSettingAnalyticsWorkspaceId},
 
     [Parameter()]
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType])]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType]
     # The type of managed identity that is being selected.
-    ${AnalyticsOutputSettingsAssociatedIdentityType},
+    ${AssociatedIdentityType},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
     # The user assigned managed identity resource ID to use.
     # Mutually exclusive with a system assigned identity type.
-    ${AnalyticsOutputSettingsAssociatedIdentityUserAssignedIdentityResourceId},
-
-    [Parameter()]
-    [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType])]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType]
-    # The type of associated identity for CommandOutputSettings.
-    ${AssociatedIdentityType},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The resource ID of the user assigned identity for CommandOutputSettings.
     ${AssociatedIdentityUserAssignedIdentityResourceId},
 
     [Parameter()]
@@ -19537,7 +18892,7 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRackDefinition[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRackDefinition[]]
     # The list of rack definitions for the compute racks in a multi-rackcluster, or an empty list in a single-rack cluster.
     # To construct, see NOTES section for COMPUTERACKDEFINITION properties and create a hash table.
     ${ComputeRackDefinition},
@@ -19572,26 +18927,6 @@ param(
     ${SecretArchiveKeyVaultId},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The URI for the key vault used as the secret archive.
-    ${SecretArchiveSettingVaultUri},
-
-    [Parameter()]
-    [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType])]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ManagedServiceIdentitySelectorType]
-    # The type of managed identity that is being selected.
-    ${SecretArchiveSettingsAssociatedIdentityType},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [System.String]
-    # The user assigned managed identity resource ID to use.
-    # Mutually exclusive with a system assigned identity type.
-    ${SecretArchiveSettingsAssociatedIdentityUserAssignedIdentityResourceId},
-
-    [Parameter()]
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ClusterSecretArchiveEnabled])]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ClusterSecretArchiveEnabled]
@@ -19600,7 +18935,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -19637,13 +18972,6 @@ param(
     [System.Int64]
     # The time to wait between the increments of update defined by the strategy.
     ${UpdateStrategyWaitTimeMinute},
-
-    [Parameter()]
-    [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.VulnerabilityScanningSettingsContainerScan])]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.VulnerabilityScanningSettingsContainerScan]
-    # The mode selection for container vulnerability scanning.
-    ${VulnerabilityScanningSettingContainerScan},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -19812,7 +19140,7 @@ Update-AzNetworkCloudConsole -ResourceGroupName resourceGroupName -VirtualMachin
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsole
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsole
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -19845,7 +19173,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudconsole
 #>
 function Update-AzNetworkCloudConsole {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsole])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsole])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -19884,21 +19212,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ConsoleEnabled])]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Support.ConsoleEnabled]
@@ -19919,7 +19232,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IConsolePatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IConsolePatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -20079,16 +19392,12 @@ Patch properties of the provided Kubernetes cluster feature.
 .Description
 Patch properties of the provided Kubernetes cluster feature.
 .Example
-$tagUpdatedHash = @{
-    tag = "tag"
-}
-
 Update-AzNetworkCloudKubernetesClusterFeature -FeatureName featureName -KubernetesClusterName kubernetesClusterName -ResourceGroupName resourceGroup -SubscriptionId subscriptionId -Tag $tagUpdatedHash
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterFeature
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterFeature
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -20125,7 +19434,7 @@ OPTION <IStringKeyValuePair[]>: The configured options for the feature.
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudkubernetesclusterfeature
 #>
 function Update-AzNetworkCloudKubernetesClusterFeature {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterFeature])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterFeature])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -20163,31 +19472,16 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStringKeyValuePair[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStringKeyValuePair[]]
     # The configured options for the feature.
     # To construct, see NOTES section for OPTION properties and create a hash table.
     ${Option},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterFeaturePatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterFeaturePatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -20359,7 +19653,7 @@ Update-AzNetworkCloudKubernetesCluster -KubernetesClusterName kubernetesClusterN
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -20398,7 +19692,7 @@ SSHPUBLICKEY <ISshPublicKey[]>: SshPublicKey represents the public key used to a
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudkubernetescluster
 #>
 function Update-AzNetworkCloudKubernetesCluster {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesCluster])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesCluster])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -20431,24 +19725,9 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # SshPublicKey represents the public key used to authenticate with a resource through SSH.
     # To construct, see NOTES section for CONTROLPLANENODECONFIGURATIONADMINPUBLICKEY properties and create a hash table.
     ${ControlPlaneNodeConfigurationAdminPublicKey},
@@ -20468,14 +19747,14 @@ param(
     [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # SshPublicKey represents the public key used to authenticate with a resource through SSH.
     # To construct, see NOTES section for SSHPUBLICKEY properties and create a hash table.
     ${SshPublicKey},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesClusterPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesClusterPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -20640,7 +19919,7 @@ Update-AzNetworkCloudL2Network -ResourceGroupName resourceGroupName -Name l2Netw
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2Network
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2Network
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -20673,7 +19952,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudl2network
 #>
 function Update-AzNetworkCloudL2Network {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2Network])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2Network])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -20706,23 +19985,8 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2NetworkPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2NetworkPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -20875,7 +20139,7 @@ Update-AzNetworkCloudL3Network -ResourceGroupName resourceGroupName -Name l3netw
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3Network
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3Network
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -20908,7 +20172,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudl3network
 #>
 function Update-AzNetworkCloudL3Network {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3Network])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3Network])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -20941,23 +20205,8 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3NetworkPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3NetworkPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -21112,7 +20361,7 @@ Update-AzNetworkCloudMetricsConfiguration -ClusterName clusterName -ResourceGrou
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterMetricsConfiguration
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterMetricsConfiguration
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -21145,7 +20394,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudmetricsconfiguration
 #>
 function Update-AzNetworkCloudMetricsConfiguration {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterMetricsConfiguration])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterMetricsConfiguration])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -21184,21 +20433,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.Int64]
     # The interval in minutes by which metrics will be collected.
@@ -21213,7 +20447,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IClusterMetricsConfigurationPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IClusterMetricsConfigurationPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -21380,7 +20614,7 @@ Update-AzNetworkCloudRack -ResourceGroupName resourceGroupName -Name rackName -T
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRack
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRack
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -21413,7 +20647,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudrack
 #>
 function Update-AzNetworkCloudRack {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRack])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRack])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -21446,21 +20680,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
     # The free-form description of the rack location.
@@ -21476,7 +20695,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IRackPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IRackPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -21651,7 +20870,7 @@ Update-AzNetworkCloudServicesNetwork -ResourceGroupName resourceGroupName -Cloud
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICloudServicesNetwork
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICloudServicesNetwork
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -21690,7 +20909,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudservicesnetwork
 #>
 function Update-AzNetworkCloudServicesNetwork {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICloudServicesNetwork])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICloudServicesNetwork])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -21723,24 +20942,9 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [AllowEmptyCollection()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IEgressEndpoint[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IEgressEndpoint[]]
     # The list of egress endpoints.
     # This allows for connection from a Hybrid AKS cluster to the specified endpoint.
     # To construct, see NOTES section for ADDITIONALEGRESSENDPOINT properties and create a hash table.
@@ -21755,7 +20959,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ICloudServicesNetworkPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ICloudServicesNetworkPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -21920,7 +21124,7 @@ Update-AzNetworkCloudStorageAppliance -Name storageApplianceName -ResourceGroupN
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageAppliance
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageAppliance
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -21953,7 +21157,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudstorageappliance
 #>
 function Update-AzNetworkCloudStorageAppliance {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageAppliance])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageAppliance])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -21986,21 +21190,6 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
     [System.String]
     # The serial number for the storage appliance.
@@ -22008,7 +21197,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageAppliancePatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageAppliancePatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -22173,7 +21362,7 @@ Update-AzNetworkCloudTrunkedNetwork -Name trunkedNetworkName -ResourceGroupName 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetwork
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetwork
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -22206,7 +21395,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudtrunkednetwork
 #>
 function Update-AzNetworkCloudTrunkedNetwork {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetwork])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetwork])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -22239,23 +21428,8 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetworkPatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetworkPatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -22416,7 +21590,7 @@ Update-AzNetworkCloudVirtualMachine -Name vmName -ResourceGroupName resourceGrou
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachine
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachine
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -22449,7 +21623,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudvirtualmachine
 #>
 function Update-AzNetworkCloudVirtualMachine {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachine])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachine])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -22482,23 +21656,8 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVirtualMachinePatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVirtualMachinePatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -22681,7 +21840,7 @@ Update-AzNetworkCloudVolume -Name volumeName -ResourceGroupName resourceGroupNam
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.INetworkCloudIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVolume
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVolume
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -22714,7 +21873,7 @@ INPUTOBJECT <INetworkCloudIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.networkcloud/update-aznetworkcloudvolume
 #>
 function Update-AzNetworkCloudVolume {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVolume])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVolume])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
@@ -22747,23 +21906,8 @@ param(
     ${InputObject},
 
     [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # The ETag of the transformation.
-    # Omit this value to always overwrite the current resource.
-    # Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-    ${IfMatch},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Header')]
-    [System.String]
-    # Set to '*' to allow a new record set to be created, but to prevent updating an existing resource.
-    # Other values will result in error from server as they are not supported.
-    ${IfNoneMatch},
-
-    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IVolumePatchParametersTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IVolumePatchParametersTags]))]
     [System.Collections.Hashtable]
     # The Azure resource tags that will replace the existing ones.
     ${Tag},
@@ -22916,12 +22060,12 @@ $password = ConvertTo-SecureString "********" -AsPlainText -Force
 New-AzNetworkCloudBareMetalMachineConfigurationDataObject -BmcCredentialsPassword $password -BmcCredentialsUsername username -BmcMacAddress "00:BB:CC:DD:EE:FF" -BootMacAddress "00:BB:CC:DD:EE:FF" -RackSlot 1 -SerialNumber serialNumber -MachineDetail machineDetail -MachineName machineName
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.BareMetalMachineConfigurationData
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.BareMetalMachineConfigurationData
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudBareMetalMachineConfigurationDataObject
 #>
 function New-AzNetworkCloudBareMetalMachineConfigurationDataObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.BareMetalMachineConfigurationData])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.BareMetalMachineConfigurationData])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -23064,12 +22208,12 @@ Create an in-memory object for BgpAdvertisement.
 New-AzNetworkCloudBgpAdvertisementObject -IPAddressPool  @("pool1","pool2") -AdvertiseToFabric "True" -Community  @("communityString") -Peer @("peer1") 
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.BgpAdvertisement
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.BgpAdvertisement
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudBgpAdvertisementObject
 #>
 function New-AzNetworkCloudBgpAdvertisementObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.BgpAdvertisement])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.BgpAdvertisement])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -23196,7 +22340,7 @@ $object=New-AzNetworkCloudBgpServiceLoadBalancerConfigurationObject -BgpAdvertis
 Write-Host ($object | Format-List | Out-String)
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.BgpServiceLoadBalancerConfiguration
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.BgpServiceLoadBalancerConfiguration
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -23229,19 +22373,19 @@ IPADDRESSPOOL <IIPAddressPool[]>: The list of pools of IP addresses that can be 
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudBgpServiceLoadBalancerConfigurationObject
 #>
 function New-AzNetworkCloudBgpServiceLoadBalancerConfigurationObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.BgpServiceLoadBalancerConfiguration])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.BgpServiceLoadBalancerConfiguration])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBgpAdvertisement[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBgpAdvertisement[]]
     # The association of IP address pools to the communities and peers, allowing for announcement of IPs.
     # To construct, see NOTES section for BGPADVERTISEMENT properties and create a hash table.
     ${BgpAdvertisement},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IServiceLoadBalancerBgpPeer[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IServiceLoadBalancerBgpPeer[]]
     # The list of additional BgpPeer entities that the Kubernetes cluster will peer with.
     # All peering must be explicitly defined.
     # To construct, see NOTES section for BGPPEER properties and create a hash table.
@@ -23256,7 +22400,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IIPAddressPool[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IIPAddressPool[]]
     # The list of pools of IP addresses that can be allocated to load balancer services.
     # To construct, see NOTES section for IPADDRESSPOOL properties and create a hash table.
     ${IPAddressPool}
@@ -23353,7 +22497,7 @@ $sshPublicKey=@{
 New-AzNetworkCloudControlPlaneNodeConfigurationObject -Count 1 -VMSkuName vmSkuName -AdministratorConfigurationAdminUsername userName -AdministratorConfigurationSshPublicKey $sshPublicKey -AvailabilityZone @("1","2","3")
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ControlPlaneNodeConfiguration
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ControlPlaneNodeConfiguration
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -23365,7 +22509,7 @@ ADMINISTRATORCONFIGURATIONSSHPUBLICKEY <ISshPublicKey[]>: The SSH configuration 
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudControlPlaneNodeConfigurationObject
 #>
 function New-AzNetworkCloudControlPlaneNodeConfigurationObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ControlPlaneNodeConfiguration])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ControlPlaneNodeConfiguration])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -23389,7 +22533,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The SSH configuration for the operating systems that run the nodes in the Kubernetes cluster.
     # In some cases, specification of public keys may be required to produce a working environment.
     # To construct, see NOTES section for ADMINISTRATORCONFIGURATIONSSHPUBLICKEY properties and create a hash table.
@@ -23492,7 +22636,7 @@ $endpointDependency=New-AzNetworkCloudEndpointDependencyObject -DomainName domai
 New-AzNetworkCloudEgressEndpointObject -Category "azure-resource-management" -Endpoint ($endpointDependency)
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.EgressEndpoint
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.EgressEndpoint
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -23505,7 +22649,7 @@ ENDPOINT <IEndpointDependency[]>: The list of endpoint dependencies.
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudEgressEndpointObject
 #>
 function New-AzNetworkCloudEgressEndpointObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.EgressEndpoint])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.EgressEndpoint])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -23518,7 +22662,7 @@ param(
 
     [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IEndpointDependency[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IEndpointDependency[]]
     # The list of endpoint dependencies.
     # To construct, see NOTES section for ENDPOINT properties and create a hash table.
     ${Endpoint}
@@ -23611,12 +22755,12 @@ Create an in-memory object for EndpointDependency.
 New-AzNetworkCloudEndpointDependencyObject -DomainName domainName -Port 1234
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.EndpointDependency
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.EndpointDependency
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudEndpointDependencyObject
 #>
 function New-AzNetworkCloudEndpointDependencyObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.EndpointDependency])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.EndpointDependency])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -23719,7 +22863,7 @@ Create an in-memory object for InitialAgentPoolConfiguration.
 New-AzNetworkCloudInitialAgentPoolConfigurationObject -Count <Int64> -Mode <AgentPoolMode> -Name <String> -VMSkuName <String> -AdministratorConfigurationAdminUsername <String> -AdministratorConfigurationSshPublicKey <ISshPublicKey[]>  -AgentOptionHugepagesCount <Int64> -AgentOptionHugepagesSize <HugepagesSize> -AttachedNetworkConfigurationL2Network <IL2NetworkAttachmentConfiguration[]> -AttachedNetworkConfigurationL3Network <IL3NetworkAttachmentConfiguration[]> -AttachedNetworkConfigurationTrunkedNetwork <ITrunkedNetworkAttachmentConfiguration[]> -AvailabilityZone <String[]> -Label <IKubernetesLabel[]> -Taint <IKubernetesLabel[]> -UpgradeSettingMaxSurge <String>
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.InitialAgentPoolConfiguration
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.InitialAgentPoolConfiguration
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -23752,7 +22896,7 @@ TAINT <IKubernetesLabel[]>: The taints applied to the nodes in this agent pool.
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudInitialAgentPoolConfigurationObject
 #>
 function New-AzNetworkCloudInitialAgentPoolConfigurationObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.InitialAgentPoolConfiguration])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.InitialAgentPoolConfiguration])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -23791,7 +22935,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ISshPublicKey[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ISshPublicKey[]]
     # The SSH configuration for the operating systems that run the nodes in the Kubernetes cluster.
     # In some cases, specification of public keys may be required to produce a working environment.
     # To construct, see NOTES section for ADMINISTRATORCONFIGURATIONSSHPUBLICKEY properties and create a hash table.
@@ -23812,21 +22956,21 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL2NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL2NetworkAttachmentConfiguration[]]
     # The list of Layer 2 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL2NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL2Network},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IL3NetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IL3NetworkAttachmentConfiguration[]]
     # The list of Layer 3 Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONL3NETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationL3Network},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ITrunkedNetworkAttachmentConfiguration[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ITrunkedNetworkAttachmentConfiguration[]]
     # The list of Trunked Networks and related configuration for attachment.
     # To construct, see NOTES section for ATTACHEDNETWORKCONFIGURATIONTRUNKEDNETWORK properties and create a hash table.
     ${AttachedNetworkConfigurationTrunkedNetwork},
@@ -23840,14 +22984,14 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesLabel[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesLabel[]]
     # The labels applied to the nodes in this agent pool.
     # To construct, see NOTES section for LABEL properties and create a hash table.
     ${Label},
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IKubernetesLabel[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IKubernetesLabel[]]
     # The taints applied to the nodes in this agent pool.
     # To construct, see NOTES section for TAINT properties and create a hash table.
     ${Taint},
@@ -23973,12 +23117,12 @@ Create an in-memory object for IpAddressPool.
 New-AzNetworkCloudIpAddressPoolObject -Address @("198.51.102.0/24") -Name "pool1" -AutoAssign True -OnlyUseHostIP True 
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IPAddressPool
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IPAddressPool
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudIpAddressPoolObject
 #>
 function New-AzNetworkCloudIpAddressPoolObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IpAddressPool])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IpAddressPool])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -24098,12 +23242,12 @@ Create an in-memory object for KeySetUser.
 New-AzNetworkCloudKeySetUserObject -AzureUserName azureUserName -SshPublicKeyData "ssh-rsa-key" -Description "userDescription"
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.KeySetUser
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.KeySetUser
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudKeySetUserObject
 #>
 function New-AzNetworkCloudKeySetUserObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.KeySetUser])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.KeySetUser])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -24218,12 +23362,12 @@ Create an in-memory object for L3NetworkAttachmentConfiguration.
 New-AzNetworkCloudL3NetworkAttachmentConfigurationObject -NetworkId '/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/l3Networks/l3network-502' -IpamEnabled True -PluginType 'SRIOV'
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.L3NetworkAttachmentConfiguration
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.L3NetworkAttachmentConfiguration
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudL3NetworkAttachmentConfigurationObject
 #>
 function New-AzNetworkCloudL3NetworkAttachmentConfigurationObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.L3NetworkAttachmentConfiguration])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.L3NetworkAttachmentConfiguration])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -24334,12 +23478,12 @@ Create an in-memory object for NetworkAttachment.
 New-AzNetworkCloudNetworkAttachmentObject -AttachedNetworkId "/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/l3Networks/l3NetworkName" -IPAllocationMethod "Dynamic" -DefaultGateway "True" -Ipv4Address "198.51.100.1" -Ipv6Address "2001:0db8:0000:0000:0000:0000:0000:0001" -Name "netAttachName01"
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.NetworkAttachment
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.NetworkAttachment
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudNetworkAttachmentObject
 #>
 function New-AzNetworkCloudNetworkAttachmentObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.NetworkAttachment])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.NetworkAttachment])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -24495,7 +23639,7 @@ $object = New-AzNetworkCloudRackDefinitionObject -NetworkRackId "/subscriptions/
 Write-Host ($object | Format-List | Out-String)
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.RackDefinition
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.RackDefinition
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -24521,7 +23665,7 @@ STORAGEAPPLIANCECONFIGURATIONDATA <IStorageApplianceConfigurationData[]>: The li
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudRackDefinitionObject
 #>
 function New-AzNetworkCloudRackDefinitionObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.RackDefinition])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.RackDefinition])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -24552,7 +23696,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IBareMetalMachineConfigurationData[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IBareMetalMachineConfigurationData[]]
     # The unordered list of bare metal machine configuration.
     # To construct, see NOTES section for BAREMETALMACHINECONFIGURATIONDATA properties and create a hash table.
     ${BareMetalMachineConfigurationData},
@@ -24565,7 +23709,7 @@ param(
 
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.IStorageApplianceConfigurationData[]]
+    [Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.IStorageApplianceConfigurationData[]]
     # The list of storage appliance configuration data for this rack.
     # To construct, see NOTES section for STORAGEAPPLIANCECONFIGURATIONDATA properties and create a hash table.
     ${StorageApplianceConfigurationData}
@@ -24658,12 +23802,12 @@ Create an in-memory object for ServiceLoadBalancerBgpPeer.
 New-AzNetworkCloudServiceLoadBalancerBgpPeerObject -Name name -PeerAddress "203.0.113.254" -PeerAsn "64497" -BfdEnabled False -BgpMultiHop False -HoldTime "P300s" -KeepAliveTime "P300s" -MyAsn 64512 -Password passsword -PeerPort 1234
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ServiceLoadBalancerBgpPeer
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ServiceLoadBalancerBgpPeer
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudServiceLoadBalancerBgpPeerObject
 #>
 function New-AzNetworkCloudServiceLoadBalancerBgpPeerObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.ServiceLoadBalancerBgpPeer])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.ServiceLoadBalancerBgpPeer])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -24824,12 +23968,12 @@ $password = ConvertTo-SecureString "********" -AsPlainText -Force
 New-AzNetworkCloudStorageApplianceConfigurationDataObject -AdminCredentialsPassword $password -AdminCredentialsUsername username -RackSlot 1 -SerialNumber serialNumber -StorageApplianceName storageApplianceName
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.StorageApplianceConfigurationData
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.StorageApplianceConfigurationData
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudStorageApplianceConfigurationDataObject
 #>
 function New-AzNetworkCloudStorageApplianceConfigurationDataObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.StorageApplianceConfigurationData])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.StorageApplianceConfigurationData])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]
@@ -24950,12 +24094,12 @@ Create an in-memory object for VirtualMachinePlacementHint.
 New-AzNetworkCloudVirtualMachinePlacementHintObject -HintType "Affinity" -ResourceId "/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/racks/rackName" -SchedulingExecution "Hard" -Scope "Machine"
 
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.VirtualMachinePlacementHint
+Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.VirtualMachinePlacementHint
 .Link
 https://learn.microsoft.com/powershell/module/Az.NetworkCloud/new-AzNetworkCloudVirtualMachinePlacementHintObject
 #>
 function New-AzNetworkCloudVirtualMachinePlacementHintObject {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20250201.VirtualMachinePlacementHint])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.NetworkCloud.Models.Api20240701.VirtualMachinePlacementHint])]
 [CmdletBinding(PositionalBinding=$false)]
 param(
     [Parameter(Mandatory)]

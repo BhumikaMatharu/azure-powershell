@@ -15,54 +15,42 @@ if(($null -eq $TestName) -or ($TestName -contains 'Update-AzNeonPostgresOrganiza
 }
 
 # Define variables directly in the script
-$resourceName = "NeonDemoOrgPS1"
-$resourceGroupName = "neonrg"
-$subscriptionId = "a81c0054-6c92-41aa-a235-4f9f98f917c6"
+$resourceName = "almasTestNeonPSRecord1A"
+$resourceGroupName = "NeonDemoRG"
+$subscriptionId = "5d9a6cc3-4e60-4b41-be79-d28f0a01074e"
 
 # Company Details
 $companyDetailBusinessPhone = "+1234567890"
-$companyDetailCompanyName = "Contoso"
+$companyDetailCompanyName = "DemoCompany"
 $companyDetailCountry = "USA"
-$companyDetailDomain = "contoso.com"
+$companyDetailDomain = "demo.com"
 $companyDetailNumberOfEmployee = 500
 $companyDetailOfficeAddress = "1234 Azure Ave"
 
-# Marketplace Details
-$marketplaceDetailSubscriptionId = "e276aac0-83e0-4381-dffe-0400d1af8065"
-$marketplaceDetailSubscriptionStatus = "Subscribed"
-
-# Offer Details
-$offerDetailOfferId = "neon_serverless_postgres_azure_prod"
-$offerDetailPlanId = "neon_serverless_postgres_azure_prod_free"
-$offerDetailPlanName = "Free Plan"
-$offerDetailPublisherId = "neon1722366567200"
-$offerDetailTermId = "gmz7xq9ge3py"
-$offerDetailTermUnit = "P1M"
-
 # Partner Organization Properties
-$partnerOrganizationPropertyOrganizationId = "org-bitter-scene-70654971"
-$partnerOrganizationPropertyOrganizationName = "NeonDemoOrgPS1"
+$partnerOrganizationPropertyOrganizationId = "org12345"
+$partnerOrganizationPropertyOrganizationName = "PartnerOrgRecord1A"
 
 # Single Sign-On Properties
-$singleSignOnPropertyAadDomain = ""
-$singleSignOnPropertyEnterpriseAppId = ""
+$singleSignOnPropertyAadDomain = "partnerorg.com"
+$singleSignOnPropertyEnterpriseAppId = "app12345"
 $singleSignOnPropertySingleSignOnState = "Enable"
-$singleSignOnPropertySingleSignOnUrl = "https://console.neon.tech/azure/sso/org-bitter-scene-70654971"
+$singleSignOnPropertySingleSignOnUrl = "https://sso.partnerorg.com"
 
 # User Details
-$userDetailEmailAddress = "Demouser@testtestliftrtest2.onmicrosoft.com"
-$userDetailFirstName = "Demo"
-$userDetailLastName = "User"
+$userDetailEmailAddress = "khanalmas@microsoft.com"
+$userDetailFirstName = "Almas"
+$userDetailLastName = "Khan"
 $userDetailPhoneNumber = "+1234567890"
-$userDetailUpn = "Demouser@testtestliftrtest2.onmicrosoft.com"
+$userDetailUpn = "khanalmas_microsoft.com#EXT#@qumulotesttenant2.onmicrosoft.com"
 
 Describe 'Update-AzNeonPostgresOrganization' {
     It 'UpdateExpanded' {
         {
             # Execute the Update-AzNeonPostgresOrganization command with parameters from defined variables
-            Update-AzNeonPostgresOrganization -Name $resourceName -ResourceGroupName $resourceGroupName -SubscriptionId $subscriptionId -CompanyDetailBusinessPhone $companyDetailBusinessPhone -CompanyDetailCompanyName $companyDetailCompanyName -CompanyDetailCountry $companyDetailCountry -CompanyDetailDomain $companyDetailDomain -CompanyDetailNumberOfEmployee $companyDetailNumberOfEmployee -CompanyDetailOfficeAddress $companyDetailOfficeAddress -MarketplaceDetailSubscriptionId $marketplaceDetailSubscriptionId -MarketplaceDetailSubscriptionStatus $marketplaceDetailSubscriptionStatus -OfferDetailOfferId $offerDetailOfferId -OfferDetailPlanId $offerDetailPlanId -OfferDetailPlanName $offerDetailPlanName -OfferDetailPublisherId $offerDetailPublisherId -OfferDetailTermId $offerDetailTermId -OfferDetailTermUnit $offerDetailTermUnit -PartnerOrganizationPropertyOrganizationId $partnerOrganizationPropertyOrganizationId -PartnerOrganizationPropertyOrganizationName $partnerOrganizationPropertyOrganizationName -SingleSignOnPropertyAadDomain @($singleSignOnPropertyAadDomain) -SingleSignOnPropertyEnterpriseAppId $singleSignOnPropertyEnterpriseAppId -SingleSignOnPropertySingleSignOnState $singleSignOnPropertySingleSignOnState -SingleSignOnPropertySingleSignOnUrl $singleSignOnPropertySingleSignOnUrl -UserDetailEmailAddress $userDetailEmailAddress -UserDetailFirstName $userDetailFirstName -UserDetailLastName $userDetailLastName -UserDetailPhoneNumber $userDetailPhoneNumber -UserDetailUpn $userDetailUpn
+            Update-AzNeonPostgresOrganization -Name $resourceName -ResourceGroupName $resourceGroupName -SubscriptionId $subscriptionId -CompanyDetailBusinessPhone $companyDetailBusinessPhone -CompanyDetailCompanyName $companyDetailCompanyName -CompanyDetailCountry $companyDetailCountry -CompanyDetailDomain $companyDetailDomain -CompanyDetailNumberOfEmployee $companyDetailNumberOfEmployee -CompanyDetailOfficeAddress $companyDetailOfficeAddress -PartnerOrganizationPropertyOrganizationId $partnerOrganizationPropertyOrganizationId -PartnerOrganizationPropertyOrganizationName $partnerOrganizationPropertyOrganizationName -SingleSignOnPropertyAadDomain @($singleSignOnPropertyAadDomain) -SingleSignOnPropertyEnterpriseAppId $singleSignOnPropertyEnterpriseAppId -SingleSignOnPropertySingleSignOnState $singleSignOnPropertySingleSignOnState -SingleSignOnPropertySingleSignOnUrl $singleSignOnPropertySingleSignOnUrl -UserDetailEmailAddress $userDetailEmailAddress -UserDetailFirstName $userDetailFirstName -UserDetailLastName $userDetailLastName -UserDetailPhoneNumber $userDetailPhoneNumber -UserDetailUpn $userDetailUpn
             
             # Validate that the update command completes without throwing exceptions
-        } | Should -Throw
+        } | Should -Not -Throw
     }
 }

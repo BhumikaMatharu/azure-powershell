@@ -42,12 +42,6 @@ function Test-AzPostgreSqlFlexibleServerConnect {
         [System.String]
         ${QueryText},
 
-        [Parameter(HelpMessage = 'The timeout in seconds for query execution. Valid range is 1-31536000 seconds.')]
-        [Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Category('Body')]
-        [ValidateRange(1, 31536000)]
-        [System.Int32]
-        ${Timeout},
-
         [Parameter(ParameterSetName='TestViaIdentity', Mandatory, ValueFromPipeline, HelpMessage = 'The server to connect.')]
         [Parameter(ParameterSetName='TestViaIdentityAndQuery', Mandatory, ValueFromPipeline, HelpMessage = 'The server to connect.')]
         [Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Category('Body')]
@@ -124,12 +118,6 @@ function Test-AzPostgreSqlFlexibleServerConnect {
             $null = $PSBoundParameters.Remove('QueryText')
         }
 
-        $TimeoutValue = 0
-        if ($PSBoundParameters.ContainsKey('Timeout')) {
-            $TimeoutValue = $PSBoundParameters.Timeout
-            $null = $PSBoundParameters.Remove('Timeout')
-        }
-
         $DatabaseName = [string]::Empty
         if ($PSBoundParameters.ContainsKey('DatabaseName')) {
             $DatabaseName = $PSBoundParameters.DatabaseName
@@ -155,24 +143,14 @@ function Test-AzPostgreSqlFlexibleServerConnect {
         if ($Server.NetworkPublicNetworkAccess -eq 'Disabled'){
             Write-Host "You have to run the test cmdlet in the subnet your server is linked."
         }
-
-        # Create PSCredential object for database connection
-        $SecurePassword = ConvertTo-SecureString -String $Password -AsPlainText -Force
-        $Credential = New-Object System.Management.Automation.PSCredential($AdministratorUserName, $SecurePassword)
         
         try {
-            $DbToUse = if ([string]::IsNullOrEmpty($DatabaseName)) { "postgres" } else { $DatabaseName }
-            $OpenConnParams = @{
-                Database    = $DbToUse
-                Server      = $HostAddr
-                Credential  = $Credential
-                SSLMode     = 'Require'
-                WarningAction = 'SilentlyContinue'
+            if ([string]::IsNullOrEmpty($DatabaseName)){
+                Open-PostGreConnection -Database "postgres" -Server $HostAddr -UserName $AdministratorUserName -Password $Password -RequireSSL -WarningAction 'silentlycontinue'
             }
-            if ($TimeoutValue -gt 0) {
-                $OpenConnParams['CommandTimeout'] = $TimeoutValue
+            else {
+                Open-PostGreConnection -Database $DatabaseName -Server $HostAddr -UserName $AdministratorUserName -Password $Password -RequireSSL -WarningAction 'silentlycontinue'
             }
-            Open-PostGreConnection @OpenConnParams
             
         } catch {
             Write-Host $_.Exception.GetType().FullName

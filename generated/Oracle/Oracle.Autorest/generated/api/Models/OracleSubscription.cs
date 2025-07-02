@@ -18,14 +18,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         /// </summary>
         private Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IProxyResource __proxyResource = new Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ProxyResource();
 
-        /// <summary>State of the add Azure subscription operation on Oracle subscription</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inlined)]
-        public string AddSubscriptionOperationState { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).AddSubscriptionOperationState; }
-
-        /// <summary>Azure subscriptions to be added</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inlined)]
-        public System.Collections.Generic.List<string> AzureSubscriptionId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).AzureSubscriptionId; }
-
         /// <summary>Cloud Account Id</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inlined)]
         public string CloudAccountId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountId; }
@@ -44,24 +36,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inlined)]
         public string Intent { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).Intent; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).Intent = value ?? null; }
 
-        /// <summary>Status details of the last operation on Oracle subscription</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inlined)]
-        public string LastOperationStatusDetail { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).LastOperationStatusDetail; }
-
-        /// <summary>Internal Acessors for AddSubscriptionOperationState</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.AddSubscriptionOperationState { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).AddSubscriptionOperationState; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).AddSubscriptionOperationState = value ?? null; }
-
-        /// <summary>Internal Acessors for AzureSubscriptionId</summary>
-        System.Collections.Generic.List<string> Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.AzureSubscriptionId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).AzureSubscriptionId; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).AzureSubscriptionId = value ?? null /* arrayOf */; }
-
         /// <summary>Internal Acessors for CloudAccountId</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.CloudAccountId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountId; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountId = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.CloudAccountId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountId; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountId = value; }
 
         /// <summary>Internal Acessors for CloudAccountState</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.CloudAccountState { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountState; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountState = value ?? null; }
-
-        /// <summary>Internal Acessors for LastOperationStatusDetail</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.LastOperationStatusDetail { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).LastOperationStatusDetail; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).LastOperationStatusDetail = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.CloudAccountState { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountState; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).CloudAccountState = value; }
 
         /// <summary>Internal Acessors for Plan</summary>
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPlan Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.Plan { get => (this._plan = this._plan ?? new Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.Plan()); set { {_plan = value;} } }
@@ -70,40 +49,22 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionProperties Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.Property { get => (this._property = this._property ?? new Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.OracleSubscriptionProperties()); set { {_property = value;} } }
 
         /// <summary>Internal Acessors for ProvisioningState</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).ProvisioningState = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).ProvisioningState = value; }
 
         /// <summary>Internal Acessors for SaasSubscriptionId</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.SaasSubscriptionId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).SaasSubscriptionId; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).SaasSubscriptionId = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionInternal.SaasSubscriptionId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).SaasSubscriptionId; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IOracleSubscriptionPropertiesInternal)Property).SaasSubscriptionId = value; }
 
         /// <summary>Internal Acessors for Id</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.Id { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Id; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Id = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.Id { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Id; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Id = value; }
 
         /// <summary>Internal Acessors for Name</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.Name { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Name; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Name = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.Name { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Name; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Name = value; }
 
         /// <summary>Internal Acessors for SystemData</summary>
-        Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ISystemData Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemData = value ?? null /* model class */; }
-
-        /// <summary>Internal Acessors for SystemDataCreatedAt</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt = value ?? default(global::System.DateTime); }
-
-        /// <summary>Internal Acessors for SystemDataCreatedBy</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy = value ?? null; }
-
-        /// <summary>Internal Acessors for SystemDataCreatedByType</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType = value ?? null; }
-
-        /// <summary>Internal Acessors for SystemDataLastModifiedAt</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt = value ?? default(global::System.DateTime); }
-
-        /// <summary>Internal Acessors for SystemDataLastModifiedBy</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy = value ?? null; }
-
-        /// <summary>Internal Acessors for SystemDataLastModifiedByType</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType = value ?? null; }
+        Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ISystemData Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemData = value; }
 
         /// <summary>Internal Acessors for Type</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.Type { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Type; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Type = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal.Type { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Type; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).Type = value; }
 
         /// <summary>The name of the resource</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
@@ -168,31 +129,31 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         /// Azure Resource Manager metadata containing createdBy and modifiedBy information.
         /// </summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
-        internal Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ISystemData SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemData = value ?? null /* model class */; }
+        internal Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ISystemData SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemData; }
 
         /// <summary>The timestamp of resource creation (UTC).</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
-        public global::System.DateTime? SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; }
+        public global::System.DateTime? SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt = value ?? default(global::System.DateTime); }
 
         /// <summary>The identity that created the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
-        public string SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; }
+        public string SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy = value ?? null; }
 
         /// <summary>The type of identity that created the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
-        public string SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; }
+        public string SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType = value ?? null; }
 
         /// <summary>The timestamp of resource last modification (UTC)</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
-        public global::System.DateTime? SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; }
+        public global::System.DateTime? SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt = value ?? default(global::System.DateTime); }
 
         /// <summary>The identity that last modified the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
-        public string SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; }
+        public string SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy = value ?? null; }
 
         /// <summary>The type of identity that last modified the resource.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inherited)]
-        public string SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; }
+        public string SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType = value ?? null; }
 
         /// <summary>Term Unit. P1Y, P3Y, etc, see Durations https://en.wikipedia.org/wiki/ISO_8601</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Inlined)]
@@ -227,29 +188,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.IJsonSerializable,
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IProxyResource
     {
-        /// <summary>State of the add Azure subscription operation on Oracle subscription</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = false,
-        ReadOnly = true,
-        Read = true,
-        Create = false,
-        Update = false,
-        Description = @"State of the add Azure subscription operation on Oracle subscription",
-        SerializedName = @"addSubscriptionOperationState",
-        PossibleTypes = new [] { typeof(string) })]
-        [global::Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Succeeded", "Updating", "Failed")]
-        string AddSubscriptionOperationState { get;  }
-        /// <summary>Azure subscriptions to be added</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = false,
-        ReadOnly = true,
-        Read = true,
-        Create = false,
-        Update = false,
-        Description = @"Azure subscriptions to be added",
-        SerializedName = @"azureSubscriptionIds",
-        PossibleTypes = new [] { typeof(string) })]
-        System.Collections.Generic.List<string> AzureSubscriptionId { get;  }
         /// <summary>Cloud Account Id</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
@@ -285,17 +223,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         PossibleTypes = new [] { typeof(string) })]
         [global::Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Retain", "Reset")]
         string Intent { get; set; }
-        /// <summary>Status details of the last operation on Oracle subscription</summary>
-        [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = false,
-        ReadOnly = true,
-        Read = true,
-        Create = false,
-        Update = false,
-        Description = @"Status details of the last operation on Oracle subscription",
-        SerializedName = @"lastOperationStatusDetail",
-        PossibleTypes = new [] { typeof(string) })]
-        string LastOperationStatusDetail { get;  }
         /// <summary>A user defined name of the 3rd Party Artifact that is being procured.</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
         Required = false,
@@ -407,11 +334,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
     internal partial interface IOracleSubscriptionInternal :
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IProxyResourceInternal
     {
-        /// <summary>State of the add Azure subscription operation on Oracle subscription</summary>
-        [global::Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Succeeded", "Updating", "Failed")]
-        string AddSubscriptionOperationState { get; set; }
-        /// <summary>Azure subscriptions to be added</summary>
-        System.Collections.Generic.List<string> AzureSubscriptionId { get; set; }
         /// <summary>Cloud Account Id</summary>
         string CloudAccountId { get; set; }
         /// <summary>Cloud Account provisioning state.</summary>
@@ -420,8 +342,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         /// <summary>Intent for the update operation</summary>
         [global::Microsoft.Azure.PowerShell.Cmdlets.Oracle.PSArgumentCompleterAttribute("Retain", "Reset")]
         string Intent { get; set; }
-        /// <summary>Status details of the last operation on Oracle subscription</summary>
-        string LastOperationStatusDetail { get; set; }
         /// <summary>Details of the resource plan.</summary>
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.IPlan Plan { get; set; }
         /// <summary>A user defined name of the 3rd Party Artifact that is being procured.</summary>

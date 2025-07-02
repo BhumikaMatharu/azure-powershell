@@ -42,67 +42,67 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models
         public string ManagedByResourceId { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ManagedByResourceId; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ManagedByResourceId = value ?? null; }
 
         /// <summary>Internal Acessors for Id</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.Id { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Id; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Id = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.Id { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Id; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Id = value; }
 
         /// <summary>Internal Acessors for Name</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.Name { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Name; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Name = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.Name { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Name; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Name = value; }
 
         /// <summary>Internal Acessors for SystemData</summary>
-        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.ISystemData Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemData = value ?? null /* model class */; }
+        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.ISystemData Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemData { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemData; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemData = value; }
 
         /// <summary>Internal Acessors for SystemDataCreatedAt</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt = value ?? default(global::System.DateTime); }
+        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataCreatedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedAt = value; }
 
         /// <summary>Internal Acessors for SystemDataCreatedBy</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataCreatedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedBy = value; }
 
         /// <summary>Internal Acessors for SystemDataCreatedByType</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataCreatedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataCreatedByType = value; }
 
         /// <summary>Internal Acessors for SystemDataLastModifiedAt</summary>
-        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt = value ?? default(global::System.DateTime); }
+        global::System.DateTime? Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataLastModifiedAt { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedAt = value; }
 
         /// <summary>Internal Acessors for SystemDataLastModifiedBy</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataLastModifiedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedBy = value; }
 
         /// <summary>Internal Acessors for SystemDataLastModifiedByType</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.SystemDataLastModifiedByType { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).SystemDataLastModifiedByType = value; }
 
         /// <summary>Internal Acessors for Type</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.Type { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Type; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Type = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal.Type { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Type; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IResourceInternal)__proxyResource).Type = value; }
 
         /// <summary>Internal Acessors for CreationData</summary>
-        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.ISourceCreationData Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.CreationData { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).CreationData; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).CreationData = value ?? null /* model class */; }
+        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.ISourceCreationData Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.CreationData { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).CreationData; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).CreationData = value; }
 
         /// <summary>Internal Acessors for ManagedBy</summary>
-        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IManagedByInfo Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.ManagedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ManagedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ManagedBy = value ?? null /* model class */; }
+        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IManagedByInfo Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.ManagedBy { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ManagedBy; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ManagedBy = value; }
 
         /// <summary>Internal Acessors for Property</summary>
         Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeProperties Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.Property { get => (this._property = this._property ?? new Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.VolumeProperties()); set { {_property = value;} } }
 
         /// <summary>Internal Acessors for ProvisioningState</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ProvisioningState = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).ProvisioningState = value; }
 
         /// <summary>Internal Acessors for StorageTarget</summary>
-        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IIscsiTargetInfo Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTarget { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTarget; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTarget = value ?? null /* model class */; }
+        Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IIscsiTargetInfo Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTarget { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTarget; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTarget = value; }
 
         /// <summary>Internal Acessors for StorageTargetIqn</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetIqn { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetIqn; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetIqn = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetIqn { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetIqn; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetIqn = value; }
 
         /// <summary>Internal Acessors for StorageTargetPortalHostname</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetPortalHostname { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalHostname; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalHostname = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetPortalHostname { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalHostname; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalHostname = value; }
 
         /// <summary>Internal Acessors for StorageTargetPortalPort</summary>
-        int? Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetPortalPort { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalPort; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalPort = value ?? default(int); }
+        int? Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetPortalPort { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalPort; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetPortalPort = value; }
 
         /// <summary>Internal Acessors for StorageTargetProvisioningState</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetProvisioningState = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetProvisioningState = value; }
 
         /// <summary>Internal Acessors for StorageTargetStatus</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetStatus { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetStatus; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetStatus = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.StorageTargetStatus { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetStatus; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).StorageTargetStatus = value; }
 
         /// <summary>Internal Acessors for VolumeId</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.VolumeId { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).VolumeId; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).VolumeId = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumeInternal.VolumeId { get => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).VolumeId; set => ((Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Models.IVolumePropertiesInternal)Property).VolumeId = value; }
 
         /// <summary>The name of the resource</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.Origin(Microsoft.Azure.PowerShell.Cmdlets.ElasticSan.PropertyOrigin.Inherited)]

@@ -14,8 +14,7 @@ Creates a new object of type PSSqlConflictResolutionPolicy. It can be passed as 
 
 ```
 New-AzCosmosDBSqlConflictResolutionPolicy -Type <String> [-Path <String>]
- [-ConflictResolutionProcedure <String>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ [-ConflictResolutionProcedure <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

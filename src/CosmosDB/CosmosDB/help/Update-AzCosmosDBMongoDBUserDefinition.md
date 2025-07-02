@@ -5,74 +5,88 @@ online version: https://learn.microsoft.com/powershell/module/az.cosmosdb/update
 schema: 2.0.0
 ---
 
-# Update-AzCosmosDBMongoDBUserDefinition
+# New-AzCosmosDBMongoDBUserDefinition
 
 ## SYNOPSIS
-This cmdlet updates an existing MongoDB user definition in a specified Cosmos DB account.
+Update an existing CosmosDB MongoDB User Definition.
 
 ## SYNTAX
 
 ### ByFieldsDataActionsParameterSet (Default)
 ```
-Update-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String>
- [-Mechanisms <String>] -DatabaseName <String>
+New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String> [-Mechanisms <String>]
+ -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
- [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByNameParameterSet
 ```
-Update-AzCosmosDBMongoDBUserDefinition -ResourceGroupName <String> -AccountName <String> -Id <String>
+New-AzCosmosDBMongoDBUserDefinition -ResourceGroupName <String> -AccountName <String> -Id <String>
  -UserName <String> -Password <String> [-Mechanisms <String>] -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
- [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-CustomData <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ByParentObjectParameterSet
+### ByParentObjectDataActionsParameterSet
 ```
-Update-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String>
- [-Mechanisms <String>] -DatabaseName <String>
+New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String> [-Mechanisms <String>]
+ -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
  [-CustomData <String>] -DatabaseAccountObject <PSDatabaseAccountGetResults>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ByObjectParameterSet
+### ByParentObjectPermissionsParameterSet
 ```
-Update-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String>
- [-Mechanisms <String>] -DatabaseName <String>
+New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String> [-Mechanisms <String>]
+ -DatabaseName <String>
  -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
- [-CustomData <String>] -InputObject <PSMongoDBUserDefinitionGetResults>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [-CustomData <String>] -DatabaseAccountObject <PSDatabaseAccountGetResults>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByResourceIdParameterSet
+```
+New-AzCosmosDBMongoDBUserDefinition -Id <String> -UserName <String> -Password <String> [-Mechanisms <String>]
+ -DatabaseName <String>
+ -Roles <System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]>
+ [-CustomData <String>] [-ResourceId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This cmdlet updates an existing MongoDB user definition in a specified Cosmos DB account.
+Update an existing CosmosDB MongoDB User Definition.
+In order to specify the Role Definition's Roles,  use the New-AzCosmosDBMongoDBRole cmdlet to create PSMongoRole objects to pass in through the Roles parameter.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Default
 ```powershell
-$subscriptionId = "00000000-0000-0000-0000-000000000000"
-$rgName = "myResourceGroup"
-$AccountName = "myCosmosDBAccount"
-$DatabaseName = "myDatabase"
-$Username1 = "myUser"
-$UserDefinitionId1 = $DatabaseName + "." + $Username1
-$Pass1 = "******"
-$Mechanisms = "SCRAM-SHA-256"
-$CustomData = "additionalInfo"
-$UpdatedRoles = @("role1", "role2")
-$FullyQualifiedUserDefinitionId1 = "/subscriptions/$subscriptionId/resourceGroups/$rgName/providers/Microsoft.DocumentDB/databaseAccounts/$AccountName/mongodbUserDefinitions/$UserDefinitionId1"
+$Roles = New-AzCosmosDBMongoDBRole -Database test -Role roleName
 
-$UserDef1 = Update-AzCosmosDBMongoDBUserDefinition -ResourceGroupName $rgName -AccountName $AccountName -Id $FullyQualifiedUserDefinitionId1 -UserName $Username1 -Password $Pass1 -Mechanisms $Mechanisms -CustomData $CustomData -DatabaseName $DatabaseName -Roles $UpdatedRoles
+
+Update-AzCosmosDBMongoDBUserDefinition `
+	-AccountName accountName `
+	-ResourceGroupName resourceGroupName `
+	-DatabaseName 'test' `
+	-UserName 'myName' `
+	-Password 'pass' `
+	-Id id `
+	-Mechanisms 'SCRAM-SHA-256' `
+	-CustomData 'test' `
+	-Roles $Roles 
 ```
 
-This command updates an existing MongoDB user definition in the specified Cosmos DB account.
+```output
+Id           : /subscriptions/80be3961-0521-4a0a-8570-5cd5a4e2f98c/resourceGroups/mongorbactest02/providers/Microsoft.DocumentDB/databaseAccounts/ashwini001/mongodbUserDefinitions/test.testuser1
+UserName     : testuser1
+Password     :
+Mechanisms   : SCRAM-SHA-256
+DatabaseName : test
+CustomData   :
+Roles        : {Microsoft.Azure.Management.CosmosDB.Models.Role}
+```
 
 ## PARAMETERS
 
@@ -107,11 +121,11 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseAccountObject
-CosmosDB Account object
+Role definition object.
 
 ```yaml
 Type: Microsoft.Azure.Commands.CosmosDB.Models.PSDatabaseAccountGetResults
-Parameter Sets: ByParentObjectParameterSet
+Parameter Sets: ByParentObjectDataActionsParameterSet, ByParentObjectPermissionsParameterSet
 Aliases:
 
 Required: True
@@ -152,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Unique ID (\<Databasename\>.\<UserName\>) for the MongoDB User Definition.
+Role Definition Unique Id(Format is `<databaseName>.<roleName>`).
 
 ```yaml
 Type: System.String
@@ -163,21 +177,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-A MongoDB User Definition for MongoDB.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoDBUserDefinitionGetResults
-Parameter Sets: ByObjectParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -226,8 +225,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResourceId
+ResourceId of the resource.
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Roles
-List of Inherited roles for MongoDB Role Definition.
+Set of inherited roles for CosmosDB MongoDB API Role Definition.
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoRole]
@@ -266,7 +280,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -282,7 +296,7 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -292,14 +306,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.CosmosDB.Models.PSDatabaseAccountGetResults
-
-### Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoDBUserDefinitionGetResults
-
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.Models.MongoDB.PSMongoDBUserDefinitionGetResults
-
+### Microsoft.Azure.Commands.CosmosDB.Models.PSMongoDBUserDefinitionGetResults
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-AzCosmosDBMongoDBUserDefinition](./Get-AzCosmosDBMongoDBUserDefinition.md)
+
+[New-AzCosmosDBMongoDBUserDefinition](./New-AzCosmosDBMongoDBUserDefinition.md)
+
+[Remove-AzCosmosDBMongoDBUserDefinition](./Remove-AzCosmosDBMongoDBUserDefinition.md)

@@ -15,22 +15,21 @@ Test out the connection to the database server
 ### Test (Default)
 ```
 Test-AzPostgreSqlFlexibleServerConnect -Name <String> -ResourceGroupName <String> [-DatabaseName <String>]
- -AdministratorLoginPassword <SecureString> [-Timeout <Int32>] [-AdministratorUserName <String>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+ -AdministratorLoginPassword <SecureString> [-AdministratorUserName <String>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ### TestAndQuery
 ```
 Test-AzPostgreSqlFlexibleServerConnect -Name <String> -ResourceGroupName <String> [-DatabaseName <String>]
- -QueryText <String> -AdministratorLoginPassword <SecureString> [-Timeout <Int32>]
- [-AdministratorUserName <String>] [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+ -QueryText <String> -AdministratorLoginPassword <SecureString> [-AdministratorUserName <String>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### TestViaIdentityAndQuery
 ```
 Test-AzPostgreSqlFlexibleServerConnect [-DatabaseName <String>] -QueryText <String>
- -AdministratorLoginPassword <SecureString> [-Timeout <Int32>] [-AdministratorUserName <String>]
+ -AdministratorLoginPassword <SecureString> [-AdministratorUserName <String>]
  -InputObject <IPostgreSqlIdentity> [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
@@ -38,8 +37,8 @@ Test-AzPostgreSqlFlexibleServerConnect [-DatabaseName <String>] -QueryText <Stri
 ### TestViaIdentity
 ```
 Test-AzPostgreSqlFlexibleServerConnect [-DatabaseName <String>] -AdministratorLoginPassword <SecureString>
- [-Timeout <Int32>] [-AdministratorUserName <String>] -InputObject <IPostgreSqlIdentity>
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+ [-AdministratorUserName <String>] -InputObject <IPostgreSqlIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -222,22 +221,6 @@ Parameter Sets: Test, TestAndQuery
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Timeout
-The timeout in seconds for query execution.
-Valid range is 1-31536000 seconds.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

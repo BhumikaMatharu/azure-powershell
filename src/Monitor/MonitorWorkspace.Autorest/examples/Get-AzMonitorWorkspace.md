@@ -11,7 +11,7 @@ azps-monitor-workspace eastus   Succeeded         Enabled             azps_test_
 
 List the specific Azure Monitor workspace.
 
-### Example 2: List the specific Azure Monitor workspace by Resource Group.
+### Example 2: List the specific Azure Monitor workspace by Resource Groupy.
 ```powershell
 Get-AzMonitorWorkspace -ResourceGroupName azps_test_group
 ```
@@ -22,7 +22,7 @@ Name                   Location ProvisioningState PublicNetworkAccess ResourceGr
 azps-monitor-workspace eastus   Succeeded         Enabled             azps_test_group
 ```
 
-List the specific Azure Monitor workspace by Resource Group.
+List the specific Azure Monitor workspace by Resource Groupy.
 
 ### Example 3: Get the specific Azure Monitor workspace by monitor workspace name.
 ```powershell

@@ -14,7 +14,7 @@
 
 <#
 .SYNOPSIS
-Get the default Iot security analytics
+Get the defualt Iot security analytics
 #>
 function Get-AzureRmIotSecurityAnalytics-SolutionScope-Single
 {

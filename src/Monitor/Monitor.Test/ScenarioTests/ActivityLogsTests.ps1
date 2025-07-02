@@ -26,7 +26,7 @@ function Test-GetAzureLogAllParameters
 
     try 
     {
-		Write-Verbose " ****** Get ActivityLog records by correlationId "
+		Write-Verbose " ****** Get ActivityLog records by corrrelationId "
         $actual = Get-AzActivityLog -CorrelationId $correlation -starttime 2015-03-02T18:00:00Z -endtime 2015-03-02T20:00:00Z -detailedOutput
 
         # Assert TODO add more asserts

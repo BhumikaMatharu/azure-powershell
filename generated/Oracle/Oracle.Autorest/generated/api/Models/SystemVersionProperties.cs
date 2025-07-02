@@ -13,12 +13,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
         Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ISystemVersionPropertiesInternal
     {
 
+        /// <summary>Internal Acessors for SystemVersion</summary>
+        string Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.ISystemVersionPropertiesInternal.SystemVersion { get => this._systemVersion; set { {_systemVersion = value;} } }
+
         /// <summary>Backing field for <see cref="SystemVersion" /> property.</summary>
         private string _systemVersion;
 
         /// <summary>A valid Oracle System Version</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Origin(Microsoft.Azure.PowerShell.Cmdlets.Oracle.PropertyOrigin.Owned)]
-        public string SystemVersion { get => this._systemVersion; set => this._systemVersion = value; }
+        public string SystemVersion { get => this._systemVersion; }
 
         /// <summary>Creates an new <see cref="SystemVersionProperties" /> instance.</summary>
         public SystemVersionProperties()
@@ -32,15 +35,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models
     {
         /// <summary>A valid Oracle System Version</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.Oracle.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
+        Required = false,
+        ReadOnly = true,
         Read = true,
-        Create = true,
-        Update = true,
+        Create = false,
+        Update = false,
         Description = @"A valid Oracle System Version",
         SerializedName = @"systemVersion",
         PossibleTypes = new [] { typeof(string) })]
-        string SystemVersion { get; set; }
+        string SystemVersion { get;  }
 
     }
     /// System Version Resource model

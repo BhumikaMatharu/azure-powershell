@@ -31,7 +31,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models
         public RecoveryPointTier RecoveryPointTier;
 
         /// <summary>
-        /// Recovery point move readiness info
+        /// Recovery point move rediness info
         /// </summary>
         public IDictionary<string, RecoveryPointMoveReadinessInfo> RecoveryPointMoveReadinessInfo;
 

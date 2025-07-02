@@ -45,20 +45,17 @@ CLUSTERINPUTOBJECT <IVMwareIdentity>: Identity Parameter
   [GatewayId <String>]: The ID of the NSX Gateway
   [GlobalReachConnectionName <String>]: Name of the global reach connection
   [HcxEnterpriseSiteName <String>]: Name of the HCX Enterprise Site
-  [HostId <String>]: The host identifier.
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
   [PlacementPolicyName <String>]: Name of the placement policy.
   [PortMirroringId <String>]: ID of the NSX port mirroring profile.
   [PrivateCloudName <String>]: Name of the private cloud
-  [ProvisionedNetworkName <String>]: Name of the cloud link.
   [PublicIPId <String>]: ID of the DNS zone.
   [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
   [ScriptCmdletName <String>]: Name of the script cmdlet.
   [ScriptExecutionName <String>]: Name of the script cmdlet.
   [ScriptPackageName <String>]: Name of the script package.
   [SegmentId <String>]: The ID of the NSX Segment
-  [StoragePolicyName <String>]: Name of the storage policy.
   [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
   [VMGroupId <String>]: ID of the VM group.
   [VirtualMachineId <String>]: ID of the virtual machine.
@@ -75,20 +72,17 @@ INPUTOBJECT <IVMwareIdentity>: Identity Parameter
   [GatewayId <String>]: The ID of the NSX Gateway
   [GlobalReachConnectionName <String>]: Name of the global reach connection
   [HcxEnterpriseSiteName <String>]: Name of the HCX Enterprise Site
-  [HostId <String>]: The host identifier.
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
   [PlacementPolicyName <String>]: Name of the placement policy.
   [PortMirroringId <String>]: ID of the NSX port mirroring profile.
   [PrivateCloudName <String>]: Name of the private cloud
-  [ProvisionedNetworkName <String>]: Name of the cloud link.
   [PublicIPId <String>]: ID of the DNS zone.
   [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
   [ScriptCmdletName <String>]: Name of the script cmdlet.
   [ScriptExecutionName <String>]: Name of the script cmdlet.
   [ScriptPackageName <String>]: Name of the script package.
   [SegmentId <String>]: The ID of the NSX Segment
-  [StoragePolicyName <String>]: Name of the storage policy.
   [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
   [VMGroupId <String>]: ID of the VM group.
   [VirtualMachineId <String>]: ID of the virtual machine.
@@ -105,20 +99,17 @@ PRIVATECLOUDINPUTOBJECT <IVMwareIdentity>: Identity Parameter
   [GatewayId <String>]: The ID of the NSX Gateway
   [GlobalReachConnectionName <String>]: Name of the global reach connection
   [HcxEnterpriseSiteName <String>]: Name of the HCX Enterprise Site
-  [HostId <String>]: The host identifier.
   [Id <String>]: Resource identity path
   [Location <String>]: The name of the Azure region.
   [PlacementPolicyName <String>]: Name of the placement policy.
   [PortMirroringId <String>]: ID of the NSX port mirroring profile.
   [PrivateCloudName <String>]: Name of the private cloud
-  [ProvisionedNetworkName <String>]: Name of the cloud link.
   [PublicIPId <String>]: ID of the DNS zone.
   [ResourceGroupName <String>]: The name of the resource group. The name is case insensitive.
   [ScriptCmdletName <String>]: Name of the script cmdlet.
   [ScriptExecutionName <String>]: Name of the script cmdlet.
   [ScriptPackageName <String>]: Name of the script package.
   [SegmentId <String>]: The ID of the NSX Segment
-  [StoragePolicyName <String>]: Name of the storage policy.
   [SubscriptionId <String>]: The ID of the target subscription. The value must be an UUID.
   [VMGroupId <String>]: ID of the VM group.
   [VirtualMachineId <String>]: ID of the virtual machine.
@@ -230,12 +221,6 @@ param(
     [System.Management.Automation.SwitchParameter]
     # Run the command asynchronously
     ${NoWait},
-
-    [Parameter()]
-    [Microsoft.Azure.PowerShell.Cmdlets.VMware.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Returns true when the command succeeds
-    ${PassThru},
 
     [Parameter(DontShow)]
     [Microsoft.Azure.PowerShell.Cmdlets.VMware.Category('Runtime')]

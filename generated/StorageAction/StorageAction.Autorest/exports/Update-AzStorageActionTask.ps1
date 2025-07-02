@@ -16,13 +16,13 @@
 
 <#
 .Synopsis
-Asynchronously update a new storage task resource with the specified parameters.
-If a storage task is already created and a subsequent update request is issued with different properties, the storage task properties will be updated.
-If a storage task is already created and a subsequent update request is issued with the exact same set of properties, the request will succeed.
+Asynchronously creates a new storage task resource with the specified parameters.
+If a storage task is already created and a subsequent create request is issued with different properties, the storage task properties will be updated.
+If a storage task is already created and a subsequent create or update request is issued with the exact same set of properties, the request will succeed.
 .Description
-Asynchronously update a new storage task resource with the specified parameters.
-If a storage task is already created and a subsequent update request is issued with different properties, the storage task properties will be updated.
-If a storage task is already created and a subsequent update request is issued with the exact same set of properties, the request will succeed.
+Asynchronously creates a new storage task resource with the specified parameters.
+If a storage task is already created and a subsequent create request is issued with different properties, the storage task properties will be updated.
+If a storage task is already created and a subsequent create or update request is issued with the exact same set of properties, the request will succeed.
 .Example
 $elseoperation = New-AzStorageActionTaskOperationObject -Name DeleteBlob -OnFailure break -OnSuccess continue
 Update-AzStorageActionTask -Name mytask1 -ResourceGroupName group001 -ElseOperation $elseoperation
@@ -113,7 +113,7 @@ param(
     [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Category('Body')]
     [System.Nullable[System.Boolean]]
-    # Determines whether to enable a system-assigned identity for the resource.
+    # Decides if enable a system assigned identity for the resource.
     ${EnableSystemAssignedIdentity},
 
     [Parameter()]
@@ -219,15 +219,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            Write-Error "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-            exit
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -251,6 +242,8 @@ begin {
             UpdateViaIdentityExpanded = 'Az.StorageAction.private\Update-AzStorageActionTask_UpdateViaIdentityExpanded';
         }
         if (('UpdateExpanded') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -264,9 +257,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)

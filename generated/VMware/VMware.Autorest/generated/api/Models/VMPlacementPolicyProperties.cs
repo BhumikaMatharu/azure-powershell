@@ -31,7 +31,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.VMware.Models
         public string DisplayName { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal)__placementPolicyProperties).DisplayName; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal)__placementPolicyProperties).DisplayName = value ?? null; }
 
         /// <summary>Internal Acessors for ProvisioningState</summary>
-        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal)__placementPolicyProperties).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal)__placementPolicyProperties).ProvisioningState = value ?? null; }
+        string Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal.ProvisioningState { get => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal)__placementPolicyProperties).ProvisioningState; set => ((Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.IPlacementPolicyPropertiesInternal)__placementPolicyProperties).ProvisioningState = value; }
 
         /// <summary>The provisioning state</summary>
         [Microsoft.Azure.PowerShell.Cmdlets.VMware.Origin(Microsoft.Azure.PowerShell.Cmdlets.VMware.PropertyOrigin.Inherited)]

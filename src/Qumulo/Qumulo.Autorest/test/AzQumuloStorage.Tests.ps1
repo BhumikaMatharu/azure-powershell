@@ -38,7 +38,7 @@ Describe 'AzQumuloStorage' {
 
     It 'List1' {
         {
-            #Find one group of most resources
+            #Find one group of most resouces
             $result = Get-AzQumuloFileSystem -ResourceGroupName "pp-test"
             $result.Count | Should -BeGreaterThan 5
         } | Should -Not -Throw

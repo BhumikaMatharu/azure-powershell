@@ -30,7 +30,7 @@ function Test-SearchGetSearchResultsAndUpdate
 	Assert-NotNull $searchResult.Value
 	Assert-AreEqual $searchResult.Value.Count $top
 
-	# Make sure we return each doc as string for backward compatible.
+	# Makesure we return each doc as string for backward compatiable.
 	$stringType = "string".GetType()
 	$valueType = $searchResult.Value.GetType()
 	$valueIsString = $valueType.GenericTypeArguments.Contains($stringType)

@@ -313,7 +313,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task StorageTaskAssignmentList(string subscriptionId, string resourceGroupName, string storageTaskName, int? Maxpagesize, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task StorageTaskAssignmentList(string subscriptionId, string resourceGroupName, string storageTaskName, string Maxpagesize, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -329,7 +329,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + global::System.Uri.EscapeDataString(storageTaskName)
                         + "/storageTaskAssignments"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
                         ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
@@ -361,7 +361,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task StorageTaskAssignmentListViaIdentity(global::System.String viaIdentity, int? Maxpagesize, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task StorageTaskAssignmentListViaIdentity(global::System.String viaIdentity, string Maxpagesize, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -389,7 +389,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + storageTaskName
                         + "/storageTaskAssignments"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
                         ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
@@ -419,7 +419,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// A <see cref="global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult>"
         /// /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult> StorageTaskAssignmentListViaIdentityWithResult(global::System.String viaIdentity, int? Maxpagesize, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult> StorageTaskAssignmentListViaIdentityWithResult(global::System.String viaIdentity, string Maxpagesize, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -447,7 +447,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + storageTaskName
                         + "/storageTaskAssignments"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
                         ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
@@ -480,7 +480,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// A <see cref="global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult>"
         /// /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult> StorageTaskAssignmentListWithResult(string subscriptionId, string resourceGroupName, string storageTaskName, int? Maxpagesize, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskAssignmentsListResult> StorageTaskAssignmentListWithResult(string subscriptionId, string resourceGroupName, string storageTaskName, string Maxpagesize, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -496,7 +496,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + global::System.Uri.EscapeDataString(storageTaskName)
                         + "/storageTaskAssignments"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
                         ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
@@ -640,7 +640,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        internal async global::System.Threading.Tasks.Task StorageTaskAssignmentList_Validate(string subscriptionId, string resourceGroupName, string storageTaskName, int? Maxpagesize, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener)
+        internal async global::System.Threading.Tasks.Task StorageTaskAssignmentList_Validate(string subscriptionId, string resourceGroupName, string storageTaskName, string Maxpagesize, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener)
         {
             using( NoSynchronizationContext )
             {
@@ -653,14 +653,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                 await eventListener.AssertMinimumLength(nameof(storageTaskName),storageTaskName,3);
                 await eventListener.AssertMaximumLength(nameof(storageTaskName),storageTaskName,18);
                 await eventListener.AssertRegEx(nameof(storageTaskName), storageTaskName, @"^[a-z0-9]{3,18}$");
+                await eventListener.AssertNotNull(nameof(Maxpagesize),Maxpagesize);
             }
         }
 
         /// <summary>
-        /// Asynchronously update a new storage task resource with the specified parameters. If a storage task is already created
-        /// and a subsequent update request is issued with different properties, the storage task properties will be updated. If a
-        /// storage task is already created and a subsequent update request is issued with the exact same set of properties, the request
-        /// will succeed.
+        /// Asynchronously creates a new storage task resource with the specified parameters. If a storage task is already created
+        /// and a subsequent create request is issued with different properties, the storage task properties will be updated. If a
+        /// storage task is already created and a subsequent create or update request is issued with the exact same set of properties,
+        /// the request will succeed.
         /// </summary>
         /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
         /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
@@ -712,10 +713,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         }
 
         /// <summary>
-        /// Asynchronously update a new storage task resource with the specified parameters. If a storage task is already created
-        /// and a subsequent update request is issued with different properties, the storage task properties will be updated. If a
-        /// storage task is already created and a subsequent update request is issued with the exact same set of properties, the request
-        /// will succeed.
+        /// Asynchronously creates a new storage task resource with the specified parameters. If a storage task is already created
+        /// and a subsequent create request is issued with different properties, the storage task properties will be updated. If a
+        /// storage task is already created and a subsequent create or update request is issued with the exact same set of properties,
+        /// the request will succeed.
         /// </summary>
         /// <param name="viaIdentity"></param>
         /// <param name="body">The parameters to create a Storage Task.</param>
@@ -776,10 +777,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         }
 
         /// <summary>
-        /// Asynchronously update a new storage task resource with the specified parameters. If a storage task is already created
-        /// and a subsequent update request is issued with different properties, the storage task properties will be updated. If a
-        /// storage task is already created and a subsequent update request is issued with the exact same set of properties, the request
-        /// will succeed.
+        /// Asynchronously creates a new storage task resource with the specified parameters. If a storage task is already created
+        /// and a subsequent create request is issued with different properties, the storage task properties will be updated. If a
+        /// storage task is already created and a subsequent create or update request is issued with the exact same set of properties,
+        /// the request will succeed.
         /// </summary>
         /// <param name="viaIdentity"></param>
         /// <param name="body">The parameters to create a Storage Task.</param>
@@ -838,10 +839,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         }
 
         /// <summary>
-        /// Asynchronously update a new storage task resource with the specified parameters. If a storage task is already created
-        /// and a subsequent update request is issued with different properties, the storage task properties will be updated. If a
-        /// storage task is already created and a subsequent update request is issued with the exact same set of properties, the request
-        /// will succeed.
+        /// Asynchronously creates a new storage task resource with the specified parameters. If a storage task is already created
+        /// and a subsequent create request is issued with different properties, the storage task properties will be updated. If a
+        /// storage task is already created and a subsequent create or update request is issued with the exact same set of properties,
+        /// the request will succeed.
         /// </summary>
         /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
         /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
@@ -892,10 +893,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         }
 
         /// <summary>
-        /// Asynchronously update a new storage task resource with the specified parameters. If a storage task is already created
-        /// and a subsequent update request is issued with different properties, the storage task properties will be updated. If a
-        /// storage task is already created and a subsequent update request is issued with the exact same set of properties, the request
-        /// will succeed.
+        /// Asynchronously creates a new storage task resource with the specified parameters. If a storage task is already created
+        /// and a subsequent create request is issued with different properties, the storage task properties will be updated. If a
+        /// storage task is already created and a subsequent create or update request is issued with the exact same set of properties,
+        /// the request will succeed.
         /// </summary>
         /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
         /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
@@ -944,10 +945,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         }
 
         /// <summary>
-        /// Asynchronously update a new storage task resource with the specified parameters. If a storage task is already created
-        /// and a subsequent update request is issued with different properties, the storage task properties will be updated. If a
-        /// storage task is already created and a subsequent update request is issued with the exact same set of properties, the request
-        /// will succeed.
+        /// Asynchronously creates a new storage task resource with the specified parameters. If a storage task is already created
+        /// and a subsequent create request is issued with different properties, the storage task properties will be updated. If a
+        /// storage task is already created and a subsequent create or update request is issued with the exact same set of properties,
+        /// the request will succeed.
         /// </summary>
         /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
         /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
@@ -1011,17 +1012,17 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                 global::System.Net.Http.HttpResponseMessage _response = null;
                 try
                 {
-                    // this operation supports x-ms-long-running-operation
-                    var _originalUri = request.RequestUri.AbsoluteUri;
                     var sendTask = sender.SendAsync(request, eventListener);
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeCall, request); if( eventListener.Token.IsCancellationRequested ) { return null; }
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 0); if( eventListener.Token.IsCancellationRequested ) { return null; }
                     _response = await sendTask;
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.ResponseCreated, _response); if( eventListener.Token.IsCancellationRequested ) { return null; }
-                    // declared final-state-via: azure-async-operation
+                    // this operation supports x-ms-long-running-operation
+                    var _originalUri = request.RequestUri.AbsoluteUri;
+                    // declared final-state-via: location
+                    var _finalUri = _response.GetFirstHeader(@"Location");
                     var asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
                     var location = _response.GetFirstHeader(@"Location");
-                    var operationLocation = _response.GetFirstHeader(@"Operation-Location");
                     while (request.Method == System.Net.Http.HttpMethod.Put && _response.StatusCode == global::System.Net.HttpStatusCode.OK || _response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
                     {
                         // delay before making the next polling request
@@ -1034,10 +1035,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Location"))) {
                             location = _response.GetFirstHeader(@"Location");
                         }
-                        if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Operation-Location"))) {
-                            operationLocation = _response.GetFirstHeader(@"Operation-Location");
-                        }
-                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? global::System.String.IsNullOrEmpty(operationLocation) ? _originalUri : operationLocation : location : asyncOperation;
+                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? _originalUri : location : asyncOperation;
                         request = request.CloneAndDispose(new global::System.Uri(_uri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
 
                         // and let's look at the current response body and see if we have some information we can give back to the listener
@@ -1097,7 +1095,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         }
                         // we are done polling, do a request on final target?
                         // create a new request with the final uri
-                        request = request.CloneAndDispose(new global::System.Uri(_originalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
+                        request = request.CloneAndDispose(new global::System.Uri(_finalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
 
                         // drop the old response
                         _response?.Dispose();
@@ -1165,17 +1163,17 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                 global::System.Net.Http.HttpResponseMessage _response = null;
                 try
                 {
-                    // this operation supports x-ms-long-running-operation
-                    var _originalUri = request.RequestUri.AbsoluteUri;
                     var sendTask = sender.SendAsync(request, eventListener);
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeCall, request); if( eventListener.Token.IsCancellationRequested ) { return; }
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 0); if( eventListener.Token.IsCancellationRequested ) { return; }
                     _response = await sendTask;
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.ResponseCreated, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-                    // declared final-state-via: azure-async-operation
+                    // this operation supports x-ms-long-running-operation
+                    var _originalUri = request.RequestUri.AbsoluteUri;
+                    // declared final-state-via: location
+                    var _finalUri = _response.GetFirstHeader(@"Location");
                     var asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
                     var location = _response.GetFirstHeader(@"Location");
-                    var operationLocation = _response.GetFirstHeader(@"Operation-Location");
                     while (request.Method == System.Net.Http.HttpMethod.Put && _response.StatusCode == global::System.Net.HttpStatusCode.OK || _response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
                     {
                         // delay before making the next polling request
@@ -1188,284 +1186,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Location"))) {
                             location = _response.GetFirstHeader(@"Location");
                         }
-                        if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Operation-Location"))) {
-                            operationLocation = _response.GetFirstHeader(@"Operation-Location");
-                        }
-                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? global::System.String.IsNullOrEmpty(operationLocation) ? _originalUri : operationLocation : location : asyncOperation;
-                        request = request.CloneAndDispose(new global::System.Uri(_uri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
-
-                        // and let's look at the current response body and see if we have some information we can give back to the listener
-                        var content = await _response.Content.ReadAsStringAsync();
-
-                        // drop the old response
-                        _response?.Dispose();
-
-                        // make the polling call
-                        _response = await sender.SendAsync(request, eventListener);
-                        await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Polling, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-
-                          // if we got back an OK, take a peek inside and see if it's done
-                          if( _response.StatusCode == global::System.Net.HttpStatusCode.OK)
-                          {
-                              var error = false;
-                              try {
-                                  if( Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonNode.Parse(await _response.Content.ReadAsStringAsync()) is Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonObject json)
-                                  {
-                                      var state = json.Property("properties")?.PropertyT<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonString>("provisioningState") ?? json.PropertyT<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonString>("status");
-                                      if( state is null )
-                                      {
-                                          // the body doesn't contain any information that has the state of the LRO
-                                          // we're going to just get out, and let the consumer have the result
-                                          break;
-                                      }
-
-                                      switch( state?.ToString()?.ToLower() )
-                                      {
-                                        case "failed":
-                                            error = true;
-                                            break;
-                                        case "succeeded":
-                                        case "canceled":
-                                          // we're done polling.
-                                          break;
-
-                                        default:
-                                          // need to keep polling!
-                                          _response.StatusCode = global::System.Net.HttpStatusCode.Created;
-                                          continue;
-                                      }
-                                  }
-                              } catch {
-                                  // if we run into a problem peeking into the result,
-                                  // we really don't want to do anything special.
-                              }
-                              if (error) {
-                                  throw new Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.UndeclaredResponseException(_response);
-                              }
-                          }
-
-                        // check for terminal status code
-                        if (_response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
-                        {
-                            continue;
-                        }
-                        // we are done polling, do a request on final target?
-                        // create a new request with the final uri
-                        request = request.CloneAndDispose(new global::System.Uri(_originalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
-
-                        // drop the old response
-                        _response?.Dispose();
-
-                        // make the final call
-                        _response = await sender.SendAsync(request,  eventListener);
-                        await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Polling, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-                        break;
-                    }
-                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 100); if( eventListener.Token.IsCancellationRequested ) { return; }
-                    var _contentType = _response.Content.Headers.ContentType?.MediaType;
-
-                    switch ( _response.StatusCode )
-                    {
-                        case global::System.Net.HttpStatusCode.OK:
-                        {
-                            await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeResponseDispatch, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-                            await onOk(_response,_response.Content.ReadAsStringAsync().ContinueWith( body => Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.StorageTask.FromJson(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonNode.Parse(body.Result)) ));
-                            break;
-                        }
-                        default:
-                        {
-                            await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeResponseDispatch, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-                            await onDefault(_response,_response.Content.ReadAsStringAsync().ContinueWith( body => Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.ErrorResponse.FromJson(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonNode.Parse(body.Result)) ));
-                            break;
-                        }
-                    }
-                }
-                finally
-                {
-                    // finally statements
-                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Finally, request, _response);
-                    _response?.Dispose();
-                    request?.Dispose();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Validation method for <see cref="StorageTasksCreate" /> method. Call this like the actual call, but you will get validation
-        /// events back.
-        /// </summary>
-        /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
-        /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-        /// <param name="storageTaskName">The name of the storage task within the specified resource group. Storage task names must
-        /// be between 3 and 18 characters in length and use numbers and lower-case letters only.</param>
-        /// <param name="body">The parameters to create a Storage Task.</param>
-        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
-        /// <returns>
-        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
-        /// </returns>
-        internal async global::System.Threading.Tasks.Task StorageTasksCreate_Validate(string subscriptionId, string resourceGroupName, string storageTaskName, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTask body, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener)
-        {
-            using( NoSynchronizationContext )
-            {
-                await eventListener.AssertNotNull(nameof(subscriptionId),subscriptionId);
-                await eventListener.AssertRegEx(nameof(subscriptionId),subscriptionId,@"^[0-9a-fA-F]{8}(-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}$");
-                await eventListener.AssertNotNull(nameof(resourceGroupName),resourceGroupName);
-                await eventListener.AssertMinimumLength(nameof(resourceGroupName),resourceGroupName,1);
-                await eventListener.AssertMaximumLength(nameof(resourceGroupName),resourceGroupName,90);
-                await eventListener.AssertNotNull(nameof(storageTaskName),storageTaskName);
-                await eventListener.AssertMinimumLength(nameof(storageTaskName),storageTaskName,3);
-                await eventListener.AssertMaximumLength(nameof(storageTaskName),storageTaskName,18);
-                await eventListener.AssertRegEx(nameof(storageTaskName), storageTaskName, @"^[a-z0-9]{3,18}$");
-                await eventListener.AssertNotNull(nameof(body), body);
-                await eventListener.AssertObjectIsValid(nameof(body), body);
-            }
-        }
-
-        /// <summary>Delete the storage task resource.</summary>
-        /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
-        /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-        /// <param name="storageTaskName">The name of the storage task within the specified resource group. Storage task names must
-        /// be between 3 and 18 characters in length and use numbers and lower-case letters only.</param>
-        /// <param name="onNoContent">a delegate that is called when the remote service returns 204 (NoContent).</param>
-        /// <param name="onOk">a delegate that is called when the remote service returns 200 (OK).</param>
-        /// <param name="onDefault">a delegate that is called when the remote service returns default (any response code not handled
-        /// elsewhere).</param>
-        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
-        /// <param name="sender">an instance of an Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync pipeline to use to make the request.</param>
-        /// <returns>
-        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
-        /// </returns>
-        public async global::System.Threading.Tasks.Task StorageTasksDelete(string subscriptionId, string resourceGroupName, string storageTaskName, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onNoContent, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
-        {
-            var apiVersion = @"2023-01-01";
-            // Constant Parameters
-            using( NoSynchronizationContext )
-            {
-                // construct URL
-                var pathAndQuery = global::System.Text.RegularExpressions.Regex.Replace(
-                        "/subscriptions/"
-                        + global::System.Uri.EscapeDataString(subscriptionId)
-                        + "/resourceGroups/"
-                        + global::System.Uri.EscapeDataString(resourceGroupName)
-                        + "/providers/Microsoft.StorageActions/storageTasks/"
-                        + global::System.Uri.EscapeDataString(storageTaskName)
-                        + "?"
-                        + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
-                        ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
-
-                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.URLCreated, pathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
-
-                // generate request object
-                var _url = new global::System.Uri($"https://management.azure.com{pathAndQuery}");
-                var request =  new global::System.Net.Http.HttpRequestMessage(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Delete, _url);
-                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.RequestCreated, request.RequestUri.PathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
-
-                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.HeaderParametersAdded); if( eventListener.Token.IsCancellationRequested ) { return; }
-                // make the call
-                await this.StorageTasksDelete_Call (request, onNoContent,onOk,onDefault,eventListener,sender);
-            }
-        }
-
-        /// <summary>Delete the storage task resource.</summary>
-        /// <param name="viaIdentity"></param>
-        /// <param name="onNoContent">a delegate that is called when the remote service returns 204 (NoContent).</param>
-        /// <param name="onOk">a delegate that is called when the remote service returns 200 (OK).</param>
-        /// <param name="onDefault">a delegate that is called when the remote service returns default (any response code not handled
-        /// elsewhere).</param>
-        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
-        /// <param name="sender">an instance of an Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync pipeline to use to make the request.</param>
-        /// <returns>
-        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
-        /// </returns>
-        public async global::System.Threading.Tasks.Task StorageTasksDeleteViaIdentity(global::System.String viaIdentity, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onNoContent, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
-        {
-            var apiVersion = @"2023-01-01";
-            // Constant Parameters
-            using( NoSynchronizationContext )
-            {
-                // verify that Identity format is an exact match for uri
-
-                var _match = new global::System.Text.RegularExpressions.Regex("^/subscriptions/(?<subscriptionId>[^/]+)/resourceGroups/(?<resourceGroupName>[^/]+)/providers/Microsoft.StorageActions/storageTasks/(?<storageTaskName>[^/]+)$", global::System.Text.RegularExpressions.RegexOptions.IgnoreCase).Match(viaIdentity);
-                if (!_match.Success)
-                {
-                    throw new global::System.Exception("Invalid identity for URI '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageActions/storageTasks/{storageTaskName}'");
-                }
-
-                // replace URI parameters with values from identity
-                var subscriptionId = _match.Groups["subscriptionId"].Value;
-                var resourceGroupName = _match.Groups["resourceGroupName"].Value;
-                var storageTaskName = _match.Groups["storageTaskName"].Value;
-                // construct URL
-                var pathAndQuery = global::System.Text.RegularExpressions.Regex.Replace(
-                        "/subscriptions/"
-                        + subscriptionId
-                        + "/resourceGroups/"
-                        + resourceGroupName
-                        + "/providers/Microsoft.StorageActions/storageTasks/"
-                        + storageTaskName
-                        + "?"
-                        + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
-                        ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
-
-                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.URLCreated, pathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
-
-                // generate request object
-                var _url = new global::System.Uri($"https://management.azure.com{pathAndQuery}");
-                var request =  new global::System.Net.Http.HttpRequestMessage(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Delete, _url);
-                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.RequestCreated, request.RequestUri.PathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
-
-                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.HeaderParametersAdded); if( eventListener.Token.IsCancellationRequested ) { return; }
-                // make the call
-                await this.StorageTasksDelete_Call (request, onNoContent,onOk,onDefault,eventListener,sender);
-            }
-        }
-
-        /// <summary>Actual wire call for <see cref= "StorageTasksDelete" /> method.</summary>
-        /// <param name="request">the prepared HttpRequestMessage to send.</param>
-        /// <param name="onNoContent">a delegate that is called when the remote service returns 204 (NoContent).</param>
-        /// <param name="onOk">a delegate that is called when the remote service returns 200 (OK).</param>
-        /// <param name="onDefault">a delegate that is called when the remote service returns default (any response code not handled
-        /// elsewhere).</param>
-        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
-        /// <param name="sender">an instance of an Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync pipeline to use to make the request.</param>
-        /// <returns>
-        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
-        /// </returns>
-        internal async global::System.Threading.Tasks.Task StorageTasksDelete_Call(global::System.Net.Http.HttpRequestMessage request, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onNoContent, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
-        {
-            using( NoSynchronizationContext )
-            {
-                global::System.Net.Http.HttpResponseMessage _response = null;
-                try
-                {
-                    // this operation supports x-ms-long-running-operation
-                    var _originalUri = request.RequestUri.AbsoluteUri;
-                    var sendTask = sender.SendAsync(request, eventListener);
-                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeCall, request); if( eventListener.Token.IsCancellationRequested ) { return; }
-                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 0); if( eventListener.Token.IsCancellationRequested ) { return; }
-                    _response = await sendTask;
-                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.ResponseCreated, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-                    // declared final-state-via: azure-async-operation
-                    var _finalUri = _response.GetFirstHeader(@"Azure-AsyncOperation");
-                    var asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
-                    var location = _response.GetFirstHeader(@"Location");
-                    var operationLocation = _response.GetFirstHeader(@"Operation-Location");
-                    while (request.Method == System.Net.Http.HttpMethod.Put && _response.StatusCode == global::System.Net.HttpStatusCode.OK || _response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
-                    {
-                        // delay before making the next polling request
-                        await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.DelayBeforePolling, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-
-                        // while we wait, let's grab the headers and get ready to poll.
-                        if (!System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Azure-AsyncOperation"))) {
-                            asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
-                        }
-                        if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Location"))) {
-                            location = _response.GetFirstHeader(@"Location");
-                        }
-                        if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Operation-Location"))) {
-                            operationLocation = _response.GetFirstHeader(@"Operation-Location");
-                        }
-                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? global::System.String.IsNullOrEmpty(operationLocation) ? _originalUri : operationLocation : location : asyncOperation;
+                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? _originalUri : location : asyncOperation;
                         request = request.CloneAndDispose(new global::System.Uri(_uri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
 
                         // and let's look at the current response body and see if we have some information we can give back to the listener
@@ -1543,9 +1264,270 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         case global::System.Net.HttpStatusCode.OK:
                         {
                             await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeResponseDispatch, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-                            await onOk(_response);
+                            await onOk(_response,_response.Content.ReadAsStringAsync().ContinueWith( body => Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.StorageTask.FromJson(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonNode.Parse(body.Result)) ));
                             break;
                         }
+                        default:
+                        {
+                            await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeResponseDispatch, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
+                            await onDefault(_response,_response.Content.ReadAsStringAsync().ContinueWith( body => Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.ErrorResponse.FromJson(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonNode.Parse(body.Result)) ));
+                            break;
+                        }
+                    }
+                }
+                finally
+                {
+                    // finally statements
+                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Finally, request, _response);
+                    _response?.Dispose();
+                    request?.Dispose();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Validation method for <see cref="StorageTasksCreate" /> method. Call this like the actual call, but you will get validation
+        /// events back.
+        /// </summary>
+        /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
+        /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+        /// <param name="storageTaskName">The name of the storage task within the specified resource group. Storage task names must
+        /// be between 3 and 18 characters in length and use numbers and lower-case letters only.</param>
+        /// <param name="body">The parameters to create a Storage Task.</param>
+        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
+        /// <returns>
+        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
+        /// </returns>
+        internal async global::System.Threading.Tasks.Task StorageTasksCreate_Validate(string subscriptionId, string resourceGroupName, string storageTaskName, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTask body, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener)
+        {
+            using( NoSynchronizationContext )
+            {
+                await eventListener.AssertNotNull(nameof(subscriptionId),subscriptionId);
+                await eventListener.AssertRegEx(nameof(subscriptionId),subscriptionId,@"^[0-9a-fA-F]{8}(-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}$");
+                await eventListener.AssertNotNull(nameof(resourceGroupName),resourceGroupName);
+                await eventListener.AssertMinimumLength(nameof(resourceGroupName),resourceGroupName,1);
+                await eventListener.AssertMaximumLength(nameof(resourceGroupName),resourceGroupName,90);
+                await eventListener.AssertNotNull(nameof(storageTaskName),storageTaskName);
+                await eventListener.AssertMinimumLength(nameof(storageTaskName),storageTaskName,3);
+                await eventListener.AssertMaximumLength(nameof(storageTaskName),storageTaskName,18);
+                await eventListener.AssertRegEx(nameof(storageTaskName), storageTaskName, @"^[a-z0-9]{3,18}$");
+                await eventListener.AssertNotNull(nameof(body), body);
+                await eventListener.AssertObjectIsValid(nameof(body), body);
+            }
+        }
+
+        /// <summary>Delete the storage task resource.</summary>
+        /// <param name="subscriptionId">The ID of the target subscription. The value must be an UUID.</param>
+        /// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+        /// <param name="storageTaskName">The name of the storage task within the specified resource group. Storage task names must
+        /// be between 3 and 18 characters in length and use numbers and lower-case letters only.</param>
+        /// <param name="onNoContent">a delegate that is called when the remote service returns 204 (NoContent).</param>
+        /// <param name="onDefault">a delegate that is called when the remote service returns default (any response code not handled
+        /// elsewhere).</param>
+        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
+        /// <param name="sender">an instance of an Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync pipeline to use to make the request.</param>
+        /// <returns>
+        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
+        /// </returns>
+        public async global::System.Threading.Tasks.Task StorageTasksDelete(string subscriptionId, string resourceGroupName, string storageTaskName, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onNoContent, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        {
+            var apiVersion = @"2023-01-01";
+            // Constant Parameters
+            using( NoSynchronizationContext )
+            {
+                // construct URL
+                var pathAndQuery = global::System.Text.RegularExpressions.Regex.Replace(
+                        "/subscriptions/"
+                        + global::System.Uri.EscapeDataString(subscriptionId)
+                        + "/resourceGroups/"
+                        + global::System.Uri.EscapeDataString(resourceGroupName)
+                        + "/providers/Microsoft.StorageActions/storageTasks/"
+                        + global::System.Uri.EscapeDataString(storageTaskName)
+                        + "?"
+                        + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
+                        ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
+
+                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.URLCreated, pathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
+
+                // generate request object
+                var _url = new global::System.Uri($"https://management.azure.com{pathAndQuery}");
+                var request =  new global::System.Net.Http.HttpRequestMessage(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Delete, _url);
+                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.RequestCreated, request.RequestUri.PathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
+
+                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.HeaderParametersAdded); if( eventListener.Token.IsCancellationRequested ) { return; }
+                // make the call
+                await this.StorageTasksDelete_Call (request, onNoContent,onDefault,eventListener,sender);
+            }
+        }
+
+        /// <summary>Delete the storage task resource.</summary>
+        /// <param name="viaIdentity"></param>
+        /// <param name="onNoContent">a delegate that is called when the remote service returns 204 (NoContent).</param>
+        /// <param name="onDefault">a delegate that is called when the remote service returns default (any response code not handled
+        /// elsewhere).</param>
+        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
+        /// <param name="sender">an instance of an Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync pipeline to use to make the request.</param>
+        /// <returns>
+        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
+        /// </returns>
+        public async global::System.Threading.Tasks.Task StorageTasksDeleteViaIdentity(global::System.String viaIdentity, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onNoContent, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        {
+            var apiVersion = @"2023-01-01";
+            // Constant Parameters
+            using( NoSynchronizationContext )
+            {
+                // verify that Identity format is an exact match for uri
+
+                var _match = new global::System.Text.RegularExpressions.Regex("^/subscriptions/(?<subscriptionId>[^/]+)/resourceGroups/(?<resourceGroupName>[^/]+)/providers/Microsoft.StorageActions/storageTasks/(?<storageTaskName>[^/]+)$", global::System.Text.RegularExpressions.RegexOptions.IgnoreCase).Match(viaIdentity);
+                if (!_match.Success)
+                {
+                    throw new global::System.Exception("Invalid identity for URI '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageActions/storageTasks/{storageTaskName}'");
+                }
+
+                // replace URI parameters with values from identity
+                var subscriptionId = _match.Groups["subscriptionId"].Value;
+                var resourceGroupName = _match.Groups["resourceGroupName"].Value;
+                var storageTaskName = _match.Groups["storageTaskName"].Value;
+                // construct URL
+                var pathAndQuery = global::System.Text.RegularExpressions.Regex.Replace(
+                        "/subscriptions/"
+                        + subscriptionId
+                        + "/resourceGroups/"
+                        + resourceGroupName
+                        + "/providers/Microsoft.StorageActions/storageTasks/"
+                        + storageTaskName
+                        + "?"
+                        + "api-version=" + global::System.Uri.EscapeDataString(apiVersion)
+                        ,"\\?&*$|&*$|(\\?)&+|(&)&+","$1$2");
+
+                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.URLCreated, pathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
+
+                // generate request object
+                var _url = new global::System.Uri($"https://management.azure.com{pathAndQuery}");
+                var request =  new global::System.Net.Http.HttpRequestMessage(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Delete, _url);
+                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.RequestCreated, request.RequestUri.PathAndQuery); if( eventListener.Token.IsCancellationRequested ) { return; }
+
+                await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.HeaderParametersAdded); if( eventListener.Token.IsCancellationRequested ) { return; }
+                // make the call
+                await this.StorageTasksDelete_Call (request, onNoContent,onDefault,eventListener,sender);
+            }
+        }
+
+        /// <summary>Actual wire call for <see cref= "StorageTasksDelete" /> method.</summary>
+        /// <param name="request">the prepared HttpRequestMessage to send.</param>
+        /// <param name="onNoContent">a delegate that is called when the remote service returns 204 (NoContent).</param>
+        /// <param name="onDefault">a delegate that is called when the remote service returns default (any response code not handled
+        /// elsewhere).</param>
+        /// <param name="eventListener">an <see cref="Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener" /> instance that will receive events.</param>
+        /// <param name="sender">an instance of an Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync pipeline to use to make the request.</param>
+        /// <returns>
+        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
+        /// </returns>
+        internal async global::System.Threading.Tasks.Task StorageTasksDelete_Call(global::System.Net.Http.HttpRequestMessage request, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task> onNoContent, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        {
+            using( NoSynchronizationContext )
+            {
+                global::System.Net.Http.HttpResponseMessage _response = null;
+                try
+                {
+                    var sendTask = sender.SendAsync(request, eventListener);
+                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeCall, request); if( eventListener.Token.IsCancellationRequested ) { return; }
+                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 0); if( eventListener.Token.IsCancellationRequested ) { return; }
+                    _response = await sendTask;
+                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.ResponseCreated, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
+                    // this operation supports x-ms-long-running-operation
+                    var _originalUri = request.RequestUri.AbsoluteUri;
+                    // declared final-state-via: location
+                    var _finalUri = _response.GetFirstHeader(@"Location");
+                    var asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
+                    var location = _response.GetFirstHeader(@"Location");
+                    while (request.Method == System.Net.Http.HttpMethod.Put && _response.StatusCode == global::System.Net.HttpStatusCode.OK || _response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
+                    {
+                        // delay before making the next polling request
+                        await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.DelayBeforePolling, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
+
+                        // while we wait, let's grab the headers and get ready to poll.
+                        if (!System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Azure-AsyncOperation"))) {
+                            asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
+                        }
+                        if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Location"))) {
+                            location = _response.GetFirstHeader(@"Location");
+                        }
+                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? _originalUri : location : asyncOperation;
+                        request = request.CloneAndDispose(new global::System.Uri(_uri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
+
+                        // and let's look at the current response body and see if we have some information we can give back to the listener
+                        var content = await _response.Content.ReadAsStringAsync();
+
+                        // drop the old response
+                        _response?.Dispose();
+
+                        // make the polling call
+                        _response = await sender.SendAsync(request, eventListener);
+                        await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Polling, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
+
+                          // if we got back an OK, take a peek inside and see if it's done
+                          if( _response.StatusCode == global::System.Net.HttpStatusCode.OK)
+                          {
+                              var error = false;
+                              try {
+                                  if( Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonNode.Parse(await _response.Content.ReadAsStringAsync()) is Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonObject json)
+                                  {
+                                      var state = json.Property("properties")?.PropertyT<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonString>("provisioningState") ?? json.PropertyT<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Json.JsonString>("status");
+                                      if( state is null )
+                                      {
+                                          // the body doesn't contain any information that has the state of the LRO
+                                          // we're going to just get out, and let the consumer have the result
+                                          break;
+                                      }
+
+                                      switch( state?.ToString()?.ToLower() )
+                                      {
+                                        case "failed":
+                                            error = true;
+                                            break;
+                                        case "succeeded":
+                                        case "canceled":
+                                          // we're done polling.
+                                          break;
+
+                                        default:
+                                          // need to keep polling!
+                                          _response.StatusCode = global::System.Net.HttpStatusCode.Created;
+                                          continue;
+                                      }
+                                  }
+                              } catch {
+                                  // if we run into a problem peeking into the result,
+                                  // we really don't want to do anything special.
+                              }
+                              if (error) {
+                                  throw new Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.UndeclaredResponseException(_response);
+                              }
+                          }
+
+                        // check for terminal status code
+                        if (_response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
+                        {
+                            continue;
+                        }
+                        // we are done polling, do a request on final target?
+                        // create a new request with the final uri
+                        request = request.CloneAndDispose(new global::System.Uri(_finalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
+
+                        // drop the old response
+                        _response?.Dispose();
+
+                        // make the final call
+                        _response = await sender.SendAsync(request,  eventListener);
+                        await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Polling, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
+                        break;
+                    }
+                    await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 100); if( eventListener.Token.IsCancellationRequested ) { return; }
+                    var _contentType = _response.Content.Headers.ContentType?.MediaType;
+
+                    switch ( _response.StatusCode )
+                    {
                         case global::System.Net.HttpStatusCode.NoContent:
                         {
                             await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeResponseDispatch, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
@@ -2995,7 +2977,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task StorageTasksReportList(string subscriptionId, string resourceGroupName, string storageTaskName, int? Maxpagesize, string Filter, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task StorageTasksReportList(string subscriptionId, string resourceGroupName, string storageTaskName, string Maxpagesize, string Filter, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -3011,7 +2993,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + global::System.Uri.EscapeDataString(storageTaskName)
                         + "/reports"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + (string.IsNullOrEmpty(Filter) ? global::System.String.Empty : "$filter=" + global::System.Uri.EscapeDataString(Filter))
                         + "&"
@@ -3044,7 +3026,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task StorageTasksReportListViaIdentity(global::System.String viaIdentity, int? Maxpagesize, string Filter, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task StorageTasksReportListViaIdentity(global::System.String viaIdentity, string Maxpagesize, string Filter, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary>, global::System.Threading.Tasks.Task> onOk, global::System.Func<global::System.Net.Http.HttpResponseMessage, global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IErrorResponse>, global::System.Threading.Tasks.Task> onDefault, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -3072,7 +3054,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + storageTaskName
                         + "/reports"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + (string.IsNullOrEmpty(Filter) ? global::System.String.Empty : "$filter=" + global::System.Uri.EscapeDataString(Filter))
                         + "&"
@@ -3103,7 +3085,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// A <see cref="global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary>"
         /// /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary> StorageTasksReportListViaIdentityWithResult(global::System.String viaIdentity, int? Maxpagesize, string Filter, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary> StorageTasksReportListViaIdentityWithResult(global::System.String viaIdentity, string Maxpagesize, string Filter, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -3131,7 +3113,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + storageTaskName
                         + "/reports"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + (string.IsNullOrEmpty(Filter) ? global::System.String.Empty : "$filter=" + global::System.Uri.EscapeDataString(Filter))
                         + "&"
@@ -3165,7 +3147,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// A <see cref="global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary>"
         /// /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary> StorageTasksReportListWithResult(string subscriptionId, string resourceGroupName, string storageTaskName, int? Maxpagesize, string Filter, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
+        public async global::System.Threading.Tasks.Task<Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Models.IStorageTaskReportSummary> StorageTasksReportListWithResult(string subscriptionId, string resourceGroupName, string storageTaskName, string Maxpagesize, string Filter, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.ISendAsync sender)
         {
             var apiVersion = @"2023-01-01";
             // Constant Parameters
@@ -3181,7 +3163,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         + global::System.Uri.EscapeDataString(storageTaskName)
                         + "/reports"
                         + "?"
-                        + (null == Maxpagesize ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize.ToString()))
+                        + (string.IsNullOrEmpty(Maxpagesize) ? global::System.String.Empty : "$maxpagesize=" + global::System.Uri.EscapeDataString(Maxpagesize))
                         + "&"
                         + (string.IsNullOrEmpty(Filter) ? global::System.String.Empty : "$filter=" + global::System.Uri.EscapeDataString(Filter))
                         + "&"
@@ -3326,7 +3308,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        internal async global::System.Threading.Tasks.Task StorageTasksReportList_Validate(string subscriptionId, string resourceGroupName, string storageTaskName, int? Maxpagesize, string Filter, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener)
+        internal async global::System.Threading.Tasks.Task StorageTasksReportList_Validate(string subscriptionId, string resourceGroupName, string storageTaskName, string Maxpagesize, string Filter, Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.IEventListener eventListener)
         {
             using( NoSynchronizationContext )
             {
@@ -3339,6 +3321,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                 await eventListener.AssertMinimumLength(nameof(storageTaskName),storageTaskName,3);
                 await eventListener.AssertMaximumLength(nameof(storageTaskName),storageTaskName,18);
                 await eventListener.AssertRegEx(nameof(storageTaskName), storageTaskName, @"^[a-z0-9]{3,18}$");
+                await eventListener.AssertNotNull(nameof(Maxpagesize),Maxpagesize);
                 await eventListener.AssertNotNull(nameof(Filter),Filter);
             }
         }
@@ -3668,17 +3651,17 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                 global::System.Net.Http.HttpResponseMessage _response = null;
                 try
                 {
-                    // this operation supports x-ms-long-running-operation
-                    var _originalUri = request.RequestUri.AbsoluteUri;
                     var sendTask = sender.SendAsync(request, eventListener);
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeCall, request); if( eventListener.Token.IsCancellationRequested ) { return null; }
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 0); if( eventListener.Token.IsCancellationRequested ) { return null; }
                     _response = await sendTask;
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.ResponseCreated, _response); if( eventListener.Token.IsCancellationRequested ) { return null; }
-                    // declared final-state-via: azure-async-operation
+                    // this operation supports x-ms-long-running-operation
+                    var _originalUri = request.RequestUri.AbsoluteUri;
+                    // declared final-state-via: location
+                    var _finalUri = _response.GetFirstHeader(@"Location");
                     var asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
                     var location = _response.GetFirstHeader(@"Location");
-                    var operationLocation = _response.GetFirstHeader(@"Operation-Location");
                     while (request.Method == System.Net.Http.HttpMethod.Put && _response.StatusCode == global::System.Net.HttpStatusCode.OK || _response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
                     {
                         // delay before making the next polling request
@@ -3691,10 +3674,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Location"))) {
                             location = _response.GetFirstHeader(@"Location");
                         }
-                        if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Operation-Location"))) {
-                            operationLocation = _response.GetFirstHeader(@"Operation-Location");
-                        }
-                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? global::System.String.IsNullOrEmpty(operationLocation) ? _originalUri : operationLocation : location : asyncOperation;
+                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? _originalUri : location : asyncOperation;
                         request = request.CloneAndDispose(new global::System.Uri(_uri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
 
                         // and let's look at the current response body and see if we have some information we can give back to the listener
@@ -3754,7 +3734,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         }
                         // we are done polling, do a request on final target?
                         // create a new request with the final uri
-                        request = request.CloneAndDispose(new global::System.Uri(_originalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
+                        request = request.CloneAndDispose(new global::System.Uri(_finalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
 
                         // drop the old response
                         _response?.Dispose();
@@ -3822,17 +3802,17 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                 global::System.Net.Http.HttpResponseMessage _response = null;
                 try
                 {
-                    // this operation supports x-ms-long-running-operation
-                    var _originalUri = request.RequestUri.AbsoluteUri;
                     var sendTask = sender.SendAsync(request, eventListener);
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.BeforeCall, request); if( eventListener.Token.IsCancellationRequested ) { return; }
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.Progress, "intentional placeholder", 0); if( eventListener.Token.IsCancellationRequested ) { return; }
                     _response = await sendTask;
                     await eventListener.Signal(Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Events.ResponseCreated, _response); if( eventListener.Token.IsCancellationRequested ) { return; }
-                    // declared final-state-via: azure-async-operation
+                    // this operation supports x-ms-long-running-operation
+                    var _originalUri = request.RequestUri.AbsoluteUri;
+                    // declared final-state-via: location
+                    var _finalUri = _response.GetFirstHeader(@"Location");
                     var asyncOperation = _response.GetFirstHeader(@"Azure-AsyncOperation");
                     var location = _response.GetFirstHeader(@"Location");
-                    var operationLocation = _response.GetFirstHeader(@"Operation-Location");
                     while (request.Method == System.Net.Http.HttpMethod.Put && _response.StatusCode == global::System.Net.HttpStatusCode.OK || _response.StatusCode == global::System.Net.HttpStatusCode.Created || _response.StatusCode == global::System.Net.HttpStatusCode.Accepted )
                     {
                         // delay before making the next polling request
@@ -3845,10 +3825,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Location"))) {
                             location = _response.GetFirstHeader(@"Location");
                         }
-                        if (!global::System.String.IsNullOrEmpty(_response.GetFirstHeader(@"Operation-Location"))) {
-                            operationLocation = _response.GetFirstHeader(@"Operation-Location");
-                        }
-                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? global::System.String.IsNullOrEmpty(operationLocation) ? _originalUri : operationLocation : location : asyncOperation;
+                        var _uri = global::System.String.IsNullOrEmpty(asyncOperation) ? global::System.String.IsNullOrEmpty(location) ? _originalUri : location : asyncOperation;
                         request = request.CloneAndDispose(new global::System.Uri(_uri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
 
                         // and let's look at the current response body and see if we have some information we can give back to the listener
@@ -3908,7 +3885,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.StorageAction
                         }
                         // we are done polling, do a request on final target?
                         // create a new request with the final uri
-                        request = request.CloneAndDispose(new global::System.Uri(_originalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
+                        request = request.CloneAndDispose(new global::System.Uri(_finalUri), Microsoft.Azure.PowerShell.Cmdlets.StorageAction.Runtime.Method.Get);
 
                         // drop the old response
                         _response?.Dispose();

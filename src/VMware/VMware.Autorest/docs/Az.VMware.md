@@ -1,6 +1,6 @@
 ---
 Module Name: Az.VMware
-Module Guid: 6bee2b60-5b08-4f28-b776-6dfda4fc70db
+Module Guid: 03b1bace-0c6d-4ffc-9019-6af02c2b4b87
 Download Help Link: https://learn.microsoft.com/powershell/module/az.vmware
 Help Version: 1.0.0.0
 Locale: en-US
@@ -32,9 +32,6 @@ Get a Datastore
 ### [Get-AzVMwareGlobalReachConnection](Get-AzVMwareGlobalReachConnection.md)
 Get a GlobalReachConnection
 
-### [Get-AzVMwareHost](Get-AzVMwareHost.md)
-Get a Host
-
 ### [Get-AzVMwareIscsiPath](Get-AzVMwareIscsiPath.md)
 Get a IscsiPath
 
@@ -46,15 +43,6 @@ Get a PrivateCloud
 
 ### [Get-AzVMwarePrivateCloudAdminCredential](Get-AzVMwarePrivateCloudAdminCredential.md)
 List the admin credentials for the private cloud
-
-### [Get-AzVMwareProvisionedNetwork](Get-AzVMwareProvisionedNetwork.md)
-Get a ProvisionedNetwork
-
-### [Get-AzVMwarePureStoragePolicy](Get-AzVMwarePureStoragePolicy.md)
-Get a PureStoragePolicy
-
-### [Get-AzVMwareSku](Get-AzVMwareSku.md)
-A list of SKUs.
 
 ### [Get-AzVMwareVirtualMachine](Get-AzVMwareVirtualMachine.md)
 Get a VirtualMachine
@@ -69,25 +57,25 @@ Create an in-memory object for AddonSrmProperties.
 Create an in-memory object for AddonVrProperties.
 
 ### [New-AzVMwareAuthorization](New-AzVMwareAuthorization.md)
-Create a ExpressRouteAuthorization
+create a ExpressRouteAuthorization
 
 ### [New-AzVMwareCloudLink](New-AzVMwareCloudLink.md)
-Create a CloudLink
+create a CloudLink
 
 ### [New-AzVMwareCluster](New-AzVMwareCluster.md)
-Create a Cluster
+create a Cluster
 
 ### [New-AzVMwareDatastore](New-AzVMwareDatastore.md)
-Create a Datastore
+create a Datastore
 
 ### [New-AzVMwareGlobalReachConnection](New-AzVMwareGlobalReachConnection.md)
-Create a GlobalReachConnection
+create a GlobalReachConnection
 
 ### [New-AzVMwareIscsiPath](New-AzVMwareIscsiPath.md)
-Create a IscsiPath
+create a IscsiPath
 
 ### [New-AzVMwarePlacementPolicy](New-AzVMwarePlacementPolicy.md)
-Create a PlacementPolicy
+create a PlacementPolicy
 
 ### [New-AzVMwarePrivateCloud](New-AzVMwarePrivateCloud.md)
 Create a private cloud
@@ -100,9 +88,6 @@ Rotate the vCenter password
 
 ### [New-AzVMwarePSCredentialExecutionParameterObject](New-AzVMwarePSCredentialExecutionParameterObject.md)
 Create an in-memory object for PSCredentialExecutionParameter.
-
-### [New-AzVMwarePureStoragePolicy](New-AzVMwarePureStoragePolicy.md)
-Create a PureStoragePolicy
 
 ### [New-AzVMwareScriptSecureStringExecutionParameterObject](New-AzVMwareScriptSecureStringExecutionParameterObject.md)
 Create an in-memory object for ScriptSecureStringExecutionParameter.
@@ -143,9 +128,6 @@ Delete a PlacementPolicy
 ### [Remove-AzVMwarePrivateCloud](Remove-AzVMwarePrivateCloud.md)
 Delete a private cloud
 
-### [Remove-AzVMwarePureStoragePolicy](Remove-AzVMwarePureStoragePolicy.md)
-Delete a PureStoragePolicy
-
 ### [Test-AzVMwareLocationQuotaAvailability](Test-AzVMwareLocationQuotaAvailability.md)
 Return quota for subscription by region
 
@@ -153,29 +135,26 @@ Return quota for subscription by region
 Return trial status for subscription by region
 
 ### [Update-AzVMwareAuthorization](Update-AzVMwareAuthorization.md)
-Update a ExpressRouteAuthorization
+update a ExpressRouteAuthorization
 
 ### [Update-AzVMwareCloudLink](Update-AzVMwareCloudLink.md)
-Update a CloudLink
+update a CloudLink
 
 ### [Update-AzVMwareCluster](Update-AzVMwareCluster.md)
-Update a Cluster
+update a Cluster
 
 ### [Update-AzVMwareDatastore](Update-AzVMwareDatastore.md)
-Update a Datastore
+update a Datastore
 
 ### [Update-AzVMwareGlobalReachConnection](Update-AzVMwareGlobalReachConnection.md)
-Update a GlobalReachConnection
+update a GlobalReachConnection
 
 ### [Update-AzVMwareIscsiPath](Update-AzVMwareIscsiPath.md)
-Update a IscsiPath
+update a IscsiPath
 
 ### [Update-AzVMwarePlacementPolicy](Update-AzVMwarePlacementPolicy.md)
-Update a PlacementPolicy
+update a PlacementPolicy
 
 ### [Update-AzVMwarePrivateCloud](Update-AzVMwarePrivateCloud.md)
-Update a PrivateCloud
-
-### [Update-AzVMwarePureStoragePolicy](Update-AzVMwarePureStoragePolicy.md)
-Update a PureStoragePolicy
+update a PrivateCloud
 

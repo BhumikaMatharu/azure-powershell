@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilePath
-The path of the file need to be deployed.
+The path of the file need to be deploied.
 The file supports Jar, NetcoreZip and Source.
 
 ```yaml

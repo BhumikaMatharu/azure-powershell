@@ -1,26 +1,18 @@
-function Get-BatchGenerationModuleMap {
+function Get-AutorestV4ModuleMap {
     param (
         [string]$srcPath
     )
-    $skippedModules = $env:SKIPPED_MODULES -split ',' | ForEach-Object { $_.Trim() }
+    
     $result = @{}
-    $modules = Get-ChildItem -Path $srcPath -Directory
 
-    foreach($module in $modules) {
-        if ($skippedModules -contains $module.Name) {
-            Write-Warning "Skipping module: $($module.Name) as it is in the skipped modules list."
-            continue
-        }
-        $subModules = Get-ChildItem -Path $module.FullName -Directory | Where-Object { 
+    Get-ChildItem -Path $srcPath -Directory | ForEach-Object {
+        $module = $_
+
+        Get-ChildItem -Path $module.FullName -Directory | Where-Object { 
             $_.Name -like '*.autorest'
-        }
-        foreach ($subModule in $subModules) {
-            $tspPath = Join-Path $subModule.FullName 'tsp-location.yaml'
-            if (Test-Path $tspPath){
-                Write-Warning "tsp-location.yaml found in $($subModule.FullName), skipping."
-                continue
-            }
-                       
+        } | ForEach-Object {
+            $subModule = $_
+            
             $readmePath = Join-Path $subModule.FullName 'README.md'
 
             if (Test-Path $readmePath) {
@@ -74,7 +66,9 @@ function Write-Matrix {
         [string]$RepoRoot
     )
 
-    Write-Host "##[group]$VariableName module groups: $($GroupedModules.Count)"
+    Write-Host "$VariableName module groups: $($GroupedModules.Count)"
+    $GroupedModules | ForEach-Object { $_ -join ', ' } | ForEach-Object { Write-Host $_ }
+
     $targets = @{}
     $MatrixStr = ""
     $index = 0
@@ -82,11 +76,8 @@ function Write-Matrix {
         $key = ($index + 1).ToString() + "-" + $modules.Count
         $MatrixStr = "$MatrixStr,'$key':{'MatrixKey':'$key'}"
         $targets[$key] = $modules
-        $moduleNamesStr = $modules -join ', '
-        Write-Host "$key : $moduleNamesStr"
         $index++
     }
-    Write-Host "##[endgroup]"
 
     if ($MatrixStr -and $MatrixStr.Length -gt 1) {
         $MatrixStr = $MatrixStr.Substring(1)
@@ -100,7 +91,6 @@ function Write-Matrix {
     }
     $targetsOutputFile = Join-Path $targetsOutputDir "$VariableName.json"
     $targets | ConvertTo-Json -Depth 5 | Out-File -FilePath $targetsOutputFile -Encoding utf8
-    Write-Host
 }
 
 function Get-Targets {

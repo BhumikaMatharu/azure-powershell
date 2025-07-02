@@ -26,7 +26,6 @@ Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.NsgCidr
 https://learn.microsoft.com/powershell/module/Az.Oracle/new-azoraclensgcidrobject
 #>
 function New-AzOracleNsgCidrObject {
-    [Microsoft.Azure.PowerShell.Cmdlets.Oracle.ModelCmdletAttribute()]
     [OutputType('Microsoft.Azure.PowerShell.Cmdlets.Oracle.Models.NsgCidr')]
     [CmdletBinding(PositionalBinding=$false)]
     Param(

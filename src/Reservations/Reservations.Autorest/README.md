@@ -54,14 +54,6 @@ title: Reservations
 subject-prefix: $(service-name)
 
 directive:
-  - from: swagger-document
-    where: $.definitions.PurchaseRequest.properties.location.x-ms-mutability
-    transform: >-
-      return [
-        "read",
-        "update",
-        "create"
-      ]
   ### Rename Cmdlet names
   - where:
       verb: Invoke

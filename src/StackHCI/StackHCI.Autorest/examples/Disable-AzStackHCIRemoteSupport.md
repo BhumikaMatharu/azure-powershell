@@ -9,5 +9,5 @@ Disabling Remote Support.
 Remote Support successfully Disabled.
 ```
 
-Disabling Remote support 
+Disabling Remort support 
 

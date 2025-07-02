@@ -15,14 +15,14 @@ Lists all the restorable Azure Cosmos DB MongoDB resources available for a speci
 ### ByNameParameterSet (Default)
 ```
 Get-AzCosmosDBMongoDBRestorableResource -Location <String> -DatabaseAccountInstanceId <String>
- -RestoreTimestampInUtc <DateTime> -RestoreLocation <String> [-DefaultProfile <IAzureContextContainer>]
+ -RestoreTimestampInUtc <DateTimeOffset> -RestoreLocation <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByParentObjectParameterSet
 ```
 Get-AzCosmosDBMongoDBRestorableResource -Location <String> -DatabaseAccountInstanceId <String>
- -RestoreTimestampInUtc <DateTime> -RestoreLocation <String>
+ -RestoreTimestampInUtc <DateTimeOffset> -RestoreLocation <String>
  -InputObject <PSRestorableDatabaseAccountGetResult> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 The timestamp to which the source account has to be restored to.
 
 ```yaml
-Type: System.DateTime
+Type: System.DateTimeOffset
 Parameter Sets: (All)
 Aliases:
 
