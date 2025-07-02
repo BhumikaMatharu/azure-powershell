@@ -21,6 +21,7 @@
 ## Upcoming Release
 * Onboarded Application Gateway WAF Exceptions cmdlet.
     - `New-AzApplicationGatewayFirewallPolicyException`  
+* Added `EnableDnstapLogging` parameter to `New-AzFirewall`
 
 ## Version 7.17.0
 * Added properties 'PublicIpAddressesV6', 'PublicIpPrefixesV6', and 'SourceVirtualNetwork' to NatGateway, as well as support for it for the following cmdlets:
@@ -456,7 +457,6 @@
 * Replaced `IdentifyTopFatFlow` parameter with 'EnableFatFlowLogging' parameter to `New-AzFirewall`
 * Fixed a bug not able to add MSSQL application rules to an AZURE FIREWALL POLICY
 * Onboard Project AzureML Registries to Private Link Common Cmdlets
-* Added `EnableDnstapLogging` parameter to `New-AzFirewall`
 
 ## Version 4.20.1
 * Added breaking change notification for `Get-AzFirewall`, `New-AzFirewall`, `Set-AzFirewall` and `New-AzFirewallHubIpAddress`
